@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/firstProfile"
+        android:title="Mei"
+        android:icon="@drawable/existing_login">
+
+        <menu>
+            <item
+                android:id="@+id/subLogin1"
+                android:title="Login"/>
+            <item
+                android:id="@+id/subDelete1"
+                android:title="Delete"/>
+        </menu>
+    </item>
+
+
+
+    <item
+        android:id="@+id/secondProfile"
+        android:title="Degi"
+        android:icon="@drawable/existing_login">
+        <menu>
+            <item
+                android:id="@+id/subLogin2"
+                android:title="Login"/>
+            <item
+                android:id="@+id/subDelete2"
+                android:title="Delete"/>
+        </menu>
+    </item>
+
+
+
+</menu>

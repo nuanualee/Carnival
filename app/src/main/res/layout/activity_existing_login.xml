@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lavender"
+    tools:context=".AddProfile.ExistingLoginActivity">
+
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="42dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="365dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:padding="0dp"
+        android:text="Welcome Back"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+
+    <TextView
+        android:id="@+id/bgForAttachProfile"
+        android:layout_width="380dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/dark_purple"
+        android:padding="60dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/attachProfile"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="72dp"
+        android:background="@color/transparent"
+
+        android:src="@drawable/circle_filled"
+        app:layout_constraintEnd_toEndOf="@+id/bgForAttachProfile"
+        app:layout_constraintStart_toStartOf="@+id/bgForAttachProfile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/existingProfile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/pfp_alpaca"
+        app:layout_constraintEnd_toEndOf="@+id/attachProfile"
+        app:layout_constraintStart_toStartOf="@+id/attachProfile"
+        app:layout_constraintTop_toTopOf="@+id/attachProfile"
+        app:shapeAppearanceOverlay="@style/MoreRound"
+        app:strokeColor="@color/lavender" />
+
+    <TextView
+        android:id="@+id/existingName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name here"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/bgForAttachProfile"
+        app:layout_constraintStart_toStartOf="@+id/bgForAttachProfile"
+        app:layout_constraintTop_toBottomOf="@+id/attachProfile" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="20dp"
+        android:text="Carnival User"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bgForAttachProfile"
+        app:layout_constraintStart_toStartOf="@+id/bgForAttachProfile" />
+
+
+    <TextView
+        android:id="@+id/bgUsername"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/lilac"
+        android:padding="60dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/picLogin"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/rounded"
+        android:src="@drawable/existing_profile_white"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="@+id/bgUsername"
+        app:layout_constraintTop_toTopOf="@+id/bgUsername" />
+
+
+    <EditText
+        android:id="@+id/txtEditUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/round_rectangle"
+        android:hint="Username"
+        android:nextFocusForward="@+id/txtEditPassword"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toEndOf="@+id/picLogin"
+        app:layout_constraintTop_toTopOf="@+id/picLogin" />
+
+
+    <TextView
+        android:id="@+id/bgPassword"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/lilac"
+        android:padding="60dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="@+id/bgUsername"
+        app:layout_constraintTop_toBottomOf="@+id/bgUsername" />
+
+    <ImageView
+        android:id="@+id/picPassword"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/rounded"
+        android:src="@drawable/existing_password"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="@+id/bgPassword"
+        app:layout_constraintTop_toTopOf="@+id/bgPassword" />
+
+
+    <EditText
+        android:id="@+id/txtEditPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/round_rectangle"
+        android:hint="Password"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toEndOf="@+id/picPassword"
+        app:layout_constraintTop_toTopOf="@+id/picPassword" />
+
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/torquise"
+        android:gravity="center"
+        android:padding="15dp"
+        android:radius="10dp"
+        android:text="Sign In"
+        app:layout_constraintStart_toStartOf="@+id/bgPassword"
+        app:layout_constraintTop_toBottomOf="@+id/bgPassword" />
+
+    <CheckBox
+        android:id="@+id/rememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/torquise"
+        android:text="Remember Me"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/btnSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

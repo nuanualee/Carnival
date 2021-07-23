@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_purple"
+    tools:context=".Page.MainActivity.CarnivalSamplerActivity">
+
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/imgCarnival"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/c_noahcyrus"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/MoreRound" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@color/black"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+    <TextView
+        android:id="@+id/txtCarnivalArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ARTIST"
+        android:textColor="@color/orange"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/btnPlayPause"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayPause" />
+
+    <TextView
+        android:id="@+id/txtCurrent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CURRENT CARNIVAL:"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtCarnivalArtist"
+        app:layout_constraintTop_toBottomOf="@+id/txtCarnivalArtist" />
+
+    <TextView
+        android:id="@+id/txtCarnivalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TITLE HERE"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtCurrent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCurrent" />
+
+
+    <ImageButton
+        android:id="@+id/btnPlayPause"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="392dp"
+        android:background="@color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pause_letterh"
+        app:layout_constraintStart_toStartOf="@+id/imgCarnival"
+        app:layout_constraintTop_toTopOf="@+id/imgCarnival" />
+
+
+    <TextView
+        android:id="@+id/txtBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="280dp"
+        android:text="BACK"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlayPause"
+        app:layout_constraintStart_toStartOf="@+id/btnPlayPause" />
+
+    <ImageButton
+        android:id="@+id/underline"
+        style="@style/Divider.Horizontal"
+        android:layout_width="48dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/txtBack"
+        app:layout_constraintTop_toBottomOf="@+id/txtBack" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

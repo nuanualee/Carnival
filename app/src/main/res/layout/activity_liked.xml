@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_purple"
+    tools:context=".Page.Liked">
+
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="53dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+
+
+    <TextView
+        android:id="@+id/txtSongList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Song List"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
+
+
+    <ImageView
+        android:id="@+id/pfpProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fit_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSongList" />
+
+
+    <TextView
+        android:id="@+id/txtLikedSongs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:text="LIKED\nSONGS"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/pfpProfile"
+        app:layout_constraintTop_toTopOf="@+id/pfpProfile" />
+
+    <TextView
+        android:id="@+id/txtBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="By: lalalandlee20"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/txtLikedSongs"
+        app:layout_constraintTop_toBottomOf="@+id/txtLikedSongs" />
+
+    <TextView
+        android:id="@+id/txtGenres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Hip-hop, Alternative"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/txtBy"
+        app:layout_constraintTop_toBottomOf="@+id/txtBy" />
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/view_liked"
+        app:layout_constraintStart_toStartOf="@+id/txtGenres"
+        app:layout_constraintTop_toBottomOf="@+id/txtGenres" />
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:src="@drawable/view_shuffle"
+        app:layout_constraintStart_toStartOf="@+id/txtGenres"
+        app:layout_constraintTop_toBottomOf="@+id/txtGenres" />
+
+
+    <ImageView
+        android:id="@+id/btnPlayAll"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="278dp"
+        android:src="@drawable/play_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPlayAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="7dp"
+        android:text="Play All"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/btnPlayAll"
+        app:layout_constraintTop_toTopOf="@+id/btnPlayAll" />
+
+
+
+
+
+
+
+    
+
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="320dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+
+
+            <TextView
+                android:id="@+id/bgOne"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.533"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgOne"
+                app:layout_constraintTop_toTopOf="@+id/bgOne" />
+
+            <TextView
+                android:id="@+id/likedSong1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="Angels Like You"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/one"
+                app:layout_constraintStart_toEndOf="@+id/one" />
+
+            <TextView
+                android:id="@+id/likedArtist1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Miley Cyrus"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong1"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong1" />
+
+            <TextView
+                android:id="@+id/likedDuration1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="3:27"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgOne"
+                app:layout_constraintTop_toTopOf="@+id/bgOne" />
+
+
+
+
+
+
+            //TWO
+
+            <TextView
+                android:id="@+id/bgTwo"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgOne"
+                app:layout_constraintTop_toBottomOf="@id/bgOne"/>
+
+            <TextView
+                android:id="@+id/two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgTwo"
+                app:layout_constraintTop_toTopOf="@+id/bgTwo" />
+
+            <TextView
+                android:id="@+id/likedSong2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="Saturn"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/two"
+                app:layout_constraintStart_toEndOf="@+id/two" />
+
+            <TextView
+                android:id="@+id/likedArtist2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sleeping At Last"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong2"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong2" />
+
+            <TextView
+                android:id="@+id/likedDuration2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="3:51"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgTwo"
+                app:layout_constraintTop_toTopOf="@+id/bgTwo" />
+
+
+
+            //THREE
+            <TextView
+                android:id="@+id/bgThree"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgTwo"
+                app:layout_constraintTop_toBottomOf="@id/bgTwo"/>
+
+            <TextView
+                android:id="@+id/three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgThree"
+                app:layout_constraintTop_toTopOf="@+id/bgThree" />
+
+            <TextView
+                android:id="@+id/likedSong3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="All I Know So Far"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/three"
+                app:layout_constraintStart_toEndOf="@+id/three" />
+
+            <TextView
+                android:id="@+id/likedArtist3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P!nk"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong3"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong3" />
+
+            <TextView
+                android:id="@+id/likedDuration3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="4:62"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgThree"
+                app:layout_constraintTop_toTopOf="@+id/bgThree" />
+
+
+
+
+            //FOUR
+            <TextView
+                android:id="@+id/bgFour"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgThree"
+                app:layout_constraintTop_toBottomOf="@id/bgThree"/>
+
+            <TextView
+                android:id="@+id/four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgFour"
+                app:layout_constraintTop_toTopOf="@+id/bgFour" />
+
+            <TextView
+                android:id="@+id/likedSong4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="What A Time"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/four"
+                app:layout_constraintStart_toEndOf="@+id/four" />
+
+            <TextView
+                android:id="@+id/likedArtist4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Julia Micheals &amp; Niall Horan"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong4"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong4" />
+
+            <TextView
+                android:id="@+id/likedDuration4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="2:53"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgFour"
+                app:layout_constraintTop_toTopOf="@+id/bgFour" />
+
+
+
+
+
+            //FIVE
+            <TextView
+                android:id="@+id/bgFive"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgFour"
+                app:layout_constraintTop_toBottomOf="@id/bgFour"/>
+
+            <TextView
+                android:id="@+id/five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgFive"
+                app:layout_constraintTop_toTopOf="@+id/bgFive" />
+
+            <TextView
+                android:id="@+id/likedSong5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="Bad Liar"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/five"
+                app:layout_constraintStart_toEndOf="@+id/five" />
+
+            <TextView
+                android:id="@+id/likedArtist5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Imagine Dragons"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong5"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong5" />
+
+            <TextView
+                android:id="@+id/likedDuration5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgFive"
+                app:layout_constraintTop_toTopOf="@+id/bgFive" />
+
+
+
+
+
+            //SIX
+            <TextView
+                android:id="@+id/bgSix"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgFive"
+                app:layout_constraintTop_toBottomOf="@id/bgFive"/>
+
+            <TextView
+                android:id="@+id/six"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgSix"
+                app:layout_constraintTop_toTopOf="@+id/bgSix" />
+
+            <TextView
+                android:id="@+id/likedSong6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="Save Your Tears"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/six"
+                app:layout_constraintStart_toEndOf="@+id/six" />
+
+            <TextView
+                android:id="@+id/likedArtist6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Weeknd &amp; Ariana Grande"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong6"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong6" />
+
+            <TextView
+                android:id="@+id/likedDuration6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="3:35"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgSix"
+                app:layout_constraintTop_toTopOf="@+id/bgSix" />
+
+
+
+            //SEVENTH
+            <TextView
+                android:id="@+id/bgSeven"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgSix"
+                app:layout_constraintTop_toBottomOf="@id/bgSix"/>
+
+            <TextView
+                android:id="@+id/seven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgSeven"
+                app:layout_constraintTop_toTopOf="@+id/bgSeven" />
+
+            <TextView
+                android:id="@+id/likedSong7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="Here We Go"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/seven"
+                app:layout_constraintStart_toEndOf="@+id/seven" />
+
+            <TextView
+                android:id="@+id/likedArtist7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WILD"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong7"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong7" />
+
+            <TextView
+                android:id="@+id/likedDuration7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="3:10"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgSeven"
+                app:layout_constraintTop_toTopOf="@+id/bgSeven" />
+
+
+
+
+            //EIGHT
+            <TextView
+                android:id="@+id/bgEight"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgSeven"
+                app:layout_constraintTop_toBottomOf="@id/bgSeven"/>
+
+            <TextView
+                android:id="@+id/eight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgEight"
+                app:layout_constraintTop_toTopOf="@+id/bgEight" />
+
+            <TextView
+                android:id="@+id/likedSong8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="The Edge of Glory"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/eight"
+                app:layout_constraintStart_toEndOf="@+id/eight" />
+
+            <TextView
+                android:id="@+id/likedArtist8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lady Gaga"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong8"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong8" />
+
+            <TextView
+                android:id="@+id/likedDuration8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="5:22"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgEight"
+                app:layout_constraintTop_toTopOf="@+id/bgEight" />
+
+
+
+
+            //NINE
+            <TextView
+                android:id="@+id/bgNine"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgEight"
+                app:layout_constraintTop_toBottomOf="@id/bgEight"/>
+
+            <TextView
+                android:id="@+id/nine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgNine"
+                app:layout_constraintTop_toTopOf="@+id/bgNine" />
+
+            <TextView
+                android:id="@+id/likedSong9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="Stressed Out"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/nine"
+                app:layout_constraintStart_toEndOf="@+id/nine" />
+
+            <TextView
+                android:id="@+id/likedArtist9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Twenty one Pilots"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong9"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong9" />
+
+            <TextView
+                android:id="@+id/likedDuration9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="3:22"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgNine"
+                app:layout_constraintTop_toTopOf="@+id/bgNine" />
+
+
+
+
+
+            //TEN
+            <TextView
+                android:id="@+id/bgTen"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgNine"
+                app:layout_constraintTop_toBottomOf="@id/bgNine"/>
+
+            <TextView
+                android:id="@+id/ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="10"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgTen"
+                app:layout_constraintTop_toTopOf="@+id/bgTen" />
+
+            <TextView
+                android:id="@+id/likedSong10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="YOUTH"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ten"
+                app:layout_constraintStart_toEndOf="@+id/ten" />
+
+            <TextView
+                android:id="@+id/likedArtist10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Troye Sivan"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong10"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong10" />
+
+            <TextView
+                android:id="@+id/likedDuration10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="3:05"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgTen"
+                app:layout_constraintTop_toTopOf="@+id/bgTen" />
+
+
+
+
+
+
+
+            //ELEVEN
+            <TextView
+                android:id="@+id/bgEleven"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgTen"
+                app:layout_constraintTop_toBottomOf="@id/bgTen"/>
+
+            <TextView
+                android:id="@+id/eleven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="11"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgEleven"
+                app:layout_constraintTop_toTopOf="@+id/bgEleven" />
+
+            <TextView
+                android:id="@+id/likedSong11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="You Need To Calm Down"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/eleven"
+                app:layout_constraintStart_toEndOf="@+id/eleven" />
+
+            <TextView
+                android:id="@+id/likedArtist11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Taylor Swift"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong11"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong11" />
+
+            <TextView
+                android:id="@+id/likedDuration11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="2:57"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgEleven"
+                app:layout_constraintTop_toTopOf="@+id/bgEleven" />
+
+
+
+
+
+
+            //TWELVE
+            <TextView
+                android:id="@+id/bgTwelve"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgEleven"
+                app:layout_constraintTop_toBottomOf="@id/bgEleven"/>
+
+            <TextView
+                android:id="@+id/twelve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="12"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgTwelve"
+                app:layout_constraintTop_toTopOf="@+id/bgTwelve" />
+
+            <TextView
+                android:id="@+id/likedSong12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="Shape of You"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/twelve"
+                app:layout_constraintStart_toEndOf="@+id/twelve" />
+
+            <TextView
+                android:id="@+id/likedArtist12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ed Sheeran"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong12"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong12" />
+
+            <TextView
+                android:id="@+id/likedDuration12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="3:54"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgTwelve"
+                app:layout_constraintTop_toTopOf="@+id/bgTwelve" />
+
+
+
+
+
+            //THIRTEEN
+            <TextView
+                android:id="@+id/bgThirteen"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgTwelve"
+                app:layout_constraintTop_toBottomOf="@id/bgTwelve"/>
+
+            <TextView
+                android:id="@+id/thirteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="13"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgThirteen"
+                app:layout_constraintTop_toTopOf="@+id/bgThirteen" />
+
+            <TextView
+                android:id="@+id/likedSong13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="Wrecking Ball"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/thirteen"
+                app:layout_constraintStart_toEndOf="@+id/thirteen" />
+
+            <TextView
+                android:id="@+id/likedArtist13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Miley Cyrus"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong13"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong13" />
+
+            <TextView
+                android:id="@+id/likedDuration13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="3:41"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgThirteen"
+                app:layout_constraintTop_toTopOf="@+id/bgThirteen" />
+
+
+
+
+
+            //FOURTEEN
+            <TextView
+                android:id="@+id/bgFourteen"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/matte_purple"
+                android:padding="19dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@+id/bgThirteen"
+                app:layout_constraintTop_toBottomOf="@id/bgThirteen"/>
+
+            <TextView
+                android:id="@+id/fourteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="14"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@+id/bgFourteen"
+                app:layout_constraintTop_toTopOf="@+id/bgFourteen" />
+
+            <TextView
+                android:id="@+id/likedSong14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="Night Changes"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/fourteen"
+                app:layout_constraintStart_toEndOf="@+id/fourteen" />
+
+            <TextView
+                android:id="@+id/likedArtist14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="One Direction"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/likedSong14"
+                app:layout_constraintTop_toBottomOf="@+id/likedSong14" />
+
+            <TextView
+                android:id="@+id/likedDuration14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="336dp"
+                android:layout_marginTop="17dp"
+                android:text="3:47"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/bgFourteen"
+                app:layout_constraintTop_toTopOf="@+id/bgFourteen" />
+
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

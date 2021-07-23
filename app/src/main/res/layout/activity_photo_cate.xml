@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgacorn"
+    tools:context=".Page.PhotoCategory.PhotoCateActivity">
+
+
+    <TextView
+        android:id="@+id/txtActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="What is \nyour vibes for today?"
+        android:textColor="@color/dark_purple"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myCategoryList"
+        android:paddingLeft="135dp"
+        android:paddingRight="110dp"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtActivity" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnsavecate"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="128dp"
+        android:backgroundTint="@color/bright_purple"
+        android:text="Continue"
+        android:textSize="20sp"
+        app:cornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myCategoryList" />
+
+    <ImageView
+        android:id="@+id/pfpPhotoCategory"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pfp_fawn"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/txtActivity"
+        app:layout_constraintTop_toTopOf="@+id/txtActivity" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

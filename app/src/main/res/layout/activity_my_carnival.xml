@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_purple"
+    tools:context=".Page.MainActivity.MyCarnivalActivity">
+
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="42dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="365dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MY CARNIVAL"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+
+    <ScrollView
+        android:id="@+id/horizontal1"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/smudge"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:src="@drawable/smudge"
+                app:layout_constraintEnd_toEndOf="@+id/artistC1"
+                app:layout_constraintTop_toTopOf="@+id/artistC1" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/artistC1"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="240dp"
+                android:onClick="carnivalSelection"
+                android:scaleType="centerCrop"
+                android:src="@drawable/c_nf"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NF"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/carnival"
+                app:layout_constraintTop_toTopOf="@+id/carnival" />
+
+            <TextView
+                android:id="@+id/genre1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Rap"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/artistC1" />
+
+
+            <ImageView
+                android:id="@+id/carnival"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/carnival"
+                app:layout_constraintEnd_toStartOf="@+id/genre1"
+                app:layout_constraintTop_toTopOf="@+id/genre1" />
+
+            <TextView
+                android:id="@+id/c1Song1"
+                android:layout_width="240dp"
+                android:layout_height="37dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/bubblegum"
+                android:padding="0dp"
+                android:text="  The Search"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/artistC1"
+                app:layout_constraintTop_toBottomOf="@+id/genre1" />
+
+            <ImageView
+                android:id="@+id/addCircle1"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="179dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintStart_toEndOf="@+id/artistC1"
+                app:layout_constraintTop_toTopOf="@+id/c1Song1" />
+
+
+            <TextView
+                android:id="@+id/c1Song2"
+                android:layout_width="220dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/pumpkin"
+                android:padding="0dp"
+                android:text="  Paralyzed"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c1Song1"
+                app:layout_constraintTop_toTopOf="@+id/c1Song1" />
+
+            <ImageView
+                android:id="@+id/addCircle2"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle1"
+                app:layout_constraintTop_toTopOf="@+id/c1Song2" />
+
+
+            <TextView
+                android:id="@+id/c1Song3"
+                android:layout_width="200dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/bee"
+                android:padding="0dp"
+                android:text="  Lie"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c1Song2"
+                app:layout_constraintTop_toTopOf="@+id/c1Song2" />
+
+            <ImageView
+                android:id="@+id/addCircle3"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle2"
+                app:layout_constraintTop_toTopOf="@+id/c1Song3" />
+
+
+            <TextView
+                android:id="@+id/c1Song4"
+                android:layout_width="220dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/olympic"
+                android:padding="0dp"
+                android:text="  Time"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c1Song3"
+                app:layout_constraintTop_toTopOf="@+id/c1Song3" />
+
+            <ImageView
+                android:id="@+id/addCircle4"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle3"
+                app:layout_constraintTop_toTopOf="@+id/c1Song4" />
+
+
+            //song2
+
+            <ImageView
+                android:id="@+id/smudge2"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:src="@drawable/smudge"
+                app:layout_constraintEnd_toEndOf="@+id/artistC2"
+                app:layout_constraintTop_toTopOf="@+id/artistC2" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/artistC2"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="240dp"
+                android:onClick="carnivalSelection"
+                android:scaleType="centerCrop"
+                android:src="@drawable/c_taylorswift"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/smudge"
+                app:shapeAppearanceOverlay="@style/MoreRound"
+                tools:layout_editor_absoluteY="200dp" />
+
+            <TextView
+                android:id="@+id/name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Taylor Swift"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/carnival2"
+                app:layout_constraintTop_toTopOf="@+id/carnival2" />
+
+            <TextView
+                android:id="@+id/genre2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Alternative/Indie"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/artistC2" />
+
+
+            <ImageView
+                android:id="@+id/carnival2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/carnival"
+                app:layout_constraintEnd_toStartOf="@+id/genre2"
+                app:layout_constraintTop_toTopOf="@+id/genre2" />
+
+
+            <TextView
+                android:id="@+id/c2Song1"
+                android:layout_width="240dp"
+                android:layout_height="37dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/bubblegum"
+
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/artistC2"
+                app:layout_constraintTop_toBottomOf="@+id/genre2" />
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:padding="0dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="  Mr. Perfectly Fine"
+                android:textColor="@android:color/white"
+
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@+id/c2Song1"
+                app:layout_constraintTop_toTopOf="@+id/c2Song1" />
+
+            <ImageView
+                android:id="@+id/addCircle11"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="179dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintStart_toEndOf="@+id/artistC2"
+                app:layout_constraintTop_toTopOf="@+id/c2Song1" />
+
+
+            <TextView
+                android:id="@+id/c2Song2"
+                android:layout_width="220dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/pumpkin"
+                android:padding="0dp"
+                android:text="  Blank Space"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c2Song1"
+                app:layout_constraintTop_toTopOf="@+id/c2Song1" />
+
+            <ImageView
+                android:id="@+id/addCircle22"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle11"
+                app:layout_constraintTop_toTopOf="@+id/c2Song2" />
+
+
+            <TextView
+                android:id="@+id/c2Song3"
+                android:layout_width="200dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/bee"
+                android:padding="0dp"
+                android:text="  ME!"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c2Song2"
+                app:layout_constraintTop_toTopOf="@+id/c2Song2" />
+
+            <ImageView
+                android:id="@+id/addCircle33"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle3"
+                app:layout_constraintTop_toTopOf="@+id/c2Song3" />
+
+
+            <TextView
+                android:id="@+id/c2Song4"
+                android:layout_width="220dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/olympic"
+                android:padding="0dp"
+                android:text="  Love Story"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c2Song3"
+                app:layout_constraintTop_toTopOf="@+id/c2Song3" />
+
+            <ImageView
+                android:id="@+id/addCircle44"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle33"
+                app:layout_constraintTop_toTopOf="@+id/c2Song4" />
+
+
+            //song3
+
+            <ImageView
+                android:id="@+id/smudge3"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:src="@drawable/smudge"
+                app:layout_constraintEnd_toEndOf="@+id/artistC3"
+                app:layout_constraintTop_toTopOf="@+id/artistC3" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/artistC3"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="240dp"
+                android:onClick="carnivalSelection"
+                android:scaleType="centerCrop"
+                android:src="@drawable/c_clintonkane"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/smudge2"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/name3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clinton Kane"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/carnival3"
+                app:layout_constraintTop_toTopOf="@+id/carnival3" />
+
+            <TextView
+                android:id="@+id/genre3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Alternative/Indie"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/artistC3" />
+
+
+            <ImageView
+                android:id="@+id/carnival3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/carnival"
+                app:layout_constraintEnd_toStartOf="@+id/genre3"
+                app:layout_constraintTop_toTopOf="@+id/genre3" />
+
+
+            <TextView
+                android:id="@+id/c3Song1"
+                android:layout_width="240dp"
+                android:layout_height="37dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/bubblegum"
+                android:text="  Drown"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/artistC3"
+                app:layout_constraintTop_toBottomOf="@+id/genre3" />
+
+
+            <ImageView
+                android:id="@+id/addCircle111"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="179dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintStart_toEndOf="@+id/artistC3"
+                app:layout_constraintTop_toTopOf="@+id/c3Song1" />
+
+
+            <TextView
+                android:id="@+id/c3Song2"
+                android:layout_width="220dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/pumpkin"
+                android:padding="0dp"
+                android:text="  Obsessed"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c3Song1"
+                app:layout_constraintTop_toTopOf="@+id/c3Song1" />
+
+            <ImageView
+                android:id="@+id/addCircle222"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle111"
+                app:layout_constraintTop_toTopOf="@+id/c3Song2" />
+
+
+            <TextView
+                android:id="@+id/c3Song3"
+                android:layout_width="200dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/bee"
+                android:padding="0dp"
+                android:text="  hopeless"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c3Song2"
+                app:layout_constraintTop_toTopOf="@+id/c3Song2" />
+
+            <ImageView
+                android:id="@+id/addCircle333"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle33"
+                app:layout_constraintTop_toTopOf="@+id/c3Song3" />
+
+
+            <TextView
+                android:id="@+id/c3Song4"
+                android:layout_width="220dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/olympic"
+                android:padding="0dp"
+                android:text="  All I Want"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c3Song3"
+                app:layout_constraintTop_toTopOf="@+id/c3Song3" />
+
+            <ImageView
+                android:id="@+id/addCircle444"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle333"
+                app:layout_constraintTop_toTopOf="@+id/c3Song4" />
+
+
+            //song4
+
+            <ImageView
+                android:id="@+id/smudge4"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:src="@drawable/smudge"
+                app:layout_constraintEnd_toEndOf="@+id/artistC4"
+                app:layout_constraintTop_toTopOf="@+id/artistC4" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/artistC4"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="240dp"
+                android:onClick="carnivalSelection"
+                android:scaleType="centerCrop"
+                android:src="@drawable/c_noahcyrus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/smudge3"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/name4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Noah Cyrus"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/carnival4"
+                app:layout_constraintTop_toTopOf="@+id/carnival4" />
+
+            <TextView
+                android:id="@+id/genre4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Pop"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/artistC4" />
+
+
+            <ImageView
+                android:id="@+id/carnival4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/carnival"
+                app:layout_constraintEnd_toStartOf="@+id/genre4"
+                app:layout_constraintTop_toTopOf="@+id/genre4" />
+
+
+            <TextView
+                android:id="@+id/c4Song1"
+                android:layout_width="240dp"
+                android:layout_height="37dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/bubblegum"
+                android:text="  July"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/artistC4"
+                app:layout_constraintTop_toBottomOf="@+id/genre4" />
+
+
+            <ImageView
+                android:id="@+id/addCircle1111"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="179dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintStart_toEndOf="@+id/artistC4"
+                app:layout_constraintTop_toTopOf="@+id/c4Song1" />
+
+
+            <TextView
+                android:id="@+id/c4Song2"
+                android:layout_width="220dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/pumpkin"
+                android:padding="0dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c4Song1"
+                app:layout_constraintTop_toTopOf="@+id/c4Song1" />
+
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:padding="0dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="  Make Me Cry"
+                android:textColor="@android:color/white"
+
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@+id/c4Song2"
+                app:layout_constraintTop_toTopOf="@+id/c4Song2" />
+
+
+            <ImageView
+                android:id="@+id/addCircle2222"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle1111"
+                app:layout_constraintTop_toTopOf="@+id/c4Song2" />
+
+
+            <TextView
+                android:id="@+id/c4Song3"
+                android:layout_width="200dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/bee"
+                android:padding="0dp"
+                android:text="  Again"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c4Song2"
+                app:layout_constraintTop_toTopOf="@+id/c4Song2" />
+
+            <ImageView
+                android:id="@+id/addCircle3333"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle333"
+                app:layout_constraintTop_toTopOf="@+id/c4Song3" />
+
+
+            <TextView
+                android:id="@+id/c4Song4"
+                android:layout_width="220dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/olympic"
+                android:padding="0dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/c4Song3"
+                app:layout_constraintTop_toTopOf="@+id/c4Song3" />
+
+
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:padding="0dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="  Stay Together"
+                android:textColor="@android:color/white"
+
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@+id/c4Song4"
+                app:layout_constraintTop_toTopOf="@+id/c4Song4" />
+
+            <ImageView
+                android:id="@+id/addCircle4444"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:src="@drawable/addcircle"
+                app:layout_constraintEnd_toEndOf="@+id/addCircle3333"
+                app:layout_constraintTop_toTopOf="@+id/c4Song4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pfpCarnivalActivity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/pfp_fawn"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4"
+        app:shapeAppearanceOverlay="@style/MoreRound" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

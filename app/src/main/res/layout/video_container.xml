@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/videoProfile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@id/videoTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="0dp"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/MoreRound" />
+
+
+
+    <TextView
+        android:id="@+id/videoCreator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/videoTitle"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="19dp"
+        android:layout_toEndOf="@id/videoProfile"
+        android:text="hello"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/creatorAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/videoCreator"
+        android:layout_above="@id/videoTitle"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="230dp"
+        android:backgroundTint="@color/transparent"
+        android:gravity="center"
+        android:radius="100dp"
+        android:text="Add"
+
+
+        />
+
+    <TextView
+        android:id="@+id/videoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_above="@id/videoDescription"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/videoDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:layout_alignParentBottom="true"/>
+
+
+
+</RelativeLayout>

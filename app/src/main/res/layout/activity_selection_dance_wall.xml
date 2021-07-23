@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selection"
+    tools:context=".Page.Moments.DanceWall.SelectionDanceWallActivity">
+
+    <View
+        android:id="@+id/dynamicbg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="42dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="365dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+
+    <TextView
+        android:id="@+id/txtDanceWall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dance Wall"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Updated daily! "
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toBottomOf="@+id/txtDanceWall" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageButton
+                android:id="@+id/cd_hiphop"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="@+id/coverOne"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cd_here" />
+
+
+            <ImageView
+                android:id="@+id/coverOne"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
+                android:layout_marginStart="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cd_one" />
+
+
+            <ImageButton
+                android:id="@+id/cd_danceElec"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="@+id/coverTwo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cd_here" />
+
+
+            <ImageView
+                android:id="@+id/coverTwo"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
+                android:layout_marginStart="48dp"
+                app:layout_constraintStart_toEndOf="@+id/coverOne"
+                app:layout_constraintTop_toTopOf="@+id/coverOne"
+                app:srcCompat="@drawable/cd_two" />
+
+
+            <ImageButton
+                android:id="@+id/cd_rbsoul"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="@+id/coverThree"
+                app:layout_constraintTop_toTopOf="@+id/coverThree"
+                app:srcCompat="@drawable/cd_here" />
+
+            <ImageView
+                android:id="@+id/coverThree"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/coverOne"
+                app:layout_constraintTop_toBottomOf="@+id/coverOne"
+                app:srcCompat="@drawable/cd_three" />
+
+            <ImageButton
+                android:id="@+id/cd_altIndie"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/cd_here"
+                app:layout_constraintStart_toStartOf="@+id/coverFour"
+                app:layout_constraintTop_toTopOf="@+id/coverFour" />
+
+            <ImageView
+                android:id="@+id/coverFour"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
+                android:layout_marginStart="48dp"
+                app:layout_constraintStart_toEndOf="@+id/coverThree"
+                app:layout_constraintTop_toTopOf="@+id/coverThree"
+                app:srcCompat="@drawable/cd_four" />
+
+
+
+
+            <ImageButton
+                android:id="@+id/cd_jpop"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="@+id/coverFive"
+                app:layout_constraintTop_toTopOf="@+id/coverFive"
+                app:srcCompat="@drawable/cd_here" />
+
+
+            <ImageView
+                android:id="@+id/coverFive"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/coverThree"
+                app:layout_constraintTop_toBottomOf="@+id/coverThree"
+                app:srcCompat="@drawable/cd_five" />
+
+
+            <ImageButton
+                android:id="@+id/cd_kpop"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="@+id/coverTwo"
+                app:layout_constraintTop_toTopOf="@+id/coverSix"
+                app:srcCompat="@drawable/cd_here" />
+
+
+            <ImageView
+                android:id="@+id/coverSix"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
+                android:layout_marginStart="48dp"
+                app:layout_constraintStart_toEndOf="@+id/coverFive"
+                app:layout_constraintTop_toTopOf="@+id/coverFive"
+                app:srcCompat="@drawable/cd_six" />
+
+
+            <ImageButton
+                android:id="@+id/cd_contemp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="@+id/coverSeven"
+                app:layout_constraintTop_toTopOf="@+id/coverSeven"
+                app:srcCompat="@drawable/cd_here" />
+
+            <ImageView
+                android:id="@+id/coverSeven"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/coverFive"
+                app:layout_constraintTop_toBottomOf="@+id/coverFive"
+                app:srcCompat="@drawable/cd_seven" />
+
+            <ImageButton
+                android:id="@+id/cd_rap"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/cd_here"
+                app:layout_constraintStart_toStartOf="@+id/coverEight"
+                app:layout_constraintTop_toTopOf="@+id/coverEight" />
+
+            <ImageView
+                android:id="@+id/coverEight"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
+                android:layout_marginStart="48dp"
+                app:layout_constraintStart_toEndOf="@+id/coverSeven"
+                app:layout_constraintTop_toTopOf="@+id/coverSeven"
+                app:srcCompat="@drawable/cd_eight" />
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <ImageView
+        android:id="@+id/pfpSelectionActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pfp_fawn"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/txtDanceWall"
+        app:layout_constraintTop_toTopOf="@+id/txtDanceWall" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

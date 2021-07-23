@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="320dp"
+    android:background="@color/babyblue"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/txtRevealed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Song Revealed!"
+        android:layout_marginBottom="70dp"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/songRevealed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/txtRevealed"
+        android:layout_marginTop="21dp"
+        android:text="HERE"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+
+
+
+
+</RelativeLayout>

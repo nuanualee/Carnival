@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/circus_1"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_2"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_3"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_4"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_5"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_6"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_7"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_9"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_10"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_11"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_12"
+        android:duration="400"></item>
+    <item
+        android:drawable="@drawable/circus_13"
+        android:duration="400"></item>
+
+
+</animation-list>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/wildAll"
+        android:title="All"
+        android:icon="@drawable/home_icon"/>
+    <item
+        android:id="@+id/wildHipHop"
+        android:title="Hip-hop"
+        android:icon="@drawable/home_icon"/>
+
+    <item
+        android:id="@+id/wildDance"
+        android:title="Dance/Electronic"
+        android:icon="@drawable/home_icon"/>
+
+
+    <item
+        android:id="@+id/wildRBSoul"
+        android:title="R&amp;B/Soul"
+        android:icon="@drawable/home_icon"/>
+
+    <item
+        android:id="@+id/wildAlt"
+        android:title="Alternative/Indie"
+        android:icon="@drawable/home_icon"/>
+
+    <item
+        android:id="@+id/wildJPop"
+        android:title="J-Pop"
+        android:icon="@drawable/home_icon"/>
+
+    <item
+        android:id="@+id/wildKPop"
+        android:title="K-Pop"
+        android:icon="@drawable/home_icon"/>
+
+
+    <item
+        android:id="@+id/wildContemp"
+        android:title="Contemporary"
+        android:icon="@drawable/home_icon"/>
+
+    <item
+        android:id="@+id/wildRap"
+        android:title="Rap"
+        android:icon="@drawable/home_icon"/>
+
+</menu>

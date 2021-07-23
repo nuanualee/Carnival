@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.music_carnival">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Music_Carnival">
+        <activity android:name="SongCollection.Song.Countdown.AltIndie.AltIndieElapsed"></activity>
+        <activity android:name=".Page.Moments.DanceWall.Genres.ContempDanceWallActivity" />
+        <activity android:name=".Page.Moments.DanceWall.Genres.KPopDanceWallActivity" />
+        <activity android:name=".Page.Moments.DanceWall.Genres.JPopDanceWallActivity" />
+        <activity android:name=".Page.Moments.DanceWall.Genres.AltIndieDanceWallActivity" />
+        <activity android:name=".Page.Moments.DanceWall.Genres.DElecDanceWallActivity" />
+        <activity android:name=".AddProfile.ExistingProfile.ExsitingProfileActivity" />
+        <activity android:name=".Page.Moments.MomentsPackage.NewMomentsActivity" />
+        <activity android:name=".Page.Moments.DanceWall.Genres.RBSoulDanceWallActivity" />
+        <activity android:name=".Page.PhotoCategory.PhotoCateActivity" />
+        <activity android:name="SongCollection.Song.RBSoul.PlayRBSoulSongActivity" />
+        <activity android:name="SongCollection.Song.Rap.PlayRapSongActivity" />
+        <activity android:name="SongCollection.Song.Contemporary.PlayContempSongActivity" />
+        <activity android:name="SongCollection.Song.AlternativeIndie.PlayAltIndieSongActivity" />
+        <activity android:name="SongCollection.Song.KPop.PlayKPopSongActivity" />
+        <activity android:name="SongCollection.Song.DanceElectronic.PlayDanceElectronicActivity" />
+        <activity android:name="SongCollection.Song.HipHop.PlayHipHopSongActivity" />
+        <activity android:name="SongCollection.Song.HipHop.PlayHipHopActivity" />
+        <activity android:name="SongCollection.Song.JPop.PlayJPopSongActivity" />
+        <activity android:name=".Page.Moments.DanceWall.SelectionDanceWallActivity" />
+        <activity android:name=".Page.MainActivity.CarnivalSamplerActivity" />
+        <activity android:name=".Page.MainActivity.MyCarnivalActivity" />
+        <activity android:name=".Page.MainActivity.MainProfileActivity" />
+        <activity android:name="SongCollection.Song.Countdown.ElaspedCountdownActivity" />
+        <activity android:name="Search.SearchActivityDance" />
+        <activity android:name=".Page.Moments.DanceWall.Genres.HHDanceWallActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildHipHopActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildRapActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildContempActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildKPopActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildJPopActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildAltIndieActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildRBSoulActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildDanceElecActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildDanceActivity" />
+        <activity android:name=".Page.Moments.DanceShake.WildCard.WildCardActivity" />
+        <activity android:name=".Page.Moments.DanceShake.DanceShakeActivity" />
+        <activity android:name="Search.SearchActivity" />
+        <activity android:name=".AddProfile.ExistingLoginActivity" />
+        <activity android:name=".Login.LoginActivity" />
+        <activity android:name=".Page.Moments.RatingEmotionActivity" />
+        <activity android:name=".Page.Playlist.Friends.PlayFriendActivity" />
+        <activity android:name=".Page.Playlist.PlaylistFourActivity" />
+        <activity android:name=".Page.Playlist.PlaylistThreeActivity" />
+        <activity android:name=".Page.Playlist.PlaylistTwoActivity" />
+        <activity android:name=".Page.Playlist.PlaylistOneActivity" />
+        <activity android:name=".Page.Moments.About" />
+        <activity android:name=".Page.Moments.Account" />
+        <activity android:name=".Page.Moments.Settings" />
+        <activity android:name="SongCollection.Song.Countdown.Countdown" />
+        <activity android:name="SongCollection.Song.AddToPlaylist" />
+        <activity android:name=".ArtistCollection.PlayArtistActivity" />
+        <activity android:name=".Popular.PopularActivity" />
+        <activity android:name=".Genres.Contemporary" />
+        <activity android:name=".Genres.KPop" />
+        <activity android:name=".Genres.JPop" />
+        <activity android:name=".Genres.Rap" />
+        <activity android:name=".Genres.AlternativeIndie" />
+        <activity android:name=".Genres.RBSoul" />
+        <activity android:name=".Genres.DanceElectronic" />
+        <activity android:name=".Genres.HipHop" />
+        <activity android:name=".AddDone.AddProfileDone" />
+        <activity android:name=".Page.MainActivity.MainActivity" />
+        <activity android:name=".ProfileAct.ProfileActivity" />
+        <activity android:name=".Page.Playlist.PlaylistActivity" />
+        <activity android:name=".Page.Liked" />
+        <activity android:name=".Page.Moments.MomentsPackage.Moments" />
+        <activity android:name="SongCollection.Song.All.PlaySongActivity" />
+        <activity android:name=".AddProfile.AddProfile">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

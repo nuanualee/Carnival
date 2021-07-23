@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_purple"
+    tools:context=".Page.MainActivity.MainActivity">
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            //SEARCH BAR
+
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/slider"
+                android:layout_width="370dp"
+                android:layout_height="190dp"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="15dp"
+                app:auto_cycle="true"
+                app:corner_radius="20"
+                app:delay="0"
+                app:layout_constraintBottom_toTopOf="@+id/btnGoGenre"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:period="1000"
+                app:placeholder="@drawable/m_olivia" />
+
+            <TextView
+                android:id="@+id/categoryTxt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="280dp"
+                android:text="Trending genres"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.09"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnGoGenre"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/transparent"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toEndOf="@+id/categoryTxt2"
+                app:layout_constraintTop_toTopOf="@+id/categoryTxt2"
+                app:srcCompat="@drawable/arrow_right" />
+
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal2"
+                android:layout_width="406dp"
+                android:layout_height="204dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="460dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoryTxt2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/btnGenre1"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="5dp"
+                        android:padding="0dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/RoundedSquare"
+                        app:srcCompat="@drawable/mileycyrus" />
+
+                    <TextView
+                        android:id="@+id/txtHipHop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginEnd="79dp"
+                        android:text="Hip-hop"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/btnGenre1"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="@+id/btnGenre1"
+                        app:layout_constraintTop_toTopOf="@+id/btnGenre1" />
+
+                    //THE CHAINSMOKERS DANCE
+
+                    <ImageButton
+                        android:id="@+id/btnGenre2"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="162dp"
+                        android:layout_marginTop="5dp"
+                        android:padding="0dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/RoundedSquare"
+                        app:srcCompat="@drawable/thechainsmokers" />
+
+
+                    <TextView
+                        android:id="@+id/txtDanceElec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:text="Dance/Electronic"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/btnGenre2"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/btnGenre2"
+                        app:layout_constraintTop_toTopOf="@+id/btnGenre2" />
+
+
+                    //BRUNO MARS - R B
+                    <ImageButton
+                        android:id="@+id/btnGenre3"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="316dp"
+                        android:layout_marginTop="5dp"
+                        android:padding="0dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/RoundedSquare"
+                        app:srcCompat="@drawable/bruno_mars" />
+
+
+                    <TextView
+                        android:id="@+id/txtRandB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginEnd="74dp"
+                        android:text="R&amp;B/Soul"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/btnGenre3"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/btnGenre3"
+                        app:layout_constraintTop_toTopOf="@+id/btnGenre3" />
+
+
+                    //ALTERNATIVE INDIE
+
+                    <ImageButton
+                        android:id="@+id/btnGenre4"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="470dp"
+                        android:layout_marginTop="5dp"
+                        android:padding="0dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/RoundedSquare"
+                        app:srcCompat="@drawable/twentyonepilots" />
+
+
+                    <TextView
+                        android:id="@+id/txtAlt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginEnd="74dp"
+                        android:text="Alternative/Indie"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/btnGenre4"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/btnGenre4"
+                        app:layout_constraintTop_toTopOf="@+id/btnGenre4" />
+
+
+                    //JPOP
+                    <ImageButton
+                        android:id="@+id/btnGenre5"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="622dp"
+                        android:layout_marginTop="5dp"
+                        android:padding="0dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/RoundedSquare"
+                        app:srcCompat="@drawable/arashi" />
+
+
+                    <TextView
+                        android:id="@+id/txtJPop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginEnd="74dp"
+                        android:text="J-Pop"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/btnGenre5"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/btnGenre5"
+                        app:layout_constraintTop_toTopOf="@+id/btnGenre5" />
+
+                    //KPOP
+                    <ImageButton
+                        android:id="@+id/btnGenre6"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="775dp"
+                        android:layout_marginTop="5dp"
+                        android:padding="0dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/RoundedSquare"
+                        app:srcCompat="@drawable/twice" />
+
+
+                    <TextView
+                        android:id="@+id/txtKPop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginEnd="74dp"
+                        android:text="K-Pop"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/btnGenre6"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/btnGenre6"
+                        app:layout_constraintTop_toTopOf="@+id/btnGenre6" />
+
+
+
+                    //CONTEMP
+                    <ImageButton
+                        android:id="@+id/btnGenre7"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="926dp"
+                        android:layout_marginTop="5dp"
+                        android:padding="0dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/RoundedSquare"
+                        app:srcCompat="@drawable/troye_sivan" />
+
+
+                    <TextView
+                        android:id="@+id/txtContemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginEnd="74dp"
+                        android:text="Contemporary"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/btnGenre7"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/btnGenre7"
+                        app:layout_constraintTop_toTopOf="@+id/btnGenre7" />
+
+
+                    //RAP
+                    <ImageButton
+                        android:id="@+id/btnGenre8"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="1077dp"
+                        android:layout_marginTop="5dp"
+                        android:padding="0dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/RoundedSquare"
+                        app:srcCompat="@drawable/eminem" />
+
+
+                    <TextView
+                        android:id="@+id/txtRap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginEnd="74dp"
+                        android:text="Rap"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/btnGenre8"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/btnGenre8"
+                        app:layout_constraintTop_toTopOf="@+id/btnGenre8" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+
+            <TextView
+                android:id="@+id/categoryTxt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="510dp"
+                android:text="Popular"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.09"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal3"
+                android:layout_width="406dp"
+                android:layout_height="204dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="460dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoryTxt3">
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    //TOPS SONGS P!NK
+
+                    <TextView
+                        android:id="@+id/txtNo1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="1."
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtAllIKnowSoFar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginEnd="200dp"
+                        android:layout_marginBottom="9dp"
+                        android:text="All I Know So Far"
+                        android:onClick="handleSelection"
+                        android:textColor="#FFFFFF"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtNo1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/txtNo1"
+                        app:layout_constraintTop_toTopOf="@+id/txtNo1"
+                        app:layout_constraintVertical_bias="0.461" />
+
+                    <TextView
+                        android:id="@+id/artistPink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="145dp"
+                        android:text="P!nk"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="@+id/txtAllIKnowSoFar"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/txtAllIKnowSoFar"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAllIKnowSoFar" />
+
+                    <TextView
+                        android:id="@+id/Lengthone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="320dp"
+                        android:layout_marginTop="10dp"
+                        android:text="4:62"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/txtAllIKnowSoFar"
+                        app:layout_constraintTop_toTopOf="@+id/txtAllIKnowSoFar" />
+
+
+
+
+
+
+                    //TOP SONGS HARRY STYLES
+
+                    <TextView
+                        android:id="@+id/txtNo2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="2."
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@id/txtNo1"
+                        app:layout_constraintTop_toTopOf="@id/txtNo1" />
+
+                    <TextView
+                        android:id="@+id/txtSignOfTheTimes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginEnd="200dp"
+                        android:layout_marginBottom="9dp"
+                        android:text="Sign Of The Times"
+                        android:onClick="handleSelection"
+                        android:textColor="#FFFFFF"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtNo2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/txtNo2"
+                        app:layout_constraintTop_toTopOf="@+id/txtNo2"
+                        app:layout_constraintVertical_bias="0.461" />
+
+                    <TextView
+                        android:id="@+id/artistHarryStyles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="145dp"
+                        android:text="Harry Styles"
+                        android:onClick="artistSelection"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="@+id/txtSignOfTheTimes"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/txtSignOfTheTimes"
+                        app:layout_constraintTop_toBottomOf="@+id/txtSignOfTheTimes" />
+
+                    <TextView
+                        android:id="@+id/Lengthtwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="320dp"
+                        android:layout_marginTop="10dp"
+                        android:text="5:68"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/txtSignOfTheTimes"
+                        app:layout_constraintTop_toTopOf="@+id/txtSignOfTheTimes" />
+
+
+
+                    //TOP SONGS MILEY CYRUS
+
+
+                    <TextView
+                        android:id="@+id/txtNo3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="3."
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@id/txtNo2"
+                        app:layout_constraintTop_toTopOf="@id/txtNo2" />
+
+                    <TextView
+                        android:id="@+id/txtAngelsLikeYou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginEnd="200dp"
+                        android:layout_marginBottom="9dp"
+                        android:text="Angels Like You"
+                        android:onClick="handleSelection"
+                        android:textColor="@color/white"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtNo3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/txtNo3"
+                        app:layout_constraintTop_toTopOf="@+id/txtNo3"
+                        app:layout_constraintVertical_bias="0.461" />
+
+                    <TextView
+                        android:id="@+id/artistMileyCyrus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="145dp"
+                        android:text="Miley Cyrus"
+                        android:onClick="artistSelection"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="@+id/txtAngelsLikeYou"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/txtAngelsLikeYou"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAngelsLikeYou" />
+
+                    <TextView
+                        android:id="@+id/LengthThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="320dp"
+                        android:layout_marginTop="10dp"
+                        android:text="3:27"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/txtAngelsLikeYou"
+                        app:layout_constraintTop_toTopOf="@+id/txtAngelsLikeYou" />
+
+                    <TextView
+                        android:id="@+id/txt_userNameDisplay"
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+
+            <ImageButton
+                android:id="@+id/btnGoPopular"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/transparent"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toEndOf="@+id/categoryTxt3"
+                app:layout_constraintTop_toTopOf="@+id/categoryTxt3"
+                app:srcCompat="@drawable/arrow_right" />
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/txtSearchBar"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/matte_purple"
+        android:padding="11dp"
+        android:text="       Search Songs"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageSearch"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtSearchBar"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="@+id/txtSearchBar"
+        app:layout_constraintTop_toTopOf="@+id/txtSearchBar"
+        app:srcCompat="@drawable/search_icon" />
+
+
+    <TextView
+        android:id="@+id/categoryTxt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Listen"
+        android:textColor="#FFFFFF"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pfpMainActivity"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/pfp_fawn"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSearchBar"
+        app:layout_constraintStart_toEndOf="@+id/txtSearchBar"
+        app:layout_constraintTop_toTopOf="@+id/txtSearchBar"
+        app:shapeAppearanceOverlay="@style/MoreRound" />
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navigation"
+        app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

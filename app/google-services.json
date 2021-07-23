@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "617776635378",
+    "firebase_url": "https://musiccarnival-553f3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "musiccarnival-553f3",
+    "storage_bucket": "musiccarnival-553f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617776635378:android:fedbbd7eb16db219871f6b",
+        "android_client_info": {
+          "package_name": "com.example.music_carnival"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617776635378-lc16ri7s22irmm2o0rnit1mcgv5d8dvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASWJzFQoZhKk91VnF4XHhL3vy7itKe2z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "617776635378-lc16ri7s22irmm2o0rnit1mcgv5d8dvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

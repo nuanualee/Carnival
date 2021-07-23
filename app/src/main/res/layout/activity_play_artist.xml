@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_purple"
+    tools:context=".ArtistCollection.PlayArtistActivity">
+
+
+    <ImageView
+        android:id="@+id/imgArtist"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_marginBottom="312dp"
+        android:adjustViewBounds="true"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/purp"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/matte_purple"
+        android:padding="13dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="@id/btnOrange"
+        app:layout_constraintTop_toTopOf="@id/btnOrange" />
+
+    <ImageView
+        android:id="@+id/btnOrange"
+        android:layout_width="78dp"
+        android:layout_height="82dp"
+        android:layout_marginBottom="272dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/play_orange" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="42dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="365dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ARTIST"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+    <TextView
+        android:id="@+id/artiste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="ARTIST"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgArtist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/aTops"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="235dp"
+        android:text="Tops"
+        android:textColor="#FFFFFF"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/aSeeAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="235dp"
+        android:text="See All"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/aTops" />
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/listeners1"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="206dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/listeners" />
+
+    <TextView
+        android:id="@+id/txtMillion1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:text="0.00M"
+        android:textColor="@color/orange"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/listeners1"
+        app:layout_constraintTop_toBottomOf="@+id/listeners1" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        style="@style/Divider.Horizontal"
+        android:layout_width="340dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/txtMillion1"
+        app:layout_constraintTop_toBottomOf="@+id/txtMillion1" />
+
+    <TextView
+        android:id="@+id/topSong1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:text="Song 1"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/listeners1"
+        app:layout_constraintTop_toTopOf="@+id/listeners1" />
+
+    <TextView
+        android:id="@+id/topLength1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="100dp"
+        android:text="0.00"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topSong1" />
+
+    <ImageView
+        android:id="@+id/topdot1"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/topLength1"
+        app:layout_constraintTop_toTopOf="@+id/topLength1"
+        app:srcCompat="@drawable/dot_horz" />
+
+
+
+
+    <ImageView
+        android:id="@+id/listeners2"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="148dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/listeners" />
+
+    <TextView
+        android:id="@+id/txtMillion2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:text="0.00M"
+        android:textColor="@color/orange"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/listeners2"
+        app:layout_constraintTop_toBottomOf="@+id/listeners2" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        style="@style/Divider.Horizontal"
+        android:layout_width="340dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/txtMillion2"
+        app:layout_constraintTop_toBottomOf="@+id/txtMillion2" />
+
+    <TextView
+        android:id="@+id/topSong2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:text="Song 1"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/listeners2"
+        app:layout_constraintTop_toTopOf="@+id/listeners2" />
+
+    <TextView
+        android:id="@+id/topLength2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/topLength1"
+        app:layout_constraintStart_toStartOf="@+id/topLength1"
+        app:layout_constraintTop_toTopOf="@+id/topSong2" />
+
+    <ImageView
+        android:id="@+id/topdot2"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/topLength2"
+        app:layout_constraintTop_toTopOf="@+id/topLength2"
+        app:srcCompat="@drawable/dot_horz" />
+
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/listeners3"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/listeners" />
+
+    <TextView
+        android:id="@+id/txtMillion3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:text="0.00M"
+        android:textColor="@color/orange"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/listeners3"
+        app:layout_constraintTop_toBottomOf="@+id/listeners3" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        style="@style/Divider.Horizontal"
+        android:layout_width="340dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/txtMillion3"
+        app:layout_constraintTop_toBottomOf="@+id/txtMillion3" />
+
+    <TextView
+        android:id="@+id/topSong3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:text="Song 1"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/listeners3"
+        app:layout_constraintTop_toTopOf="@+id/listeners3" />
+
+    <TextView
+        android:id="@+id/topLength3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/topLength2"
+        app:layout_constraintStart_toStartOf="@+id/topLength2"
+        app:layout_constraintTop_toTopOf="@+id/topSong3" />
+
+    <ImageView
+        android:id="@+id/topdot3"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/topLength3"
+        app:layout_constraintTop_toTopOf="@+id/topLength3"
+        app:srcCompat="@drawable/dot_horz" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

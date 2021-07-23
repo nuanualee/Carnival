@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matte_purple"
+    tools:context=".ProfileAct.ProfileActivity">
+
+
+    <TextView
+        android:id="@+id/txtEditProfile"
+        android:layout_width="412dp"
+        android:layout_height="70dp"
+        android:background="@color/dark_purple"
+        android:padding="15dp"
+        android:text="                     Edit Profile"
+        android:textColor="@android:color/white"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/txtChoose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/bright_purple"
+        android:padding="2dp"
+        android:text="Choose a profile icon"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEditProfile" />
+
+
+    //ROW 1
+
+    <ImageButton
+        android:id="@+id/btnCat"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="136dp"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Rounded"
+        app:srcCompat="@drawable/pfp_cat" />
+
+    <ImageButton
+        android:id="@+id/btnBear"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/btnCat"
+        app:layout_constraintTop_toTopOf="@+id/btnCat"
+        app:srcCompat="@drawable/pfp_bear"
+        />
+
+    <ImageButton
+        android:id="@+id/btnFox"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/btnBear"
+        app:layout_constraintTop_toTopOf="@+id/btnBear"
+        app:srcCompat="@drawable/pfp_fox" />
+
+
+    //ROW 2
+
+    <ImageButton
+        android:id="@+id/btnElephant"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="268dp"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Rounded"
+        app:srcCompat="@drawable/pfp_elephant" />
+
+    <ImageButton
+        android:id="@+id/btnGoat"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/btnElephant"
+        app:layout_constraintTop_toTopOf="@+id/btnElephant"
+        app:srcCompat="@drawable/pfp_goat" />
+
+    <ImageButton
+        android:id="@+id/btnSeal"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/btnGoat"
+        app:layout_constraintTop_toTopOf="@+id/btnGoat"
+        app:srcCompat="@drawable/pfp_seal" />
+
+
+    //ROW 3
+
+    <ImageButton
+        android:id="@+id/btnPug"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="400dp"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Rounded"
+        app:srcCompat="@drawable/pfp_pug" />
+
+    <ImageButton
+        android:id="@+id/btnAlpaca"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/btnPug"
+        app:layout_constraintTop_toTopOf="@+id/btnPug"
+        app:srcCompat="@drawable/pfp_alpaca" />
+
+    <ImageButton
+        android:id="@+id/btnMonkey"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/btnAlpaca"
+        app:layout_constraintTop_toTopOf="@+id/btnAlpaca"
+        app:srcCompat="@drawable/pfp_monkey" />
+
+    //ROW 3
+
+    <ImageButton
+        android:id="@+id/btnFrog"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="532dp"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Rounded"
+        app:srcCompat="@drawable/pfp_frog" />
+
+    <ImageButton
+        android:id="@+id/btnFawn"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/btnFrog"
+        app:layout_constraintTop_toTopOf="@+id/btnFrog"
+        app:srcCompat="@drawable/pfp_fawn" />
+
+    <ImageButton
+        android:id="@+id/btnGiraffe"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded"
+        android:onClick="handleSelection"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/btnFawn"
+        app:layout_constraintTop_toTopOf="@+id/btnFawn"
+        app:srcCompat="@drawable/pfp_giraffe" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

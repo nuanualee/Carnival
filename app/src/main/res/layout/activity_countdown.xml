@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_purple"
+    tools:context="SongCollection.Song.Countdown.Countdown">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="42dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="365dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+
+    <TextView
+        android:id="@+id/txtSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set countdown\n       to start"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <ImageButton
+        android:id="@+id/divider"
+        style="@style/Divider.Horizontal"
+        android:layout_width="306dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSet" />
+
+
+    <ImageButton
+        android:id="@+id/timer1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="180dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fiveSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:text="5s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/timer1"
+        app:layout_constraintTop_toBottomOf="@+id/timer1" />
+
+    <ImageButton
+        android:id="@+id/timer2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/timer"
+        app:layout_constraintStart_toEndOf="@+id/timer1"
+        app:layout_constraintTop_toTopOf="@+id/timer1" />
+
+    <TextView
+        android:id="@+id/tenSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:text="10s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/timer2"
+        app:layout_constraintTop_toBottomOf="@+id/timer2" />
+
+
+    <ImageButton
+        android:id="@+id/timer3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/timer"
+        app:layout_constraintStart_toEndOf="@+id/timer2"
+        app:layout_constraintTop_toTopOf="@+id/timer2" />
+
+    <TextView
+        android:id="@+id/twoFiveSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:text="25s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/timer3"
+        app:layout_constraintTop_toBottomOf="@+id/timer3" />
+
+
+    <ImageButton
+        android:id="@+id/timer4"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/timer"
+        app:layout_constraintStart_toEndOf="@+id/timer3"
+        app:layout_constraintTop_toTopOf="@+id/timer3" />
+
+    <TextView
+        android:id="@+id/fourtySeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:text="40s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/timer4"
+        app:layout_constraintTop_toBottomOf="@+id/timer4" />
+
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/display_Album"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="376dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/play_insert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Rounded" />
+
+    <ImageButton
+        android:id="@+id/btnStart"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_start"
+        app:layout_constraintBottom_toTopOf="@+id/display_Album"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

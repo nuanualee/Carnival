@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_purple"
+    tools:context=".Page.Moments.MomentsPackage.NewMomentsActivity">
+
+
+
+
+    <ImageView
+        android:id="@+id/pfpNewMoments"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="48dp"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/icon_carnival" />
+
+
+    <TextView
+        android:id="@+id/txtNewM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add New Moments"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093" />
+
+    <TextView
+        android:id="@+id/holderTxtUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="What is your name?"
+
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/pfpNewMoments"
+        app:layout_constraintTop_toBottomOf="@+id/pfpNewMoments" />
+
+    <EditText
+        android:id="@+id/userNameE"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_rectangle"
+        android:hint="   Username"
+        android:padding="5dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/holderTxtUsername"
+        app:layout_constraintTop_toBottomOf="@+id/holderTxtUsername" />
+
+
+    <TextView
+        android:id="@+id/holderTxtDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Write something to Moments"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/userNameE"
+        app:layout_constraintTop_toBottomOf="@+id/userNameE" />
+
+    <EditText
+        android:id="@+id/userDetails"
+        android:layout_width="330dp"
+        android:layout_height="100dp"
+        android:background="@drawable/round_rectangle"
+        android:hint="   Details"
+        android:padding="5dp"
+        android:inputType="textMultiLine"
+        android:backgroundTint="@color/white"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/holderTxtDetails"
+        app:layout_constraintTop_toBottomOf="@+id/holderTxtDetails" />
+
+    <TextView
+        android:id="@+id/holderTextSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Which song/artist?"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/userDetails"
+        app:layout_constraintTop_toBottomOf="@+id/userDetails" />
+
+    <EditText
+        android:id="@+id/songChosen"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_rectangle"
+        android:hint="   Song - Artist"
+        android:padding="5dp"
+        android:inputType="textMultiLine"
+        android:backgroundTint="@color/white"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/holderTextSong"
+        app:layout_constraintTop_toBottomOf="@+id/holderTextSong" />
+
+
+    <Button
+        android:id="@+id/btnAddNow"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/bright_purple"
+        android:gravity="center"
+        android:padding="15dp"
+        android:radius="10dp"
+        android:text="Add Now"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/songChosen" />
+
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/transparent"
+        android:gravity="center"
+        android:padding="15dp"
+        android:radius="10dp"
+        android:text="CANCEL"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddNow"
+        app:layout_constraintStart_toStartOf="@+id/btnAddNow"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddNow" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

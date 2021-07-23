@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_purple"
+    tools:context=".Page.Playlist.PlaylistActivity">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Playlists"
+
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/horizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="520dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/playlistCover1"
+                android:layout_width="300dp"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/clouds_in_heads"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <TextView
+                android:id="@+id/playlistName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:text="CLOSURE"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover1"
+                app:layout_constraintTop_toTopOf="@+id/playlistCover1" />
+
+            <TextView
+                android:id="@+id/playlistCreator1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Creator  |"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/playlistName1"
+                app:layout_constraintTop_toTopOf="@+id/playlistName1" />
+
+            <TextView
+                android:id="@+id/playlistGenre1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Alternative"
+                android:textColor="@color/peach"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/playlistCreator1"
+                app:layout_constraintTop_toTopOf="@+id/playlistCreator1" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/playlistCover2"
+                android:layout_width="300dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/exploding_car"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover1"
+                app:layout_constraintTop_toBottomOf="@+id/playlistCover1"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <TextView
+                android:id="@+id/playlistName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="91dp"
+                android:text="IN MY HEAD"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover2"
+                app:layout_constraintTop_toTopOf="@+id/playlistCover2" />
+
+            <TextView
+                android:id="@+id/playlistCreator2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Creator  |"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/playlistName2"
+                app:layout_constraintTop_toTopOf="@+id/playlistName2" />
+
+            <TextView
+                android:id="@+id/playlistGenre2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Contemporary"
+                android:textColor="@color/peach"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/playlistCreator2"
+                app:layout_constraintTop_toTopOf="@+id/playlistCreator2" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/playlistCover3"
+                android:layout_width="300dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/air_up_there"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover2"
+                app:layout_constraintTop_toBottomOf="@+id/playlistCover2"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <TextView
+                android:id="@+id/playlistName3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:text="AIR UP THERE"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover3"
+                app:layout_constraintTop_toTopOf="@+id/playlistCover3" />
+
+            <TextView
+                android:id="@+id/playlistCreator3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Creator  |"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/playlistName3"
+                app:layout_constraintTop_toTopOf="@+id/playlistName3" />
+
+            <TextView
+                android:id="@+id/playlistGenre3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Hip-hop/Pop"
+                android:textColor="@color/peach"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/playlistCreator3"
+                app:layout_constraintTop_toTopOf="@+id/playlistCreator3" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/playlistCover4"
+                android:layout_width="300dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/flowers"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover3"
+                app:layout_constraintTop_toBottomOf="@+id/playlistCover3"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <TextView
+                android:id="@+id/playlistName4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="91dp"
+                android:text="ACCEPTANCE"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover4"
+                app:layout_constraintTop_toTopOf="@+id/playlistCover4" />
+
+            <TextView
+                android:id="@+id/playlistCreator4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Creator  |"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/playlistName4"
+                app:layout_constraintTop_toTopOf="@+id/playlistName4" />
+
+            <TextView
+                android:id="@+id/playlistGenre4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  R&amp;B/Soul"
+                android:textColor="@color/peach"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/playlistCreator4"
+                app:layout_constraintTop_toTopOf="@+id/playlistCreator4" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navigation"
+        app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+    <ImageView
+        android:id="@+id/pfpPlaylist"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pfp_fawn"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal2"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
