@@ -49,15 +49,15 @@ public class AddProfileDone extends AppCompatActivity {
         if (isRemembered) {
             Intent intent = new Intent(AddProfileDone.this, MainActivity.class);
             Bundle btnAnimal = this.getIntent().getExtras(); //receiving Extras from Animal
-            int i = btnAnimal.getInt("index");
-            intent.putExtra("index", i);
+            int i = btnAnimal.getInt("pfp");
+            intent.putExtra("pfp", i);
             startActivity(intent);
         }
 
         Bundle btnAnimal = this.getIntent().getExtras(); //receiving Extras from Animal
-        currentIndex = btnAnimal.getInt("index");
+        currentIndex = btnAnimal.getInt("pfp");
         Log.d("bark", "we received: " + currentIndex);
-        int i = btnAnimal.getInt("index");
+        int i = btnAnimal.getInt("pfp");
         displayAnimalBasedOnIndex(currentIndex);
 
 

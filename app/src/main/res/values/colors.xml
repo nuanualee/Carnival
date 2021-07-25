@@ -38,6 +38,17 @@
     <color name="bee">#FDC141</color>
     <color name="olympic">#599FC0</color>
     <color name="thistle">#9188BF</color>
+    <color name="cdOne_color"> #F8FFB6</color>
+    <color name="cdTwo_color">#E9C6F1</color>
+    <color name="cdThree_color">#FED0D0</color>
+    <color name="cdFour_color">#EBE2D5</color>
+    <color name="cdFive_color">#E1FCFF</color>
+    <color name="cdSix_color">#FFE8DF</color>
+    <color name="cdSeven_color">#E5FF7C</color>
+    <color name="cdEight_color">#BDC6D0</color>
+    <color name="cdNine_color">#EEFFEB</color>
+    <color name="cdTen_color">#CEDBFF</color>
+
 
 
 </resources>

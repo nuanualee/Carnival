@@ -43,6 +43,7 @@ public class PlaySongActivity extends AppCompatActivity {
 
 
     private int drawablePfp;
+    private int pfpCurrentIndex = -1;
 
     private MediaPlayer player = new MediaPlayer();
     private ImageButton btnPlayPause = null; //button initiate
@@ -82,10 +83,10 @@ public class PlaySongActivity extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
-            Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
-            displayAnimalBasedOnIndex(currentIndex);
+            pfpCurrentIndex = bundle.getInt("pfp");
+            Log.d("bark", "pfp received: " + pfpCurrentIndex);
+            int i = bundle.getInt("pfp");
+            displayAnimalBasedOnIndex(pfpCurrentIndex);
         }
 
 
@@ -113,9 +114,9 @@ public class PlaySongActivity extends AppCompatActivity {
                             Intent intent3 = new Intent(PlaySongActivity.this, Countdown.class);
 
                             intent3.putExtra("ALBUM", drawable);
-                            //intent.getExtras().getInt("index");
-                            Log.d("temasek", "Countdown received " + currentIndex);
-                            intent3.putExtra("index", currentIndex);
+                            //intent.getExtras().getInt("pfp");
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+                            intent3.putExtra("pfp", pfpCurrentIndex);
                             intent3.putExtra("genre","mainActivity");
 
 
@@ -187,11 +188,11 @@ public class PlaySongActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(PlaySongActivity.this, MainActivity.class);
 
-                currentIndex = bundle.getInt("index");
-                Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
-                displayAnimalBasedOnIndex(currentIndex);
-                intent.putExtra("index", i);
+                pfpCurrentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + pfpCurrentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(pfpCurrentIndex);
+                intent.putExtra("pfp", i);
 
                 startActivity(intent);
             }

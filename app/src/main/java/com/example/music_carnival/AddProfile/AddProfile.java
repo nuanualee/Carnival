@@ -72,20 +72,17 @@ public class AddProfile extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem item) {//SECOND ONCLICK
                         Toast.makeText(AddProfile.this, item.getTitle(), Toast.LENGTH_SHORT).show();
                         int id = item.getItemId();
-                        if (id == R.id.firstProfile){
-                        }
-                        else if (id == R.id.secondProfile) {
+                        if (id == R.id.firstProfile) {
+                        } else if (id == R.id.secondProfile) {
 
-                        }
-                        else if (id == R.id.subLogin1) {
+                        } else if (id == R.id.subLogin1) {
                             Toast.makeText(AddProfile.this, "Directing to Login", Toast.LENGTH_SHORT).show();
                             Intent loginPage = new Intent(AddProfile.this, ExistingLoginActivity.class);
                             startActivity(loginPage);
                         }
                         if (id == R.id.subDelete1) {
                             Toast.makeText(AddProfile.this, "Deleting Profile", Toast.LENGTH_SHORT).show();
-                        }
-                        else if (id == R.id.subLogin2) {
+                        } else if (id == R.id.subLogin2) {
                             Toast.makeText(AddProfile.this, "Directing to Login", Toast.LENGTH_SHORT).show();
                             Intent loginPage = new Intent(AddProfile.this, ExistingLoginActivity.class);
                             startActivity(loginPage);
@@ -103,8 +100,6 @@ public class AddProfile extends AppCompatActivity {
         });
 
 
-
-
         //(ONE) initialize name input
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +108,7 @@ public class AddProfile extends AppCompatActivity {
                 String name = nameInput.getText().toString();
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("NAME",name);
+                editor.putString("NAME", name);
                 editor.apply();
 
                 Toast.makeText(AddProfile.this, "Please choose an unique avatar!", Toast.LENGTH_SHORT).show();
@@ -131,7 +126,8 @@ public class AddProfile extends AppCompatActivity {
 
     }
 
-  public void handleSelection(View myView) {
+
+    public void handleSelection(View myView) {
         String resourceId = getResources().getResourceEntryName(myView.getId());
         int currentArrayIndex = addProfileCollection.searchButtonById(resourceId);
         Log.d("temasek", "The pressed image is   " + currentArrayIndex);
@@ -140,8 +136,9 @@ public class AddProfile extends AppCompatActivity {
 
     public void sendDataToProfile(int i) {
         Intent intent = new Intent(this, ProfileActivity.class);
-        intent.putExtra("index", i);
+        intent.putExtra("pfp", i);
         startActivity(intent);
-
     }
+
+
 }

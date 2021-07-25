@@ -40,9 +40,9 @@ public class Contemporary extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
             Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
 
@@ -60,11 +60,11 @@ public class Contemporary extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Contemporary.this, MainActivity.class);
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
 
                 startActivity(intent);
             }
@@ -103,6 +103,12 @@ public class Contemporary extends AppCompatActivity {
     public void sendDataToActivity (int index){
         Intent intent = new Intent (this, PlayContempSongActivity.class );
         intent.putExtra("index",index);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        currentIndex = bundle.getInt("pfp");
+        Log.d("bark", "MAIN received: " + currentIndex);
+        int i = bundle.getInt("pfp");
+        intent.putExtra("pfp", i);
         startActivity(intent);
 
     }

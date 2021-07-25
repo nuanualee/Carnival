@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.interfaces.ItemClickListener;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.AddDone.DoneCollection;
@@ -81,13 +82,33 @@ public class MainActivity extends AppCompatActivity {
         slideModelList.add(new SlideModel(R.drawable.m_wild, "REWIND NOW"));
         imageSlider.setImageList(slideModelList, true);
 
+
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
-            Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
+            Log.d("bark", "MAIN received: " + currentIndex);
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
+
+
+        imageSlider.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemSelected(int position) {
+                if (position == 0) {
+                    Intent intent = new Intent(MainActivity.this, NewInActivity.class);
+
+                    currentIndex = bundle.getInt("pfp");
+                    Log.d("bark", "we received: " + currentIndex);
+                    int i = bundle.getInt("pfp");
+                    displayAnimalBasedOnIndex(currentIndex);
+                    intent.putExtra("pfp", position);
+
+                    startActivity(intent);
+                }
+            }
+        });
+
 
         imgGoPfp = findViewById(R.id.pfpMainActivity);
         imgGoPfp.setOnClickListener(new View.OnClickListener() {
@@ -95,13 +116,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainProfileActivity.class);
 
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
 
-                intent.putExtra("index", i);
                 startActivity(intent);
             }
         });
@@ -123,12 +143,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent_one = new Intent(MainActivity.this, HipHop.class);
 
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
-                intent_one.putExtra("index", i);
-
+                intent_one.putExtra("pfp", i);
 
                 startActivity(intent_one);
             }
@@ -139,6 +158,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_two = new Intent(MainActivity.this, DanceElectronic.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent_two.putExtra("pfp", i);
+
+
                 startActivity(intent_two);
             }
         });
@@ -148,6 +175,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_three = new Intent(MainActivity.this, RBSoul.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent_three.putExtra("pfp", i);
+
                 startActivity(intent_three);
             }
         });
@@ -157,6 +191,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_fourth = new Intent(MainActivity.this, AlternativeIndie.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent_fourth.putExtra("pfp", i);
+
                 startActivity(intent_fourth);
             }
         });
@@ -166,6 +207,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_fifth = new Intent(MainActivity.this, JPop.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent_fifth.putExtra("pfp", i);
+
                 startActivity(intent_fifth);
             }
         });
@@ -175,6 +223,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_six = new Intent(MainActivity.this, KPop.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent_six.putExtra("pfp", i);
+
                 startActivity(intent_six);
             }
         });
@@ -184,6 +239,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_seventh = new Intent(MainActivity.this, Contemporary.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent_seventh.putExtra("pfp", i);
+
                 startActivity(intent_seventh);
             }
         });
@@ -193,6 +255,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_eigth = new Intent(MainActivity.this, Rap.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent_eigth.putExtra("pfp", i);
+
                 startActivity(intent_eigth);
             }
         });
@@ -231,11 +300,11 @@ public class MainActivity extends AppCompatActivity {
                         Intent newIntent = new Intent(MainActivity.this, Moments.class);
                     {
 
-                        currentIndex = bundle.getInt("index");
+                        currentIndex = bundle.getInt("pfp");
                         Log.d("bark", "we received: " + currentIndex);
-                        int i = bundle.getInt("index");
+                        int i = bundle.getInt("pfp");
                         displayAnimalBasedOnIndex(currentIndex);
-                        newIntent.putExtra("index", i);
+                        newIntent.putExtra("pfp", i);
                     }
                     startActivity(newIntent);
                     return true;
@@ -245,11 +314,11 @@ public class MainActivity extends AppCompatActivity {
 
                         Intent newIntent2 = new Intent(MainActivity.this, Liked.class);
                     {
-                        currentIndex = bundle.getInt("index");
+                        currentIndex = bundle.getInt("pfp");
                         Log.d("bark", "we received: " + currentIndex);
-                        int i = bundle.getInt("index");
+                        int i = bundle.getInt("pfp");
                         displayAnimalBasedOnIndex(currentIndex);
-                        newIntent2.putExtra("index", i);
+                        newIntent2.putExtra("pfp", i);
                     }
                     startActivity(newIntent2);
                     overridePendingTransition(0, 0);
@@ -259,17 +328,17 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.playlist:
                         Intent newIntent3 = new Intent(MainActivity.this, PlaylistActivity.class);
                     {
-                        currentIndex = bundle.getInt("index");
+                        currentIndex = bundle.getInt("pfp");
                         Log.d("bark", "we received: " + currentIndex);
-                        int i = bundle.getInt("index");
+                        int i = bundle.getInt("pfp");
                         displayAnimalBasedOnIndex(currentIndex);
-                        newIntent3.putExtra("index", i);
+                        newIntent3.putExtra("pfp", i);
                     }
 
 
-                        startActivity(newIntent3);
-                        overridePendingTransition(0, 0);
-                        return true;
+                    startActivity(newIntent3);
+                    overridePendingTransition(0, 0);
+                    return true;
 
                 }
                 return false;
@@ -282,7 +351,7 @@ public class MainActivity extends AppCompatActivity {
         String resourceId = getResources().getResourceEntryName(myView.getId()); //can get back ID from file layout
         int currentArrayIndex = songCollection.searchSongById(resourceId);
 
-        Log.d("temasek", "The current array position is :  " + currentArrayIndex);
+        Log.d("temasek", "The current array position of MAIN is:  " + currentArrayIndex);
         sendDataToActivity(currentArrayIndex); //method being called, sent to PlaySongActivity
 
     }
@@ -290,6 +359,13 @@ public class MainActivity extends AppCompatActivity {
     public void sendDataToActivity(int index) {
         Intent intent = new Intent(this, PlaySongActivity.class);
         intent.putExtra("index", index);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        currentIndex = bundle.getInt("pfp");
+        Log.d("bark", "MAIN received: " + currentIndex);
+        int i = bundle.getInt("pfp");
+        intent.putExtra("pfp", i);
+
         startActivity(intent);
 
     }

@@ -68,6 +68,9 @@ public class Countdown extends AppCompatActivity {
         int currentIndex = extras.getInt("index");
         Log.d("temasek", "Countdown CHOOSING Received " + currentIndex);
 
+        int pfpCurrentIndex = extras.getInt("pfp");
+        Log.d("temasek", "Countdown PFP Received " + pfpCurrentIndex);
+
         String genre = extras.getString("genre");
         Log.d("temasek", "Countdown GENRE Received " + genre);
 
@@ -96,6 +99,7 @@ public class Countdown extends AppCompatActivity {
                         Intent intent = new Intent(Countdown.this, ElaspedCountdownActivity.class);
 
                         intent.putExtra("index", currentIndex);
+                        intent.putExtra("pfp",pfpCurrentIndex);
                         intent.putExtra("timer", 1);
                         intent.putExtra("genre",genre);
 
@@ -130,6 +134,7 @@ public class Countdown extends AppCompatActivity {
                         Intent intent = new Intent(Countdown.this, ElaspedCountdownActivity.class);
 
                         intent.putExtra("index", currentIndex);
+                        intent.putExtra("pfp",pfpCurrentIndex);
                         intent.putExtra("timer", 2);
                         intent.putExtra("genre",genre);
 
@@ -163,6 +168,7 @@ public class Countdown extends AppCompatActivity {
                         Intent intent = new Intent(Countdown.this, ElaspedCountdownActivity.class);
 
                         intent.putExtra("index", currentIndex);
+                        intent.putExtra("pfp",pfpCurrentIndex);
                         intent.putExtra("timer", 3);
                         intent.putExtra("genre",genre);
 
@@ -197,6 +203,7 @@ public class Countdown extends AppCompatActivity {
                         Intent intent = new Intent(Countdown.this, ElaspedCountdownActivity.class);
 
                         intent.putExtra("index", currentIndex);
+                        intent.putExtra("pfp",pfpCurrentIndex);
                         intent.putExtra("timer",4);
                         intent.putExtra("genre",genre);
 

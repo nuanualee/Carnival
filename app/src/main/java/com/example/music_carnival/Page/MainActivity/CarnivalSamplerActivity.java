@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.music_carnival.AddDone.Done;
+import com.example.music_carnival.AddDone.DoneCollection;
 import com.example.music_carnival.R;
 
 import java.io.IOException;
@@ -32,6 +34,10 @@ public class CarnivalSamplerActivity extends AppCompatActivity {
 
     private final MediaPlayer player = new MediaPlayer();
 
+    private int drawablePfp;
+    private int currentIndexPfp;
+    DoneCollection doneCollection = new DoneCollection();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,14 @@ public class CarnivalSamplerActivity extends AppCompatActivity {
             displayCarnivalBasedOnIndex(currentIndex);
             playCarnival(filelink);
 
+        }
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from DanceWall
+        if (bundle != null) {
+            currentIndexPfp = bundle.getInt("index");
+            Log.d("bark", "we received: " + currentIndexPfp);
+            int i = bundle.getInt("index");
+            displayAnimalBasedOnIndex(currentIndexPfp);
         }
 
 
@@ -136,6 +150,13 @@ public class CarnivalSamplerActivity extends AppCompatActivity {
         Intent intentBack = new Intent(CarnivalSamplerActivity.this, MyCarnivalActivity.class);
         startActivity(intentBack);
     }
+    public void displayAnimalBasedOnIndex(int selectedIndex) {
+        Done done = doneCollection.getCurrentAnimal(selectedIndex);
+        drawable = done.getDrawable();
+        Log.d("temasek", "You clicked on animal : " + drawablePfp);
 
+        ImageView iCoverArt = findViewById(R.id.pfpCarnivalSampler);
+        iCoverArt.setImageResource(drawablePfp);
+    }
 
 }

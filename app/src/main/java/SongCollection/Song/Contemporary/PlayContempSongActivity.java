@@ -43,7 +43,9 @@ public class PlayContempSongActivity extends AppCompatActivity {
     private int drawable;
     private int currentIndex = -1;
 
+
     private int drawablePfp;
+    private int pfpCurrentIndex = -1;
 
     private final MediaPlayer player = new MediaPlayer();
     private ImageButton btnPlayPause = null; //button initiate
@@ -94,8 +96,8 @@ public class PlayContempSongActivity extends AppCompatActivity {
 
                             intent3.putExtra("ALBUM", drawable);
                             //intent.getExtras().getInt("index");
-                            Log.d("temasek", "Countdown received " + currentIndex);
-                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+                            intent3.putExtra("pfp", pfpCurrentIndex);
                             intent3.putExtra("genre","contemp");
 
                             startActivity(intent3);
@@ -172,10 +174,10 @@ public class PlayContempSongActivity extends AppCompatActivity {
         }
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
-            Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
-            displayAnimalBasedOnIndex(currentIndex);
+            pfpCurrentIndex = bundle.getInt("pfp");
+            Log.d("bark", "we received: " + pfpCurrentIndex);
+            int i = bundle.getInt("pfp");
+            displayAnimalBasedOnIndex(pfpCurrentIndex);
         }
 
 
@@ -184,6 +186,13 @@ public class PlayContempSongActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PlayContempSongActivity.this, MainActivity.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + pfpCurrentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(pfpCurrentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
             }
         });

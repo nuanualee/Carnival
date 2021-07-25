@@ -1,42 +1,45 @@
 package com.example.music_carnival.Page.Moments.DanceShake;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.anupkumarpanwar.scratchview.ScratchView;
-import com.example.music_carnival.Page.Moments.DanceShake.WildCard.WildCardActivity;
-import com.example.music_carnival.Page.Moments.MomentsPackage.Moments;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.music_carnival.Page.Moments.DanceShake.WildCard.ScratchCard;
 import com.example.music_carnival.R;
 
 import java.util.Random;
 
 public class WildHipHopActivity extends AppCompatActivity {
-    ImageButton backButton;
-    ImageButton imageButton;
+
+    ImageView imageWildCard;
     ImageButton btnGenre;
-    Button findSongButton;
     TextView textView;
-    ScratchView scratchView;
+    TextView codeTxt;
+
+
+    private ScratchCard mScratchCard;
+
+
     Random r;
     Integer[] images = {
-            R.drawable.hurt2bhuman,
-            R.drawable.iftheworldwasending,
-            R.drawable.kissmemor,
-            R.drawable.lovescenario,
-            R.drawable.leavethedooropen,
-            R.drawable.magic24k,
-            R.drawable.monster,
-
+            R.drawable.harrystyles,
+            R.drawable.allaboutthatbass,
+            R.drawable.alliknowsofar,
+            R.drawable.bangerz,
+            R.drawable.bluma_to_lunch,
+            R.drawable.butter,
+            R.drawable.eminem,
+            R.drawable.dryflower
     };
+
 
 
     @Override
@@ -46,6 +49,40 @@ public class WildHipHopActivity extends AppCompatActivity {
 
         r = new Random();
         textView = findViewById(R.id.wildCardTitle);
+        imageWildCard = findViewById(R.id.wildCardImage);
+        mScratchCard = findViewById(R.id.scratchCard);
+
+        imageWildCard.setImageResource(images[r.nextInt(images.length)]);
+        findViewById(R.id.btnFind).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(getIntent());
+                overridePendingTransition(0, 0);
+
+                textView.setText("Finding Song!");
+
+            }
+        });
+    }
+
+    private void scratch(boolean isScratched) {
+        if (isScratched) {
+            mScratchCard.setVisibility(View.INVISIBLE);
+        } else {
+            mScratchCard.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void handleListeners() {
+        mScratchCard.setOnScratchListener(new ScratchCard.OnScratchListener() {
+            @Override
+            public void onScratch(ScratchCard scratchCard, float visiblePercent) {
+                if (visiblePercent > 0.8) {
+                    scratch(true);
+                }
+            }
+        });
 
 
         btnGenre = findViewById(R.id.btnMenu);
@@ -61,39 +98,48 @@ public class WildHipHopActivity extends AppCompatActivity {
                         int id = item.getItemId();
 
                         if (id == R.id.wildAll) {
-                            Intent intentHH = new Intent(WildHipHopActivity.this, WildCardActivity.class);
-                            startActivity(intentHH);
-                            Toast.makeText(WildHipHopActivity.this, "Wildcard genre - All", Toast.LENGTH_SHORT).show();
+                            //do nothing
                         }
                         if (id == R.id.wildHipHop) {
-                            //do nothing
+                            Intent intentHH = new Intent(WildHipHopActivity.this, WildHipHopActivity.class);
+                            startActivity(intentHH);
+                            overridePendingTransition(0, 0);
+                            Toast.makeText(WildHipHopActivity.this, "Wildcard genre - Hiphop", Toast.LENGTH_SHORT).show();
+
                         } else if (id == R.id.wildDance) {
                             Intent intentDE = new Intent(WildHipHopActivity.this, WildDanceElecActivity.class);
                             startActivity(intentDE);
+                            overridePendingTransition(0, 0);
                             Toast.makeText(WildHipHopActivity.this, "Wildcard genre - Dance/Electronic", Toast.LENGTH_SHORT).show();
                         } else if (id == R.id.wildRBSoul) {
                             Intent intentRB = new Intent(WildHipHopActivity.this, WildRBSoulActivity.class);
                             startActivity(intentRB);
+                            overridePendingTransition(0, 0);
                             Toast.makeText(WildHipHopActivity.this, "Wildcard genre - R&B/Soul", Toast.LENGTH_SHORT).show();
                         } else if (id == R.id.wildAlt) {
                             Intent intentRB = new Intent(WildHipHopActivity.this, WildAltIndieActivity.class);
                             startActivity(intentRB);
+                            overridePendingTransition(0, 0);
                             Toast.makeText(WildHipHopActivity.this, "Wildcard genre - Alternative/Indie", Toast.LENGTH_SHORT).show();
                         } else if (id == R.id.wildJPop) {
                             Intent intentAI = new Intent(WildHipHopActivity.this, WildJPopActivity.class);
                             startActivity(intentAI);
+                            overridePendingTransition(0, 0);
                             Toast.makeText(WildHipHopActivity.this, "Wildcard genre - J-Pop", Toast.LENGTH_SHORT).show();
                         } else if (id == R.id.wildKPop) {
                             Intent intentRB = new Intent(WildHipHopActivity.this, WildKPopActivity.class);
                             startActivity(intentRB);
+                            overridePendingTransition(0, 0);
                             Toast.makeText(WildHipHopActivity.this, "Wildcard genre - K-Pop", Toast.LENGTH_SHORT).show();
                         } else if (id == R.id.wildContemp) {
                             Intent intentRB = new Intent(WildHipHopActivity.this, WildContempActivity.class);
                             startActivity(intentRB);
+                            overridePendingTransition(0, 0);
                             Toast.makeText(WildHipHopActivity.this, "Wildcard genre - Contemporary", Toast.LENGTH_SHORT).show();
                         } else if (id == R.id.wildRap) {
                             Intent intentRB = new Intent(WildHipHopActivity.this, WildRapActivity.class);
                             startActivity(intentRB);
+                            overridePendingTransition(0, 0);
                             Toast.makeText(WildHipHopActivity.this, "Wildcard genre - Rap", Toast.LENGTH_SHORT).show();
                         }
                         return true;
@@ -105,46 +151,5 @@ public class WildHipHopActivity extends AppCompatActivity {
         });
 
 
-        //ScratchView here
-        scratchView = findViewById(R.id.scratchView);
-        scratchView.setRevealListener(new ScratchView.IRevealListener() {
-            @Override
-            public void onRevealed(ScratchView scratchView) {
-                Toast.makeText(WildHipHopActivity.this, "Revealed", Toast.LENGTH_SHORT).show();
-                if (images.equals(R.drawable.harrystyles)) {
-                    textView.setText("Fine Line");
-                }
-            }
-
-            @Override
-            public void onRevealPercentChangedListener(ScratchView scratchView, float percent) {
-                Toast.makeText(WildHipHopActivity.this, "Scratched off" + percent * 100, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        backButton = findViewById(R.id.btnBack);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(WildHipHopActivity.this, Moments.class);
-                startActivity(intent);
-            }
-        });
-
-
-        //initialize
-        imageButton = findViewById(R.id.wildCardImage);
-        findSongButton = findViewById(R.id.btnFind);
-        findSongButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(WildHipHopActivity.this, "Finding Song", Toast.LENGTH_SHORT).show();
-                //display random images by setting array integer
-                imageButton.setImageResource(images[r.nextInt(images.length)]);
-                textView.setText("Song found! Scratch to reveal");
-
-            }
-        });
     }
 }

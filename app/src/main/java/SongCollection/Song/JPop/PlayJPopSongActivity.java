@@ -43,7 +43,9 @@ public class PlayJPopSongActivity extends AppCompatActivity {
     private int drawable;
     private int currentIndex = -1;
 
+
     private int drawablePfp;
+    private int pfpCurrentIndex = -1;
 
     private final MediaPlayer player = new MediaPlayer();
     private ImageButton btnPlayPause = null; //button initiate

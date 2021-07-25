@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Music_Carnival">
-        <activity android:name="SongCollection.Song.Countdown.AltIndie.AltIndieElapsed"></activity>
+        <activity android:name="SongCollection.Song.NewIn.PlayNewInSongActivity"></activity>
+        <activity android:name=".Page.MainActivity.NewInActivity" />
         <activity android:name=".Page.Moments.DanceWall.Genres.ContempDanceWallActivity" />
         <activity android:name=".Page.Moments.DanceWall.Genres.KPopDanceWallActivity" />
         <activity android:name=".Page.Moments.DanceWall.Genres.JPopDanceWallActivity" />
@@ -28,14 +29,12 @@
         <activity android:name="SongCollection.Song.KPop.PlayKPopSongActivity" />
         <activity android:name="SongCollection.Song.DanceElectronic.PlayDanceElectronicActivity" />
         <activity android:name="SongCollection.Song.HipHop.PlayHipHopSongActivity" />
-        <activity android:name="SongCollection.Song.HipHop.PlayHipHopActivity" />
         <activity android:name="SongCollection.Song.JPop.PlayJPopSongActivity" />
         <activity android:name=".Page.Moments.DanceWall.SelectionDanceWallActivity" />
         <activity android:name=".Page.MainActivity.CarnivalSamplerActivity" />
         <activity android:name=".Page.MainActivity.MyCarnivalActivity" />
         <activity android:name=".Page.MainActivity.MainProfileActivity" />
         <activity android:name="SongCollection.Song.Countdown.ElaspedCountdownActivity" />
-        <activity android:name="Search.SearchActivityDance" />
         <activity android:name=".Page.Moments.DanceWall.Genres.HHDanceWallActivity" />
         <activity android:name=".Page.Moments.DanceShake.WildHipHopActivity" />
         <activity android:name=".Page.Moments.DanceShake.WildRapActivity" />

@@ -2,6 +2,7 @@ package com.example.music_carnival.Page.Moments.DanceShake.WildCard;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.music_carnival.AddDone.Done;
+import com.example.music_carnival.AddDone.DoneCollection;
 import com.example.music_carnival.Page.Moments.DanceShake.WildAltIndieActivity;
 import com.example.music_carnival.Page.Moments.DanceShake.WildContempActivity;
 import com.example.music_carnival.Page.Moments.DanceShake.WildDanceElecActivity;
@@ -20,6 +23,7 @@ import com.example.music_carnival.Page.Moments.DanceShake.WildJPopActivity;
 import com.example.music_carnival.Page.Moments.DanceShake.WildKPopActivity;
 import com.example.music_carnival.Page.Moments.DanceShake.WildRBSoulActivity;
 import com.example.music_carnival.Page.Moments.DanceShake.WildRapActivity;
+import com.example.music_carnival.Page.Moments.MomentsPackage.Moments;
 import com.example.music_carnival.R;
 
 import java.util.Random;
@@ -28,12 +32,14 @@ public class WildCardActivity extends AppCompatActivity {
 
 
     ImageView imageWildCard;
-    ImageButton btnGenre;
+    ImageButton menu_button;
     TextView textView;
     TextView codeTxt;
 
 
     private ScratchCard mScratchCard;
+
+    ImageButton backButton;
 
 
     Random r;
@@ -45,15 +51,45 @@ public class WildCardActivity extends AppCompatActivity {
             R.drawable.bluma_to_lunch,
             R.drawable.butter,
             R.drawable.eminem,
-
+            R.drawable.dryflower
     };
 
+
+    private int drawable;
+    private int currentIndex = -1;
+    DoneCollection doneCollection = new DoneCollection();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wild_card);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        if (bundle != null) {
+            currentIndex = bundle.getInt("index");
+            Log.d("bark", "we received: " + currentIndex);
+            int i = bundle.getInt("index");
+            displayAnimalBasedOnIndex(currentIndex);
+        }
+
+        backButton = findViewById(R.id.btnBack);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WildCardActivity.this, Moments.class);
+
+                currentIndex = bundle.getInt("index");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("index");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("index", i);
+
+                startActivity(intent);
+            }
+        });
+
+
 
         r = new Random();
         textView = findViewById(R.id.wildCardTitle);
@@ -93,13 +129,12 @@ public class WildCardActivity extends AppCompatActivity {
         });
 
 
-
-
-        btnGenre = findViewById(R.id.btnMenu);
-        btnGenre.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
+        menu_button = findViewById(R.id.btnMenu);
+        menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
             @Override
             public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(WildCardActivity.this, btnGenre);
+                Toast.makeText(WildCardActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+                PopupMenu popup = new PopupMenu(WildCardActivity.this, menu_button);
                 getMenuInflater().inflate(R.menu.menu_wildcard, popup.getMenu());
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
@@ -156,11 +191,18 @@ public class WildCardActivity extends AppCompatActivity {
                     }
                 });
                 popup.show();
-
             }
         });
 
 
+    }
+    public void displayAnimalBasedOnIndex(int selectedIndex) {
+        Done done = doneCollection.getCurrentAnimal(selectedIndex);
+        drawable = done.getDrawable();
+        Log.d("temasek", "You clicked on animal : " + drawable);
+
+        ImageView iCoverArt = findViewById(R.id.pfpWildCardActivity);
+        iCoverArt.setImageResource(drawable);
     }
 
 

@@ -169,15 +169,15 @@ public class Moments extends AppCompatActivity {
                             Toast.makeText(Moments.this, "Going to Dance Wall", Toast.LENGTH_SHORT).show();
 
                         } else if (id == R.id.wildCard) {
+                            Intent intent = new Intent(Moments.this, WildCardActivity.class);
+
                             currentIndex = bundle.getInt("index");
-                            Log.d("bark", "we received: " + currentIndex);
+                            Log.d("bark", "Moments received" + currentIndex + " to be sent to WILDCARD ");
                             int i = bundle.getInt("index");
                             displayAnimalBasedOnIndex(currentIndex);
-
-
-                            Intent intent = new Intent(Moments.this, WildCardActivity.class);
-                            startActivity(intent);
                             intent.putExtra("index", i);
+
+                            startActivity(intent);
                             Toast.makeText(Moments.this, "Going to Wild Card", Toast.LENGTH_SHORT).show();
 
                         }

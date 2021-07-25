@@ -33,7 +33,6 @@ import SongCollection.Song.Countdown.Countdown;
 import static com.example.music_carnival.R.drawable.like_orange;
 import static com.example.music_carnival.R.drawable.play_letterh;
 import static com.example.music_carnival.R.drawable.play_triangleanother;
-import static com.example.music_carnival.R.drawable.triangle_play;
 
 public class PlayHipHopSongActivity extends AppCompatActivity {
 
@@ -44,7 +43,9 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
     private int drawable;
     private int currentIndex = -1;
 
+
     private int drawablePfp;
+    private int pfpCurrentIndex = -1;
 
     private final MediaPlayer player = new MediaPlayer();
     private ImageButton btnPlayPause = null; //button initiate
@@ -95,8 +96,8 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
 
                             intent3.putExtra("ALBUM", drawable);
                             //intent.getExtras().getInt("index");
-                            Log.d("temasek", "Countdown received " + currentIndex);
-                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+                            intent3.putExtra("pfp", pfpCurrentIndex);
                             intent3.putExtra("genre","hipHop");
 
 
@@ -174,10 +175,10 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
         }
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
-            Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
-            displayAnimalBasedOnIndex(currentIndex);
+            pfpCurrentIndex = bundle.getInt("pfp");
+            Log.d("bark", "we received: " + pfpCurrentIndex);
+            int i = bundle.getInt("pfp");
+            displayAnimalBasedOnIndex(pfpCurrentIndex);
         }
 
         backButton = findViewById(R.id.btnBack);
@@ -185,6 +186,15 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PlayHipHopSongActivity.this, MainActivity.class);
+
+
+                pfpCurrentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + pfpCurrentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(pfpCurrentIndex);
+                intent.putExtra("pfp", i);
+
+
                 startActivity(intent);
             }
         });
@@ -260,7 +270,7 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) { //ON COMPLETION, finished playing
                 Toast.makeText(PlayHipHopSongActivity.this, "Song ended", Toast.LENGTH_SHORT).show();
-                btnPlayPause.setImageResource(triangle_play); //btn changes back to PLAY
+                btnPlayPause.setImageResource(play_triangleanother); //btn changes back to PLAY
             }
         });
     }
