@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgacorn"
+    tools:context=".Page.MainActivity.NewInActivity">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="42dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="365dp"
+        android:background="@color/transparent"
+        android:backgroundTint="@color/black"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left_black" />
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEW IN"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+
+    <ImageView
+        android:id="@+id/pfpNewIn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pfp_fawn"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/text"
+        app:layout_constraintTop_toTopOf="@+id/text" />
+
+    <ScrollView
+        android:id="@+id/scrollViewNewIn"
+        android:layout_width="350dp"
+        android:layout_height="570dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            //ten cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/tenthCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="250dp"
+                android:background="@color/cdTen_color"
+
+
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/ninthCd"
+                app:layout_constraintStart_toStartOf="@+id/ninthCd"
+                app:layout_constraintTop_toTopOf="@+id/ninthCd"
+
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/tenthCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_eighteen"
+                app:layout_constraintBottom_toBottomOf="@+id/tenthCd"
+                app:layout_constraintEnd_toEndOf="@id/tenthCd"
+                app:layout_constraintStart_toStartOf="@+id/tenthCd"
+                app:layout_constraintTop_toTopOf="@+id/tenthCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Pop"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/tenthCd"
+                app:layout_constraintTop_toTopOf="@+id/tenthCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Jeremy Zucker"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre10"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre10" />
+
+            <TextView
+                android:id="@+id/cdTitle10"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="18"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist10"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist10" />
+
+
+            //ninth cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ninthCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="250dp"
+                android:background="@color/cdNine_color"
+
+
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/eigthCd"
+                app:layout_constraintStart_toStartOf="@+id/eigthCd"
+                app:layout_constraintTop_toTopOf="@+id/eigthCd"
+
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ninthCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_badhabits"
+                app:layout_constraintBottom_toBottomOf="@+id/ninthCd"
+                app:layout_constraintEnd_toEndOf="@id/ninthCd"
+                app:layout_constraintStart_toStartOf="@+id/ninthCd"
+                app:layout_constraintTop_toTopOf="@+id/ninthCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Pop"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/ninthCd"
+                app:layout_constraintTop_toTopOf="@+id/ninthCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Ed Sheeran"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre9"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre9" />
+
+            <TextView
+                android:id="@+id/cdTitle9"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="Bad Habits"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist9"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist9" />
+
+
+            //eigth cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/eigthCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="250dp"
+                android:background="@color/cdEight_color"
+
+
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/seventhCd"
+                app:layout_constraintStart_toStartOf="@+id/seventhCd"
+                app:layout_constraintTop_toTopOf="@+id/seventhCd"
+
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/eighthCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_cureform"
+                app:layout_constraintBottom_toBottomOf="@+id/eigthCd"
+                app:layout_constraintEnd_toEndOf="@id/eigthCd"
+                app:layout_constraintStart_toStartOf="@+id/eigthCd"
+                app:layout_constraintTop_toTopOf="@+id/eigthCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Pop"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/eigthCd"
+                app:layout_constraintTop_toTopOf="@+id/eigthCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Aurora"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre8"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre8" />
+
+            <TextView
+                android:id="@+id/cdTitle8"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="Cure For Me"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist8"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist8" />
+
+
+            //seventh cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/seventhCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="250dp"
+                android:background="@color/cdSeven_color"
+
+
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/sixthCd"
+                app:layout_constraintStart_toStartOf="@+id/sixthCd"
+                app:layout_constraintTop_toTopOf="@+id/sixthCd"
+
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/seventhCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_peoplewatching"
+                app:layout_constraintBottom_toBottomOf="@+id/seventhCd"
+                app:layout_constraintEnd_toEndOf="@id/seventhCd"
+                app:layout_constraintStart_toStartOf="@+id/seventhCd"
+                app:layout_constraintTop_toTopOf="@+id/seventhCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Alternative/Indie"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/seventhCd"
+                app:layout_constraintTop_toTopOf="@+id/seventhCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Conan Gray"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre7"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre7" />
+
+            <TextView
+                android:id="@+id/cdTitle7"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="People Watching"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist7"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist7" />
+
+
+            //sixth cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sixthCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="250dp"
+                android:background="@color/cdSix_color"
+
+
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/fifthCd"
+                app:layout_constraintStart_toStartOf="@+id/fifthCd"
+                app:layout_constraintTop_toTopOf="@+id/fifthCd"
+
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sixthCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_permissiontodance"
+                app:layout_constraintBottom_toBottomOf="@+id/sixthCd"
+                app:layout_constraintEnd_toEndOf="@id/sixthCd"
+                app:layout_constraintStart_toStartOf="@+id/sixthCd"
+                app:layout_constraintTop_toTopOf="@+id/sixthCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Dance-Pop"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/sixthCd"
+                app:layout_constraintTop_toTopOf="@+id/sixthCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="BTS"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre6"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre6" />
+
+            <TextView
+                android:id="@+id/cdTitle6"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="Permission to Dance"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist6"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist6" />
+
+
+            //fifth cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/fifthCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="250dp"
+                android:background="@color/cdFive_color"
+
+
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/fourthCd"
+                app:layout_constraintStart_toStartOf="@+id/fourthCd"
+                app:layout_constraintTop_toTopOf="@+id/fourthCd"
+
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/fifthCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_kissmemore"
+                app:layout_constraintBottom_toBottomOf="@+id/fifthCd"
+                app:layout_constraintEnd_toEndOf="@id/fifthCd"
+                app:layout_constraintStart_toStartOf="@+id/fifthCd"
+                app:layout_constraintTop_toTopOf="@+id/fifthCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Pop"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/fifthCd"
+                app:layout_constraintTop_toTopOf="@+id/fifthCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Doja Cat &amp; SZA"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre5"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre5" />
+
+            <TextView
+                android:id="@+id/cdTitle5"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="Kiss Me More"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist5"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist5" />
+
+
+            //fourth cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/fourthCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="250dp"
+                android:background="@color/cdFour_color"
+
+
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/thirdCd"
+                app:layout_constraintStart_toStartOf="@+id/thirdCd"
+                app:layout_constraintTop_toTopOf="@+id/thirdCd"
+
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/fourthCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_talkofthistown"
+                app:layout_constraintBottom_toBottomOf="@+id/fourthCd"
+                app:layout_constraintEnd_toEndOf="@id/fourthCd"
+                app:layout_constraintStart_toStartOf="@+id/fourthCd"
+                app:layout_constraintTop_toTopOf="@+id/fourthCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Country"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/fourthCd"
+                app:layout_constraintTop_toTopOf="@+id/fourthCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Lady Antebellum"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre4"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre4" />
+
+            <TextView
+                android:id="@+id/cdTitle4"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="Talk Of This Town"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist4"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist4" />
+
+
+            //third cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/thirdCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="250dp"
+                android:background="@color/cdThree_color"
+
+
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/secondCd"
+                app:layout_constraintStart_toStartOf="@+id/secondCd"
+                app:layout_constraintTop_toTopOf="@+id/secondCd"
+
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/thirdCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_stay"
+                app:layout_constraintBottom_toBottomOf="@+id/thirdCd"
+                app:layout_constraintEnd_toEndOf="@id/thirdCd"
+                app:layout_constraintStart_toStartOf="@+id/thirdCd"
+                app:layout_constraintTop_toTopOf="@+id/thirdCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Pop"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/thirdCd"
+                app:layout_constraintTop_toTopOf="@+id/thirdCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="The Kid LAROI &amp; Justin Bieber"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre3"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre3" />
+
+            <TextView
+                android:id="@+id/cdTitle3"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="Stay"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist3"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist3" />
+
+
+            //second cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/secondCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="250dp"
+                android:background="@color/cdTwo_color"
+
+
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/firstCd"
+                app:layout_constraintStart_toStartOf="@+id/firstCd"
+
+
+                app:layout_constraintTop_toTopOf="@+id/firstCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/secondCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_chlorine"
+                app:layout_constraintBottom_toBottomOf="@+id/secondCd"
+                app:layout_constraintEnd_toEndOf="@id/secondCd"
+                app:layout_constraintStart_toStartOf="@+id/secondCd"
+                app:layout_constraintTop_toTopOf="@+id/secondCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Hip-Hop"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/secondCd"
+                app:layout_constraintTop_toTopOf="@+id/secondCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Twenty one Pilots"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre2"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre2" />
+
+            <TextView
+                android:id="@+id/cdTitle2"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="Chlorine"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist2"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist2" />
+
+
+            //first cd
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/firstCd"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:background="@color/cdOne_color"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/firstCD"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@color/transparent"
+                android:onClick="handleSelection"
+                android:scaleType="fitCenter"
+                android:src="@drawable/in_sour"
+                app:layout_constraintBottom_toBottomOf="@+id/firstCd"
+                app:layout_constraintEnd_toEndOf="@id/firstCd"
+                app:layout_constraintStart_toStartOf="@+id/firstCd"
+                app:layout_constraintTop_toTopOf="@+id/firstCd"
+                app:shapeAppearanceOverlay="@style/MoreRound" />
+
+            <TextView
+                android:id="@+id/cdGenre1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="182dp"
+
+                android:text="Pop"
+                android:textColor="@color/bright_purple"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/firstCd"
+                app:layout_constraintTop_toTopOf="@+id/firstCd" />
+
+
+            <TextView
+                android:id="@+id/cdArtist1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Olivia Rodrigo"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cdGenre1"
+                app:layout_constraintTop_toBottomOf="@+id/cdGenre1" />
+
+            <TextView
+                android:id="@+id/cdTitle1"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:text="favourite crime"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                app:layout_constraintStart_toStartOf="@+id/cdArtist1"
+                app:layout_constraintTop_toBottomOf="@+id/cdArtist1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
