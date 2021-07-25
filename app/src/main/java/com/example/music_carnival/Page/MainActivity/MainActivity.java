@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, NewInActivity.class);
 
                     currentIndex = bundle.getInt("pfp");
-                    Log.d("bark", "we received: " + currentIndex);
+                    Log.d("bark", "MAINACTIVITY sending: " + currentIndex + "to IMAGESLIDER 1");
                     int i = bundle.getInt("pfp");
                     displayAnimalBasedOnIndex(currentIndex);
                     intent.putExtra("pfp", position);

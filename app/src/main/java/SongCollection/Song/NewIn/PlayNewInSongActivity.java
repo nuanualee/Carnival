@@ -71,8 +71,24 @@ public class PlayNewInSongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_song);
 
-        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Moments
 
+        Intent intent = getIntent();
+        if (intent.getExtras() != null) {
+            Bundle songData = this.getIntent().getExtras();
+            int currentIndex = songData.getInt("index");
+            Log.d("temasek", "We receieved: " + currentIndex);
+            displaySongBasedOnIndex(currentIndex);
+            playSong(filelink);
+        }
+
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        if (bundle != null) {
+            pfpCurrentIndex = bundle.getInt("pfp");
+            Log.d("bark", "pfp received: " + pfpCurrentIndex);
+            int i = bundle.getInt("pfp");
+            displayAnimalBasedOnIndex(pfpCurrentIndex);
+        }
 
         menu_button = findViewById(R.id.btnMenu);
         menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
@@ -94,7 +110,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
                             Intent intent2 = new Intent(PlayNewInSongActivity.this, NewMomentsActivity.class);
 
 
-                            currentIndex = bundle.getInt("index");
+                            currentIndex = bundle.getInt("pfp");
                             Log.d("bark", "we received: " + currentIndex);
                             int i = bundle.getInt("index");
                             displayAnimalBasedOnIndex(currentIndex);
@@ -173,21 +189,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
         });
 
 
-        Intent intent = getIntent();
 
-        if (intent.getExtras() != null) {
-            Bundle songData = this.getIntent().getExtras();
-            int currentIndex = songData.getInt("index");
-            Log.d("temasek", "We receieved: " + currentIndex);
-            displaySongBasedOnIndex(currentIndex);
-            playSong(filelink);
-        }
-        if (bundle != null) {
-            pfpCurrentIndex = bundle.getInt("pfp");
-            Log.d("bark", "we received: " + pfpCurrentIndex);
-            int i = bundle.getInt("pfp");
-            displayAnimalBasedOnIndex(pfpCurrentIndex);
-        }
 
 
         backButton = findViewById(R.id.btnBack);
@@ -259,7 +261,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
             player.setDataSource(songUrl); //WILL NEED TO PUT CLAUSE
             player.prepare(); //prepare player
             player.start(); //start player
-            btnPlayPause.setImageResource(play_letterh); //BUTTON becomes paused
+//            btnPlayPause.setImageResource(play_letterh); //BUTTON becomes paused
             setTitle(title);
             gracefullyStopsWhenMusicEnds(); //METHOD IS BEING CALLED
 

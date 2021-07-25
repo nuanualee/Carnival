@@ -37,24 +37,25 @@ public class NewInActivity extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
-            Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
+            Log.d("bark", "NEW IN received: " + currentIndex);
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
+
 
         backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
 
                 Intent intent = new Intent(NewInActivity.this, MainActivity.class);
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
             }
         });
