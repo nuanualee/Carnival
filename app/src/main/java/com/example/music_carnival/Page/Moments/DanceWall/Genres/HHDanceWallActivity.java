@@ -39,9 +39,9 @@ public class HHDanceWallActivity extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
             Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
 
@@ -53,12 +53,13 @@ public class HHDanceWallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HHDanceWallActivity.this, SelectionDanceWallActivity.class);
-                currentIndex = bundle.getInt("index");
-                Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
-                displayAnimalBasedOnIndex(currentIndex);
 
-                intent.putExtra("index", i);
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
             }
         });

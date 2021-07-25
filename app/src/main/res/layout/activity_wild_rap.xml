@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/lavender"
     tools:context=".Page.Moments.DanceShake.WildRapActivity">
+
+
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="42dp"
@@ -90,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Scratch to reveal ALL genre"
+        android:text="Scratch to reveal RAP genre"
         android:textColor="@color/matte_grey"
         android:gravity="center"
         android:textSize="21sp"
@@ -124,7 +126,6 @@
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnBack"
         app:layout_constraintTop_toTopOf="@+id/btnBack" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

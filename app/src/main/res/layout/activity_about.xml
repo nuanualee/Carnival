@@ -102,6 +102,16 @@ your friends to join Carnival!"
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <ImageView
+        android:id="@+id/pfpInsideSettings"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pfp_fawn"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

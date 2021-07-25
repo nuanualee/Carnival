@@ -42,9 +42,9 @@ public class NewMomentsActivity extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Moments
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
             Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
 
@@ -105,11 +105,11 @@ public class NewMomentsActivity extends AppCompatActivity {
                                 && !songChosen.getText().toString().equals("")) {
                             Intent intent = new Intent(NewMomentsActivity.this, Moments.class);
 
-                            currentIndex = bundle.getInt("index");
+                            currentIndex = bundle.getInt("pfp");
                             Log.d("bark", "we received: " + currentIndex);
-                            int i = bundle.getInt("index");
+                            int i = bundle.getInt("pfp");
                             displayAnimalBasedOnIndex(currentIndex);
-                            intent.putExtra("index", i);
+                            intent.putExtra("pfp", i);
 
 
                             Toast.makeText(NewMomentsActivity.this, "Moments added!", Toast.LENGTH_SHORT).show();

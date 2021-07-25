@@ -26,6 +26,10 @@ public class MyCarnivalActivity extends AppCompatActivity {
     private int currentIndex = -1;
     DoneCollection doneCollection = new DoneCollection();
 
+
+    private int drawablePfp;
+    private int pfpCurrentIndex = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,14 +44,23 @@ public class MyCarnivalActivity extends AppCompatActivity {
         }
 
 
+        Bundle bundlePfp = this.getIntent().getExtras(); //receiving Extras from Animal
+        if (bundlePfp != null) {
+            pfpCurrentIndex = bundlePfp.getInt("pfp");
+            Log.d("bark", "pfp received: " + pfpCurrentIndex);
+            int i = bundlePfp.getInt("pfp");
+            displayAnimalBasedOnIndex(pfpCurrentIndex);
+        }
+
+
         backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentIndex = bundle.getInt("index");
-                Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
-                displayAnimalBasedOnIndex(currentIndex);
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + pfpCurrentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(pfpCurrentIndex);
 
                 Intent intent = new Intent(MyCarnivalActivity.this, MainProfileActivity.class);
                 intent.putExtra("index", i);
@@ -72,15 +85,26 @@ public class MyCarnivalActivity extends AppCompatActivity {
     public void sendCarnivalToActivity(int index) {
         Intent intent = new Intent(this, CarnivalSamplerActivity.class);
         intent.putExtra("index", index);
+
+        Bundle bundlePfp = this.getIntent().getExtras(); //receiving Extras from Animal
+        pfpCurrentIndex = bundlePfp.getInt("pfp");
+        Log.d("bark", "MAIN received: " + pfpCurrentIndex);
+        int i = bundlePfp.getInt("pfp");
+        intent.putExtra("pfp", i);
+
+
         startActivity(intent);
     }
+
+
+
     public void displayAnimalBasedOnIndex(int selectedIndex) {
         Done done = doneCollection.getCurrentAnimal(selectedIndex);
         drawable = done.getDrawable();
-        Log.d("temasek", "You clicked on animal : " + drawable);
+        Log.d("temasek", "You clicked on animal : " + drawablePfp);
 
         ImageView iCoverArt = findViewById(R.id.pfpCarnivalActivity);
-        iCoverArt.setImageResource(drawable);
+        iCoverArt.setImageResource(drawablePfp);
     }
 
 }

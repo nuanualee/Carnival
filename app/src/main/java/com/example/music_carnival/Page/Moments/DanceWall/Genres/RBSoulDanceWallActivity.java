@@ -38,9 +38,9 @@ public class RBSoulDanceWallActivity extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
             Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
 
@@ -51,12 +51,12 @@ public class RBSoulDanceWallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RBSoulDanceWallActivity.this, SelectionDanceWallActivity.class);
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
             }
         });

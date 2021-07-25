@@ -1,18 +1,22 @@
 package com.example.music_carnival.Page.Moments;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
+import com.example.music_carnival.AddDone.Done;
+import com.example.music_carnival.AddDone.DoneCollection;
 import com.example.music_carnival.AddProfile.AddProfile;
 import com.example.music_carnival.R;
 
@@ -27,11 +31,23 @@ public class Account extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
 
+    private int drawable;
+    private int currentIndex = -1;
+    DoneCollection doneCollection = new DoneCollection();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        if (bundle != null) {
+            currentIndex = bundle.getInt("pfp");
+            Log.d("bark", "we received: " + currentIndex);
+            int i = bundle.getInt("pfp");
+            displayAnimalBasedOnIndex(currentIndex);
+        }
 
         arrowOne = findViewById(R.id.arrowOne);
 
@@ -65,6 +81,13 @@ public class Account extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Account.this, Settings.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
             }
         });
@@ -86,5 +109,13 @@ public class Account extends AppCompatActivity {
             }
         });
 
+    }
+    public void displayAnimalBasedOnIndex(int selectedIndex) {
+        Done done = doneCollection.getCurrentAnimal(selectedIndex);
+        drawable = done.getDrawable();
+        Log.d("temasek", "You clicked on animal : " + drawable);
+
+        ImageView iCoverArt = findViewById(R.id.pfpInsideSettings);
+        iCoverArt.setImageResource(drawable);
     }
 }

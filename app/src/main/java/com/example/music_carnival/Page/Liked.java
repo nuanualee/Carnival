@@ -33,9 +33,9 @@ public class Liked extends AppCompatActivity {
 
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
-        currentIndex = bundle.getInt("index");
-        Log.d("bark", "we received: " + currentIndex);
-        int i = bundle.getInt("index");
+        currentIndex = bundle.getInt("pfp");
+        Log.d("bark", "LIKED received: " + currentIndex);
+        int i = bundle.getInt("pfp");
         displayAnimalBasedOnIndex(currentIndex);
 
 
@@ -44,7 +44,7 @@ public class Liked extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Liked.this, MainActivity.class);
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
             }
         });

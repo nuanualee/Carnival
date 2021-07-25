@@ -48,9 +48,9 @@ public class PhotoCateActivity extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
-            Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
+            Log.d("bark", "PHOTOCATEACTIVITY received: " + currentIndex);
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
 

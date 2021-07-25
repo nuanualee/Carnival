@@ -16,7 +16,7 @@ import com.example.music_carnival.AddDone.DoneCollection;
 import com.example.music_carnival.Page.MainActivity.MainActivity;
 import com.example.music_carnival.R;
 
-import SongCollection.Song.All.PlaySongActivity;
+import SongCollection.Song.RBSoul.PlayRBSoulSongActivity;
 import SongCollection.Song.RBSoul.RBSoulSongCollection;
 
 public class RBSoul extends AppCompatActivity {
@@ -99,7 +99,7 @@ public class RBSoul extends AppCompatActivity {
     }
 
     public void sendDataToActivity (int index){
-        Intent intent = new Intent (this, PlaySongActivity.class );
+        Intent intent = new Intent (this, PlayRBSoulSongActivity.class );
         intent.putExtra("index",index);
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal

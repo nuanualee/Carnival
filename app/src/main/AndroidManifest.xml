@@ -44,7 +44,6 @@
         <activity android:name=".Page.Moments.DanceShake.WildAltIndieActivity" />
         <activity android:name=".Page.Moments.DanceShake.WildRBSoulActivity" />
         <activity android:name=".Page.Moments.DanceShake.WildDanceElecActivity" />
-        <activity android:name=".Page.Moments.DanceShake.WildDanceActivity" />
         <activity android:name=".Page.Moments.DanceShake.WildCard.WildCardActivity" />
         <activity android:name=".Page.Moments.DanceShake.DanceShakeActivity" />
         <activity android:name="Search.SearchActivity" />

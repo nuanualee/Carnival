@@ -32,10 +32,11 @@ public class CarnivalSamplerActivity extends AppCompatActivity {
     ImageButton btnPlayPause;
     private TextView txtBack;
 
+    private int drawablePfp;
+    private int pfpCurrentIndex = -1;
+
     private final MediaPlayer player = new MediaPlayer();
 
-    private int drawablePfp;
-    private int currentIndexPfp;
     DoneCollection doneCollection = new DoneCollection();
 
 
@@ -55,12 +56,13 @@ public class CarnivalSamplerActivity extends AppCompatActivity {
 
         }
 
-        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from DanceWall
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndexPfp = bundle.getInt("index");
-            Log.d("bark", "we received: " + currentIndexPfp);
-            int i = bundle.getInt("index");
-            displayAnimalBasedOnIndex(currentIndexPfp);
+            pfpCurrentIndex = bundle.getInt("pfp");
+            Log.d("bark", "pfp received: " + pfpCurrentIndex);
+            int i = bundle.getInt("pfp");
+            displayAnimalBasedOnIndex(pfpCurrentIndex);
         }
 
 
@@ -86,6 +88,13 @@ public class CarnivalSamplerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CarnivalSamplerActivity.this,MyCarnivalActivity.class);
+
+                pfpCurrentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + pfpCurrentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(pfpCurrentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
                 player.stop();
             }

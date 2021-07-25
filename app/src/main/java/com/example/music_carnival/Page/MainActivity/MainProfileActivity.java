@@ -71,11 +71,11 @@ public class MainProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainProfileActivity.this, PhotoCateActivity.class);
 
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
 
                 startActivity(intent);
             }

@@ -64,9 +64,9 @@ public class Moments extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
-            Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
+            Log.d("bark", "MOMENTS received : " + currentIndex);
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
 
@@ -77,11 +77,11 @@ public class Moments extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Moments.this, NewMomentsActivity.class);
 
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
 
 
                 startActivity(intent);
@@ -138,6 +138,13 @@ public class Moments extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentSettings = new Intent(Moments.this, Settings.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "Moments received" + currentIndex + " to be sent to SETTING ");
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intentSettings.putExtra("pfp", i);
+
                 startActivity(intentSettings);
             }
         });
@@ -158,11 +165,11 @@ public class Moments extends AppCompatActivity {
                         if (id == R.id.danceWall) {
                             Intent intent = new Intent(Moments.this, SelectionDanceWallActivity.class);
 
-                            currentIndex = bundle.getInt("index");
+                            currentIndex = bundle.getInt("pfp");
                             Log.d("bark", "we received: " + currentIndex);
-                            int i = bundle.getInt("index");
+                            int i = bundle.getInt("pfp");
                             displayAnimalBasedOnIndex(currentIndex);
-                            intent.putExtra("index", i);
+                            intent.putExtra("pfp", i);
 
 
                             startActivity(intent);
@@ -171,11 +178,11 @@ public class Moments extends AppCompatActivity {
                         } else if (id == R.id.wildCard) {
                             Intent intent = new Intent(Moments.this, WildCardActivity.class);
 
-                            currentIndex = bundle.getInt("index");
+                            currentIndex = bundle.getInt("pfp");
                             Log.d("bark", "Moments received" + currentIndex + " to be sent to WILDCARD ");
-                            int i = bundle.getInt("index");
+                            int i = bundle.getInt("pfp");
                             displayAnimalBasedOnIndex(currentIndex);
-                            intent.putExtra("index", i);
+                            intent.putExtra("pfp", i);
 
                             startActivity(intent);
                             Toast.makeText(Moments.this, "Going to Wild Card", Toast.LENGTH_SHORT).show();
@@ -208,13 +215,13 @@ public class Moments extends AppCompatActivity {
                     case R.id.home:
                         Intent intent = new Intent(Moments.this, MainActivity.class);
 
-                        currentIndex = bundle.getInt("index");
+                        currentIndex = bundle.getInt("pfp");
                         Log.d("bark", "we received: " + currentIndex);
-                        int i = bundle.getInt("index");
+                        int i = bundle.getInt("pfp");
                         displayAnimalBasedOnIndex(currentIndex);
 
 
-                        intent.putExtra("index", i);
+                        intent.putExtra("pfp", i);
                         startActivity(intent);
                         overridePendingTransition(0, 0);
                         return true;
@@ -224,12 +231,13 @@ public class Moments extends AppCompatActivity {
 
                     case R.id.liked:
                         Intent intentLiked = new Intent(Moments.this, Liked.class);
-                        currentIndex = bundle.getInt("index");
-                        Log.d("bark", "we received: " + currentIndex);
-                        i = bundle.getInt("index");
-                        displayAnimalBasedOnIndex(currentIndex);
 
-                        intentLiked.putExtra("index", i);
+                        currentIndex = bundle.getInt("pfp");
+                        Log.d("bark", "we received: " + currentIndex);
+                        i = bundle.getInt("pfp");
+                        displayAnimalBasedOnIndex(currentIndex);
+                        intentLiked.putExtra("pfp", i);
+
                         startActivity(intentLiked);
                         overridePendingTransition(0, 0);
                         return true;

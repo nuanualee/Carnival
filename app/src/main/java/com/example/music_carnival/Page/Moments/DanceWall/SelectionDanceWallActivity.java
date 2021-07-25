@@ -46,9 +46,9 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
         //otherwise it the activity will stop....
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
             Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
 
@@ -61,12 +61,12 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SelectionDanceWallActivity.this, Moments.class);
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
 
                 startActivity(intent);
             }
@@ -85,11 +85,11 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
 
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, HHDanceWallActivity.class);
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
 
 
                 startActivity(intent);
@@ -108,12 +108,12 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, DElecDanceWallActivity.class);
 
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -129,12 +129,12 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 cd_rbsoul.startAnimation(animSlide);
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, RBSoulDanceWallActivity.class);
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
@@ -151,12 +151,12 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
 
                 cd_altindie.startAnimation(animSlide);
                 Intent intent = new Intent(SelectionDanceWallActivity.this, AltIndieDanceWallActivity.class);
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
@@ -173,12 +173,12 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
 
                 cd_jpop.startAnimation(animSlide);
                 Intent intent = new Intent(SelectionDanceWallActivity.this, JPopDanceWallActivity.class);
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -196,12 +196,12 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 cd_kpop.startAnimation(animSlide);
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, KPopDanceWallActivity.class);
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
@@ -219,12 +219,12 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 cd_contemp.startAnimation(animSlide);
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, ContempDanceWallActivity.class);
-                currentIndex = bundle.getInt("index");
+                currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
-                int i = bundle.getInt("index");
+                int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
