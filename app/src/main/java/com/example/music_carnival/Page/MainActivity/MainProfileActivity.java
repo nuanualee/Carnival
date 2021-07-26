@@ -54,7 +54,6 @@ public class MainProfileActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
         String name = sharedPreferences.getString("NAME", "");
 
-
         if (name != null) {
             //set data on textview after if
             txt.setText(name);

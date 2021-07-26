@@ -71,6 +71,7 @@ public class AddProfileDone extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //putting data on shared preferences
+
                 String name = user_txt.getText().toString();
                 boolean checked = rememberMe.isChecked();
 
