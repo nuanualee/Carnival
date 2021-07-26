@@ -63,7 +63,7 @@ public class MyCarnivalActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(pfpCurrentIndex);
 
                 Intent intent = new Intent(MyCarnivalActivity.this, MainProfileActivity.class);
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
             }
         });
@@ -88,7 +88,7 @@ public class MyCarnivalActivity extends AppCompatActivity {
 
         Bundle bundlePfp = this.getIntent().getExtras(); //receiving Extras from Animal
         pfpCurrentIndex = bundlePfp.getInt("pfp");
-        Log.d("bark", "MAIN received: " + pfpCurrentIndex);
+        Log.d("bark", "CARNIVAL sending: " + pfpCurrentIndex + "to SAMPLER");
         int i = bundlePfp.getInt("pfp");
         intent.putExtra("pfp", i);
 

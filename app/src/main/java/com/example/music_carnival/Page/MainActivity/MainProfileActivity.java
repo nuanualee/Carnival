@@ -116,7 +116,7 @@ public class MainProfileActivity extends AppCompatActivity {
 
 
                 Intent intent = new Intent(MainProfileActivity.this, MainActivity.class);
-                intent.putExtra("index", i);
+                intent.putExtra("pfp", i);
                 startActivity(intent);
             }
         });

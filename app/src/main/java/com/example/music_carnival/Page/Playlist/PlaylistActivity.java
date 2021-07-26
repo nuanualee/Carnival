@@ -88,9 +88,9 @@ public class PlaylistActivity extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
-            currentIndex = bundle.getInt("index");
+            currentIndex = bundle.getInt("pfp");
             Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
+            int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
 
@@ -153,11 +153,11 @@ public class PlaylistActivity extends AppCompatActivity {
                         Intent intentHome = new Intent(PlaylistActivity.this, MainActivity.class);
 
                     {
-                        currentIndex = bundle.getInt("index");
+                        currentIndex = bundle.getInt("pfp");
                         Log.d("bark", "we received: " + currentIndex);
-                        int i = bundle.getInt("index");
+                        int i = bundle.getInt("pfp");
                         displayAnimalBasedOnIndex(currentIndex);
-                        intentHome.putExtra("index", i);
+                        intentHome.putExtra("pfp", i);
                     }
                         startActivity(intentHome);
                         overridePendingTransition(0, 0);
@@ -166,11 +166,11 @@ public class PlaylistActivity extends AppCompatActivity {
                     case R.id.moments:
                         Intent intentMoments = new Intent(PlaylistActivity.this, Moments.class);
                     {
-                        currentIndex = bundle.getInt("index");
+                        currentIndex = bundle.getInt("pfp");
                         Log.d("bark", "we received: " + currentIndex);
-                        int i = bundle.getInt("index");
+                        int i = bundle.getInt("pfp");
                         displayAnimalBasedOnIndex(currentIndex);
-                        intentMoments.putExtra("index", i);
+                        intentMoments.putExtra("pfp", i);
                     }
 
                         startActivity(intentMoments);
@@ -181,11 +181,11 @@ public class PlaylistActivity extends AppCompatActivity {
                     case R.id.liked:
                         Intent intentLike = new Intent(PlaylistActivity.this, Liked.class);
                     {
-                        currentIndex = bundle.getInt("index");
+                        currentIndex = bundle.getInt("pfp");
                         Log.d("bark", "we received: " + currentIndex);
-                        int i = bundle.getInt("index");
+                        int i = bundle.getInt("pfp");
                         displayAnimalBasedOnIndex(currentIndex);
-                        intentLike.putExtra("index", i);
+                        intentLike.putExtra("pfp", i);
                     }
                         startActivity(intentLike);
                         overridePendingTransition(0, 0);

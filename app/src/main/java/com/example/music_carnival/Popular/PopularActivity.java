@@ -3,6 +3,7 @@ package com.example.music_carnival.Popular;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.music_carnival.AddDone.Done;
+import com.example.music_carnival.AddDone.DoneCollection;
 import com.example.music_carnival.Page.MainActivity.MainActivity;
 import com.example.music_carnival.R;
 
@@ -41,10 +44,22 @@ public class PopularActivity extends AppCompatActivity {
     ImageButton backButton;
 
 
+    private int drawable;
+    private int currentIndex = -1;
+    DoneCollection doneCollection = new DoneCollection();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popular);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        if (bundle != null) {
+            currentIndex = bundle.getInt("pfp");
+            Log.d("bark", "NEW IN received: " + currentIndex);
+            int i = bundle.getInt("pfp");
+            displayAnimalBasedOnIndex(currentIndex);
+        }
 
         listView = findViewById(R.id.listview);
 
@@ -55,6 +70,8 @@ public class PopularActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
                 if (position == 0){
                     Toast.makeText(PopularActivity.this, "1st Popular!", Toast.LENGTH_SHORT).show();
                 }
@@ -78,6 +95,14 @@ public class PopularActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PopularActivity.this, MainActivity.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "BACK SENDING: " + currentIndex + " back MAIN");
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
+
                 startActivity(intent);
             }
         });
@@ -124,4 +149,13 @@ public class PopularActivity extends AppCompatActivity {
             return row;
         }
     }
+    public void displayAnimalBasedOnIndex(int selectedIndex) {
+        Done done = doneCollection.getCurrentAnimal(selectedIndex);
+        drawable = done.getDrawable();
+        Log.d("temasek", "You clicked on animal : " + drawable);
+
+        ImageView iCoverArt = findViewById(R.id.pfpPopularActivity);
+        iCoverArt.setImageResource(drawable);
+    }
+
 }

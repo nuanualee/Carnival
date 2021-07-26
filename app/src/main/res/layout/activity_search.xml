@@ -13,6 +13,7 @@
         android:layout_width="371dp"
         android:layout_height="577dp"
         android:layout_marginTop="144dp"
+        android:onClick="handleSelection"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,6 +83,17 @@
         app:layout_constraintStart_toStartOf="@+id/txtSearchBar"
         app:layout_constraintTop_toTopOf="@+id/txtSearchBar"
         app:layout_constraintVertical_bias="1.0" />
+
+
+    <ImageView
+        android:id="@+id/pfpSearchActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pfp_fawn"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

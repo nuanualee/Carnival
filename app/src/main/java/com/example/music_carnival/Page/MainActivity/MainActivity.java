@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //init imageslider
         ImageSlider imageSlider = findViewById(R.id.slider);
         List<SlideModel> slideModelList = new ArrayList<>();
         slideModelList.add(new SlideModel(R.drawable.m_olivia, "NEW IN"));
@@ -102,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("bark", "MAINACTIVITY sending: " + currentIndex + "to IMAGESLIDER 1");
                     int i = bundle.getInt("pfp");
                     displayAnimalBasedOnIndex(currentIndex);
-                    intent.putExtra("pfp", position);
+                    intent.putExtra("pfp", i);
 
                     startActivity(intent);
                 }
@@ -131,6 +133,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent goSearch = new Intent(MainActivity.this, SearchActivity.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                goSearch.putExtra("pfp", i);
+
                 startActivity(goSearch);
                 overridePendingTransition(0, 0);
             }
@@ -270,9 +279,16 @@ public class MainActivity extends AppCompatActivity {
         btnGoPopular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_top = new Intent(MainActivity.this, PopularActivity.class);
-                Toast.makeText(MainActivity.this, "Top songs now~", Toast.LENGTH_SHORT).show();
-                startActivity(intent_top);
+                Intent intent_popular = new Intent(MainActivity.this, PopularActivity.class);
+                Toast.makeText(MainActivity.this, "Popular songs~", Toast.LENGTH_SHORT).show();
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent_popular.putExtra("pfp", i);
+
+                startActivity(intent_popular);
             }
         });
 
@@ -334,7 +350,6 @@ public class MainActivity extends AppCompatActivity {
                         displayAnimalBasedOnIndex(currentIndex);
                         newIntent3.putExtra("pfp", i);
                     }
-
 
                     startActivity(newIntent3);
                     overridePendingTransition(0, 0);

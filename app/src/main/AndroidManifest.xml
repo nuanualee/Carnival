@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Music_Carnival">
-        <activity android:name="SongCollection.Song.NewIn.PlayNewInSongActivity"></activity>
+        <activity android:name=".AddProfile.AddProfile"></activity>
+        <activity android:name="SongCollection.Song.NewIn.PlayNewInSongActivity" />
         <activity android:name=".Page.MainActivity.NewInActivity" />
         <activity android:name=".Page.Moments.DanceWall.Genres.ContempDanceWallActivity" />
         <activity android:name=".Page.Moments.DanceWall.Genres.KPopDanceWallActivity" />
@@ -77,7 +78,7 @@
         <activity android:name=".Page.Liked" />
         <activity android:name=".Page.Moments.MomentsPackage.Moments" />
         <activity android:name="SongCollection.Song.All.PlaySongActivity" />
-        <activity android:name=".AddProfile.AddProfile">
+        <activity android:name=".Page.SplashScreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

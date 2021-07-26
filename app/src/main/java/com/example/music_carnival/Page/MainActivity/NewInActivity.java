@@ -49,7 +49,7 @@ public class NewInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 currentIndex = bundle.getInt("pfp");
-                Log.d("bark", "we received: " + currentIndex);
+                Log.d("bark", "BACK SENDING: " + currentIndex + " back MAIN");
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
@@ -83,6 +83,13 @@ public class NewInActivity extends AppCompatActivity {
     public void sendDataToActivity(int index) {
         Intent intent = new Intent(this, PlayNewInSongActivity.class);
         intent.putExtra("index", index);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        currentIndex = bundle.getInt("pfp");
+        Log.d("bark", "NEWIN sending: " + currentIndex + "to PLAYNEWINACTIVITY");
+        int i = bundle.getInt("pfp");
+        intent.putExtra("pfp", i);
+
         startActivity(intent);
 
     }
