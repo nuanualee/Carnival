@@ -57,7 +57,8 @@ public class AddToPlaylist extends AppCompatActivity {
 
 
     public void addtoFavourite(View view) {
-        Toast.makeText(this, "ADDED TO PLAYLIST!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Added to Playlist!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
 

@@ -227,8 +227,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
             // Log.d("temasek", "running");
             seekbar.setProgress(player.getCurrentPosition());
             handler.postDelayed(this, 1000); //this, run this runnable. will call itself 1 sec after.
-
-
+            
         }
     };
 
