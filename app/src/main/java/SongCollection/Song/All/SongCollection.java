@@ -19,7 +19,7 @@ public class SongCollection {
                 "https://firebasestorage.googleapis.com/v0/b/musiccarnival-553f3.appspot.com/o/Harry%20Styles%20-%20Fine%20Line%20(Official%20Audio).mp3?alt=media&token=8443598d-8e5b-4af0-882b-a71de1d859fc",
                 2.87,
                 R.drawable.harrystyles);
-        Song angelsLikeYou = new Song("btnMain2",
+        Song angelsLikeYou = new Song("txtAngelsLikeYou",
                 "Plastic Hearts",
                 "Miley Cyrus",
                 "https://firebasestorage.googleapis.com/v0/b/musiccarnival-553f3.appspot.com/o/Miley%20Cyrus%20-%20Angels%20Like%20You%20(Audio).mp3?alt=media&token=8aa1b5c5-2845-4be6-a0ea-2c419eb26bc2",
