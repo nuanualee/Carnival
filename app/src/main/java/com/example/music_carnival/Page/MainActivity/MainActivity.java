@@ -398,6 +398,13 @@ public class MainActivity extends AppCompatActivity {
     public void sendArtistToActivity(int index) {
         Intent intent = new Intent(this, PlayArtistActivity.class);
         intent.putExtra("index", index);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        currentIndex = bundle.getInt("pfp");
+        Log.d("bark", "MAIN received: " + currentIndex);
+        int i = bundle.getInt("pfp");
+        intent.putExtra("pfp", i);
+
         startActivity(intent);
     }
 

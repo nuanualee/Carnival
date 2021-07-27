@@ -8,7 +8,7 @@ public class ArtistCollection {
 
     public ArtistCollection (){
 
-        Artist harryStyles = new Artist("txtArtist1",
+        Artist harryStyles = new Artist("artistHarryStyles",
                 "HARRY" +  "\nSTYLES",
                 "Sign Of The Times",
                 "Watermelon Sugar",
@@ -22,7 +22,7 @@ public class ArtistCollection {
                 R.drawable.artist_harrystyles);
 
 
-        Artist mileyCyrus = new Artist("txtArtist2",
+        Artist mileyCyrus = new Artist("artistMileyCyrus",
                 "MILEY" +  "\nCYRUS",
                 "Party in the U.S.A",
                 "Wrecking Ball",
@@ -49,7 +49,7 @@ public class ArtistCollection {
                 1.3,
                 R.drawable.artist_nissy);
 
-        Artist pink = new Artist("txtArtist4",
+        Artist pink = new Artist("artistPink",
                 "P!NK",
                 "Don't Let Me Get Me",
                 "Just Give Me A Reason",
