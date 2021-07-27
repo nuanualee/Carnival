@@ -41,6 +41,7 @@ public class PlaySongActivity extends AppCompatActivity {
     private int drawable;
     private int currentIndex = -1;
 
+    private int songIndex = -1;
 
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
@@ -70,7 +71,8 @@ public class PlaySongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_song);
 
-
+        //playpause
+        btnPlayPause = findViewById(R.id.btnPlayPause);
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
             Bundle songData = this.getIntent().getExtras();
@@ -81,10 +83,15 @@ public class PlaySongActivity extends AppCompatActivity {
         }
 
 
+
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
             pfpCurrentIndex = bundle.getInt("pfp");
             Log.d("bark", "pfp received: " + pfpCurrentIndex);
+
+            songIndex = bundle.getInt("index");
+            Log.d("temasek", "song array list no. received: " + songIndex);
+
             int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(pfpCurrentIndex);
         }
@@ -114,13 +121,23 @@ public class PlaySongActivity extends AppCompatActivity {
                             Intent intent3 = new Intent(PlaySongActivity.this, Countdown.class);
 
                             intent3.putExtra("ALBUM", drawable);
-                            //intent.getExtras().getInt("pfp");
-                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+                            Log.d("temasek", "PLAYSONGACTIVITY sending over PFP " + pfpCurrentIndex);
                             intent3.putExtra("pfp", pfpCurrentIndex);
                             intent3.putExtra("genre","mainActivity");
 
+                            songIndex = bundle.getInt("index");
+                            Log.d("temasek", "song array list no. sending: " + songIndex);
+                            int i = bundle.getInt("index");
+                            intent3.putExtra("index",i);
+
+                           /*  int songIndex = intent3.getExtras().getInt("index");
+                            intent3.putExtra("index",songIndex);
+                            Log.d("temasek", "PLAYSONGACTIVITY sending over SONG " + songIndex); */
 
                             startActivity(intent3);
+                            if (player != null) {
+                                player.release();
+                            }
 
                         }
 
@@ -157,8 +174,6 @@ public class PlaySongActivity extends AppCompatActivity {
         });
 
 
-        //playpause
-        btnPlayPause = findViewById(R.id.btnPlayPause);
         btnPlayPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

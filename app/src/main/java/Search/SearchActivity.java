@@ -131,7 +131,7 @@ public class SearchActivity extends AppCompatActivity {
         mSearchList.add(new Search("four",
                 "Walk Me Home",
                 "P!nk",
-                R.drawable.plastichearts));
+                R.drawable.hurt2bhuman));
         mSearchList.add(new Search("five",
                 "Super Bass",
                 "Nicki Minaj",

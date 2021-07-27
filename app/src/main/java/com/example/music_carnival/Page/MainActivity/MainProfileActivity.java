@@ -58,10 +58,19 @@ public class MainProfileActivity extends AppCompatActivity {
             //set data on textview after if
             txt.setText(name);
         }
+        mainTxtCategory = findViewById(R.id.mainTxtCategory);
+        Intent intent = getIntent();
 
+        Bundle feeling = this.getIntent().getExtras();
+        String feelingIndex = feeling.getString("title");
+        Log.d("temasek", "PhotoCate receieved Feeling: " + feelingIndex);
 
-
-       // if ()
+        if (mainTxtCategory != null) {
+            mainTxtCategory.setText("Feeling " + getIntent().getStringExtra("title"));
+        } else {
+            mainTxtCategory.setText("Feeling rhythm");
+        }
+        // if ()
 
         mainTxtCategory = findViewById(R.id.mainTxtCategory);
         btnGoCategory = findViewById(R.id.arrowGoCategory);
@@ -71,7 +80,7 @@ public class MainProfileActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainProfileActivity.this, PhotoCateActivity.class);
 
                 currentIndex = bundle.getInt("pfp");
-                Log.d("bark", "we received: " + currentIndex);
+                Log.d("bark", "CLICKING FEELING received: " + currentIndex);
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
                 intent.putExtra("pfp", i);
@@ -79,6 +88,9 @@ public class MainProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
         btnGoCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,6 +133,7 @@ public class MainProfileActivity extends AppCompatActivity {
         });
 
     }
+
     public void displayAnimalBasedOnIndex(int selectedIndex) {
         Done done = doneCollection.getCurrentAnimal(selectedIndex);
         drawable = done.getDrawable();
@@ -131,19 +144,23 @@ public class MainProfileActivity extends AppCompatActivity {
     }
 
 
-
-
     public void friendsSelection(View view) {
         String friendId = getResources().getResourceEntryName(view.getId());
         int currentFriendArrayIndex = friendsCollection.searchFriendById(friendId);
 
-        Log.d("temasek","The current friend array position is " + currentFriendArrayIndex);
+        Log.d("temasek", "The current friend array position is " + currentFriendArrayIndex);
         sendFriendstoActivity(currentFriendArrayIndex);
     }
 
-    public void sendFriendstoActivity (int index){
-        Intent intent = new Intent (this, PlayFriendActivity.class );
-        intent.putExtra("index",index);
+    public void sendFriendstoActivity(int index) {
+        Intent intent = new Intent(this, PlayFriendActivity.class);
+        intent.putExtra("index", index);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        currentIndex = bundle.getInt("pfp");
+        Log.d("bark", "MAIN received: " + currentIndex);
+        int i = bundle.getInt("pfp");
+        intent.putExtra("pfp", i);
         startActivity(intent);
     }
 

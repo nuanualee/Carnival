@@ -42,6 +42,8 @@ public class AddProfileDone extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_profile_done);
 
+
+
         rememberMe = findViewById(R.id.rememberMe);
         sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
         //default value of checkbox is false
@@ -85,7 +87,10 @@ public class AddProfileDone extends AppCompatActivity {
                 if (!userStr.equals("")) {
                 Toast.makeText(AddProfileDone.this, "Login succesfully!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddProfileDone.this, MainActivity.class);
-                    intent.putExtra("index", i);
+                    intent.putExtra("pfp", i);
+                    displayAnimalBasedOnIndex(currentIndex);
+
+
                     startActivity(intent);
                     finish();
                 } else {

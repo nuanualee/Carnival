@@ -5,14 +5,24 @@ public class MyMoment {
     String userName;
     String userDetail;
     String songChose;
+    String keyMoment;
 
     public MyMoment() {
     }
 
-    public MyMoment(String userName, String userDetail, String songChose) {
+    public MyMoment(String userName, String userDetail, String songChose, String keyMoment) {
         this.userName = userName;
         this.userDetail = userDetail;
         this.songChose = songChose;
+        this.keyMoment = keyMoment;
+    }
+
+    public String getKeyMoment() {
+        return keyMoment;
+    }
+
+    public void setKeyMoment(String keyMoment) {
+        this.keyMoment = keyMoment;
     }
 
     public String getUserName() {

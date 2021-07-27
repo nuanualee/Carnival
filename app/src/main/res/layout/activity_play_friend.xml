@@ -8,413 +8,415 @@
     tools:context=".Page.Playlist.Friends.Friends">
 
 
-    <ScrollView
+    <ImageView
+        android:id="@+id/plyBG"
         android:layout_width="match_parent"
-        android:layout_height="770dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="293dp"
+        android:background="@color/matte_purple"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/forFND"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="268dp"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/bright_purple"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_friendsNameDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="NAME"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/forFND"
+        app:layout_constraintStart_toStartOf="@+id/forFND"
+        app:layout_constraintTop_toTopOf="@+id/forFND" />
+
+
+    <TextView
+        android:id="@+id/txtFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="328dp"
+        android:text="Friends"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/viewFriend"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/pfp_alpaca"
+        app:layout_constraintBottom_toTopOf="@+id/forFND"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:shapeAppearanceOverlay="@style/MoreRound"
+        app:strokeColor="@color/orange"
+        app:strokeWidth="5dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFriends">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <ImageView
-                android:id="@+id/plyBG"
-                android:layout_width="match_parent"
-                android:layout_height="293dp"
-                android:background="@color/matte_purple"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <TextView
-                android:id="@+id/forPND"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="260dp"
-                android:background="@drawable/rounded"
-                android:backgroundTint="@color/bright_purple"
-                android:textColor="@android:color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txt_playlistNameDisplay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
-                android:text="NAME"
-                android:textColor="@color/white"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/forPND"
-                app:layout_constraintStart_toStartOf="@+id/forPND"
-                app:layout_constraintTop_toTopOf="@+id/forPND" />
-
-
-            <TextView
-                android:id="@+id/txtFriends"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="328dp"
-                android:text="Friends"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.046"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/viewFriend"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:id="@+id/friend1"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="1dp"
                 android:src="@drawable/pfp_alpaca"
-                app:layout_constraintBottom_toTopOf="@+id/forPND"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.716"
                 app:shapeAppearanceOverlay="@style/MoreRound"
                 app:strokeColor="@color/orange"
-                app:strokeWidth="5dp" />
+                app:strokeWidth="2dp" />
 
-            <HorizontalScrollView
-                android:id="@+id/horizontal1"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtFriends">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/friend2"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/pfp_alpaca"
+                app:layout_constraintStart_toEndOf="@id/friend1"
+                app:layout_constraintTop_toTopOf="@id/friend1"
+                app:shapeAppearanceOverlay="@style/MoreRound"
+                app:strokeColor="@color/orange"
+                app:strokeWidth="2dp" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/friend3"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/pfp_alpaca"
+                app:layout_constraintStart_toEndOf="@id/friend2"
+                app:layout_constraintTop_toTopOf="@id/friend2"
+                app:shapeAppearanceOverlay="@style/MoreRound"
+                app:strokeColor="@color/orange"
+                app:strokeWidth="2dp" />
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/friend1"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="1dp"
-                        android:src="@drawable/pfp_alpaca"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:shapeAppearanceOverlay="@style/MoreRound"
-                        app:strokeColor="@color/orange"
-                        app:strokeWidth="2dp" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/friend4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/pfp_alpaca"
+                app:layout_constraintStart_toEndOf="@id/friend3"
+                app:layout_constraintTop_toTopOf="@id/friend3"
+                app:shapeAppearanceOverlay="@style/MoreRound"
+                app:strokeColor="@color/orange"
+                app:strokeWidth="2dp" />
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/friend2"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="1dp"
-                        android:src="@drawable/pfp_alpaca"
-                        app:layout_constraintStart_toEndOf="@id/friend1"
-                        app:layout_constraintTop_toTopOf="@id/friend1"
-                        app:shapeAppearanceOverlay="@style/MoreRound"
-                        app:strokeColor="@color/orange"
-                        app:strokeWidth="2dp" />
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/friend3"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="1dp"
-                        android:src="@drawable/pfp_alpaca"
-                        app:layout_constraintStart_toEndOf="@id/friend2"
-                        app:layout_constraintTop_toTopOf="@id/friend2"
-                        app:shapeAppearanceOverlay="@style/MoreRound"
-                        app:strokeColor="@color/orange"
-                        app:strokeWidth="2dp" />
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/friend4"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="1dp"
-                        android:src="@drawable/pfp_alpaca"
-                        app:layout_constraintStart_toEndOf="@id/friend3"
-                        app:layout_constraintTop_toTopOf="@id/friend3"
-                        app:shapeAppearanceOverlay="@style/MoreRound"
-                        app:strokeColor="@color/orange"
-                        app:strokeWidth="2dp" />
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/friend5"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="1dp"
-                        android:src="@drawable/pfp_alpaca"
-                        app:layout_constraintStart_toEndOf="@id/friend4"
-                        app:layout_constraintTop_toTopOf="@id/friend4"
-                        app:shapeAppearanceOverlay="@style/MoreRound"
-                        app:strokeColor="@color/orange"
-                        app:strokeWidth="2dp" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </HorizontalScrollView>
-
-
-            <TextView
-                android:id="@+id/txtPlaylist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="460dp"
-                android:text="Playlist"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.046"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <HorizontalScrollView
-                android:id="@+id/horizontal2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPlaylist">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/playlistCover1"
-                        android:layout_width="200dp"
-                        android:layout_height="150dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="1dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/clouds_in_heads"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:shapeAppearanceOverlay="@style/RoundedSquare" />
-
-                    <TextView
-                        android:id="@+id/playlistName1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="6dp"
-                        android:text="NAME"
-                        android:textSize="25sp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/playlistCover1"
-                        app:layout_constraintTop_toTopOf="@+id/playlistCover1" />
-
-                    <TextView
-                        android:id="@+id/playlistCreator1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:text="Creator  |"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
-                        app:layout_constraintStart_toStartOf="@+id/playlistName1"
-                        app:layout_constraintTop_toTopOf="@+id/playlistName1" />
-
-                    <TextView
-                        android:id="@+id/playlistGenre1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="  Genre"
-                        android:textSize="16sp"
-                        android:textColor="@color/peach"
-                        app:layout_constraintStart_toEndOf="@+id/playlistCreator1"
-                        app:layout_constraintTop_toTopOf="@+id/playlistCreator1" />
-
-
-
-
-
-
-
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/playlistCover2"
-                        android:layout_width="200dp"
-                        android:layout_height="150dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="1dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/clouds_in_heads"
-                        app:layout_constraintStart_toEndOf="@id/playlistCover1"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:shapeAppearanceOverlay="@style/RoundedSquare" />
-
-                    <TextView
-                        android:id="@+id/playlistName2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="91dp"
-                        android:text="NAME"
-                        android:textColor="@color/white"
-                        android:textSize="25sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/playlistCover2"
-                        app:layout_constraintTop_toTopOf="@+id/playlistCover2" />
-
-                    <TextView
-                        android:id="@+id/playlistCreator2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:text="Creator  |"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
-                        app:layout_constraintStart_toStartOf="@+id/playlistName2"
-                        app:layout_constraintTop_toTopOf="@+id/playlistName2" />
-
-                    <TextView
-                        android:id="@+id/playlistGenre2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="  Genre"
-                        android:textSize="16sp"
-                        android:textColor="@color/peach"
-                        app:layout_constraintStart_toEndOf="@+id/playlistCreator2"
-                        app:layout_constraintTop_toTopOf="@+id/playlistCreator2" />
-
-
-
-
-
-
-
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/playlistCover3"
-                        android:layout_width="200dp"
-                        android:layout_height="150dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="1dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/clouds_in_heads"
-                        app:layout_constraintStart_toEndOf="@id/playlistCover2"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:shapeAppearanceOverlay="@style/RoundedSquare" />
-
-                    <TextView
-                        android:id="@+id/playlistName3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="6dp"
-                        android:text="NAME"
-                        android:textSize="25sp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/playlistCover3"
-                        app:layout_constraintTop_toTopOf="@+id/playlistCover3" />
-
-                    <TextView
-                        android:id="@+id/playlistCreator3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:text="Creator  |"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
-                        app:layout_constraintStart_toStartOf="@+id/playlistName3"
-                        app:layout_constraintTop_toTopOf="@+id/playlistName3" />
-
-                    <TextView
-                        android:id="@+id/playlistGenre3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="  Genre"
-                        android:textSize="16sp"
-                        android:textColor="@color/peach"
-                        app:layout_constraintStart_toEndOf="@+id/playlistCreator3"
-                        app:layout_constraintTop_toTopOf="@+id/playlistCreator3" />
-
-
-
-
-
-
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/playlistCover4"
-                        android:layout_width="200dp"
-                        android:layout_height="150dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="1dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/clouds_in_heads"
-                        app:layout_constraintStart_toEndOf="@id/playlistCover3"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:shapeAppearanceOverlay="@style/RoundedSquare" />
-
-                    <TextView
-                        android:id="@+id/playlistName4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="91dp"
-                        android:text="NAME"
-                        android:textSize="25sp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/playlistCover4"
-                        app:layout_constraintTop_toTopOf="@+id/playlistCover4" />
-
-                    <TextView
-                        android:id="@+id/playlistCreator4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:text="Creator  |"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
-                        app:layout_constraintStart_toStartOf="@+id/playlistName4"
-                        app:layout_constraintTop_toTopOf="@+id/playlistName4" />
-
-                    <TextView
-                        android:id="@+id/playlistGenre4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="  Genre"
-                        android:textSize="16sp"
-                        android:textColor="@color/peach"
-                        app:layout_constraintStart_toEndOf="@+id/playlistCreator4"
-                        app:layout_constraintTop_toTopOf="@+id/playlistCreator4" />
-
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </HorizontalScrollView>
-
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/friend5"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/pfp_alpaca"
+                app:layout_constraintStart_toEndOf="@id/friend4"
+                app:layout_constraintTop_toTopOf="@id/friend4"
+                app:shapeAppearanceOverlay="@style/MoreRound"
+                app:strokeColor="@color/orange"
+                app:strokeWidth="2dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </HorizontalScrollView>
 
+
+    <TextView
+        android:id="@+id/txtPlaylist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="460dp"
+        android:text="Playlist"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlaylist">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/playlistCover1"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/clouds_in_heads"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <TextView
+                android:id="@+id/playlistName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:text="NAME"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover1"
+                app:layout_constraintTop_toTopOf="@+id/playlistCover1" />
+
+            <TextView
+                android:id="@+id/playlistCreator1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Creator  |"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/playlistName1"
+                app:layout_constraintTop_toTopOf="@+id/playlistName1" />
+
+            <TextView
+                android:id="@+id/playlistGenre1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Genre"
+                android:textColor="@color/peach"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/playlistCreator1"
+                app:layout_constraintTop_toTopOf="@+id/playlistCreator1" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/playlistCover2"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/clouds_in_heads"
+                app:layout_constraintStart_toEndOf="@id/playlistCover1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <TextView
+                android:id="@+id/playlistName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="91dp"
+                android:text="NAME"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover2"
+                app:layout_constraintTop_toTopOf="@+id/playlistCover2" />
+
+            <TextView
+                android:id="@+id/playlistCreator2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Creator  |"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/playlistName2"
+                app:layout_constraintTop_toTopOf="@+id/playlistName2" />
+
+            <TextView
+                android:id="@+id/playlistGenre2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Genre"
+                android:textColor="@color/peach"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/playlistCreator2"
+                app:layout_constraintTop_toTopOf="@+id/playlistCreator2" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/playlistCover3"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/clouds_in_heads"
+                app:layout_constraintStart_toEndOf="@id/playlistCover2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <TextView
+                android:id="@+id/playlistName3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:text="NAME"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover3"
+                app:layout_constraintTop_toTopOf="@+id/playlistCover3" />
+
+            <TextView
+                android:id="@+id/playlistCreator3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Creator  |"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/playlistName3"
+                app:layout_constraintTop_toTopOf="@+id/playlistName3" />
+
+            <TextView
+                android:id="@+id/playlistGenre3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Genre"
+                android:textColor="@color/peach"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/playlistCreator3"
+                app:layout_constraintTop_toTopOf="@+id/playlistCreator3" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/playlistCover4"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/clouds_in_heads"
+                app:layout_constraintStart_toEndOf="@id/playlistCover3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <TextView
+                android:id="@+id/playlistName4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="91dp"
+                android:text="NAME"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/playlistCover4"
+                app:layout_constraintTop_toTopOf="@+id/playlistCover4" />
+
+            <TextView
+                android:id="@+id/playlistCreator4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Creator  |"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/playlistName4"
+                app:layout_constraintTop_toTopOf="@+id/playlistName4" />
+
+            <TextView
+                android:id="@+id/playlistGenre4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Genre"
+                android:textColor="@color/peach"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/playlistCreator4"
+                app:layout_constraintTop_toTopOf="@+id/playlistCreator4" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="42dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="365dp"
+        android:background="@color/transparent"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+
+
+    <TextView
+        android:id="@+id/txtYoure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You're friends with:"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/plyBG"
+        app:layout_constraintVertical_bias="0.875" />
+
+    <ImageView
+        android:id="@+id/pfpFriendActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pfp_fawn"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

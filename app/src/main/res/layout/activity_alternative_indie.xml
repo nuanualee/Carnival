@@ -151,6 +151,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="48dp"
                         android:text="Shy Away"
+                        android:onClick="handleSelection"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -210,6 +211,7 @@
 
                     <TextView
                         android:id="@+id/txtPHTP"
+                        android:onClick="handleSelection"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
@@ -274,6 +276,7 @@
 
                     <TextView
                         android:id="@+id/txtHB"
+                        android:onClick="handleSelection"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
@@ -338,6 +341,7 @@
 
                     <TextView
                         android:id="@+id/txtMagic"
+                        android:onClick="handleSelection"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"

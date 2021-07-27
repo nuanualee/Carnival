@@ -57,5 +57,17 @@
         app:layout_constraintStart_toEndOf="@+id/txtActivity"
         app:layout_constraintTop_toTopOf="@+id/txtActivity" />
 
+    <CheckBox
+        android:id="@+id/rememberMePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/torquise"
+        android:text="Remember Me"
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/btnsavecate"
+        app:layout_constraintStart_toStartOf="@+id/btnsavecate"
+        app:layout_constraintTop_toBottomOf="@+id/btnsavecate" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

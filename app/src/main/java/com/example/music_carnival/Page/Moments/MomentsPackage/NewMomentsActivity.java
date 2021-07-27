@@ -25,19 +25,25 @@ import java.util.Random;
 
 public class NewMomentsActivity extends AppCompatActivity {
 
+    //init
     Button btnAddNow, btnCancel;
     EditText userName, userDetails, songChosen;
     DatabaseReference reference;
     Integer momentNum = new Random().nextInt();
 
+    //change int to string of our randomized number
+    String keyMoments = Integer.toString(momentNum);
+
     private int drawable;
     private int currentIndex = -1;
     DoneCollection doneCollection = new DoneCollection();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_moments);
+
 
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Moments
@@ -70,7 +76,7 @@ public class NewMomentsActivity extends AppCompatActivity {
                         dataSnapshot.getRef().child("userName").setValue(userName.getText().toString());
                         dataSnapshot.getRef().child("userDetail").setValue(userDetails.getText().toString());
                         dataSnapshot.getRef().child("songChose").setValue(songChosen.getText().toString());
-
+                        dataSnapshot.getRef().child("momentNum").setValue(keyMoments);
 
                         if (userName.getText().toString().equals("") && userDetails.getText().toString().equals("")
                                 && songChosen.getText().toString().equals("")) {
@@ -106,7 +112,7 @@ public class NewMomentsActivity extends AppCompatActivity {
                             Intent intent = new Intent(NewMomentsActivity.this, Moments.class);
 
                             currentIndex = bundle.getInt("pfp");
-                            Log.d("bark", "we received: " + currentIndex);
+                            Log.d("bark", "newmoments sending: " + currentIndex);
                             int i = bundle.getInt("pfp");
                             displayAnimalBasedOnIndex(currentIndex);
                             intent.putExtra("pfp", i);

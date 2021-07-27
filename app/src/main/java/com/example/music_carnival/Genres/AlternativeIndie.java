@@ -106,7 +106,7 @@ public class AlternativeIndie extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         currentIndex = bundle.getInt("pfp");
-        Log.d("bark", "MAIN received: " + currentIndex);
+        Log.d("bark", "ALT received: " + currentIndex);
         int i = bundle.getInt("pfp");
         intent.putExtra("pfp", i);
 

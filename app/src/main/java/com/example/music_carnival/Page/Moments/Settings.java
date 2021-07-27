@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.AddDone.DoneCollection;
-import com.example.music_carnival.Page.MainActivity.MainActivity;
+import com.example.music_carnival.Page.Moments.MomentsPackage.Moments;
 import com.example.music_carnival.R;
 
 public class Settings extends AppCompatActivity {
@@ -47,7 +47,7 @@ public class Settings extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Settings.this, MainActivity.class);
+                Intent intent = new Intent(Settings.this, Moments.class);
 
                 currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);

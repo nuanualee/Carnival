@@ -43,7 +43,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
     private String filelink = "";
     private int drawable;
     private int currentIndex = -1;
-
+    private int songIndex = -1;
 
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
@@ -71,6 +71,9 @@ public class PlayNewInSongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_song);
 
+
+        //playpause
+        btnPlayPause = findViewById(R.id.btnPlayPause);
 
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
@@ -121,13 +124,19 @@ public class PlayNewInSongActivity extends AppCompatActivity {
                             Intent intent3 = new Intent(PlayNewInSongActivity.this, Countdown.class);
 
                             intent3.putExtra("ALBUM", drawable);
-                            //intent.getExtras().getInt("index");
                             Log.d("temasek", "Countdown received " + pfpCurrentIndex);
                             intent3.putExtra("pfp", pfpCurrentIndex);
                             intent3.putExtra("genre","newIn");
 
-                            startActivity(intent3);
+                            songIndex = bundle.getInt("index");
+                            Log.d("temasek", "song array list no. sending: " + songIndex);
+                            int i = bundle.getInt("index");
+                            intent3.putExtra("index",i);
 
+                            startActivity(intent3);
+                            if (player != null) {
+                                player.release();
+                            }
                         }
 
                         return true;
@@ -162,9 +171,6 @@ public class PlayNewInSongActivity extends AppCompatActivity {
             }
         });
 
-
-        //playpause
-        btnPlayPause = findViewById(R.id.btnPlayPause);
 
         btnPlayPause.setOnClickListener(new View.OnClickListener() {
             @Override

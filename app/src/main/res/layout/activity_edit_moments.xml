@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_purple"
-    tools:context=".Page.Moments.MomentsPackage.NewMomentsActivity">
-
+    tools:context=".Page.Moments.MomentsPackage.EditMomentsActivity">
 
 
 
     <ImageView
-        android:id="@+id/pfpNewMoments"
+        android:id="@+id/pfpPost"
         android:layout_width="82dp"
         android:layout_height="82dp"
         android:layout_marginTop="48dp"
@@ -26,10 +25,10 @@
 
 
     <TextView
-        android:id="@+id/txtNewM"
+        android:id="@+id/txtUpdateM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add New Moments"
+        android:text="Moments Post"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,8 +48,8 @@
         android:textColor="@color/white"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/pfpNewMoments"
-        app:layout_constraintTop_toBottomOf="@+id/pfpNewMoments" />
+        app:layout_constraintStart_toStartOf="@+id/pfpPost"
+        app:layout_constraintTop_toBottomOf="@+id/pfpPost" />
 
     <EditText
         android:id="@+id/userNameE"
@@ -120,7 +119,7 @@
 
 
     <Button
-        android:id="@+id/btnAddNow"
+        android:id="@+id/btnCancel"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -128,7 +127,7 @@
         android:gravity="center"
         android:padding="15dp"
         android:radius="10dp"
-        android:text="Add Now"
+        android:text="CANCEL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +135,7 @@
 
 
     <Button
-        android:id="@+id/btnCancel"
+        android:id="@+id/btnDelete"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -145,9 +144,17 @@
         android:padding="15dp"
         android:radius="10dp"
         android:text="CANCEL"
-        app:layout_constraintEnd_toEndOf="@+id/btnAddNow"
-        app:layout_constraintStart_toStartOf="@+id/btnAddNow"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddNow" />
+        app:layout_constraintEnd_toEndOf="@+id/btnCancel"
+        app:layout_constraintStart_toStartOf="@+id/btnCancel"
+        app:layout_constraintTop_toBottomOf="@+id/btnCancel" />
 
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animDelete"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDelete"
+        app:layout_constraintEnd_toEndOf="@+id/btnDelete"
+        app:layout_constraintStart_toStartOf="@+id/btnDelete"
+        app:layout_constraintTop_toTopOf="@+id/btnDelete"
+        app:lottie_rawRes="@raw/animdelete" />
 </androidx.constraintlayout.widget.ConstraintLayout>

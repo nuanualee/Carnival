@@ -42,7 +42,7 @@ public class PlayKPopSongActivity extends AppCompatActivity {
     private String filelink = "";
     private int drawable;
     private int currentIndex = -1;
-
+    private int songIndex = -1;
 
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
@@ -71,6 +71,30 @@ public class PlayKPopSongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_song);
 
+
+        //playpause
+        btnPlayPause = findViewById(R.id.btnPlayPause);
+        Intent intent = getIntent();
+        if (intent.getExtras() != null) {
+            Bundle songData = this.getIntent().getExtras();
+            int currentIndex = songData.getInt("index");
+            Log.d("temasek", "We receieved: " + currentIndex);
+            displaySongBasedOnIndex(currentIndex);
+            playSong(filelink);
+        }
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        if (bundle != null) {
+            pfpCurrentIndex = bundle.getInt("pfp");
+            Log.d("bark", "pfp received: " + pfpCurrentIndex);
+
+            songIndex = bundle.getInt("index");
+            Log.d("temasek", "song array list no. received: " + songIndex);
+
+            int i = bundle.getInt("pfp");
+            displayAnimalBasedOnIndex(pfpCurrentIndex);
+        }
+
+
         menu_button = findViewById(R.id.btnMenu);
         menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
             @Override
@@ -95,14 +119,20 @@ public class PlayKPopSongActivity extends AppCompatActivity {
                             Intent intent3 = new Intent(PlayKPopSongActivity.this, Countdown.class);
 
                             intent3.putExtra("ALBUM", drawable);
-                            //intent.getExtras().getInt("index");
-                            Log.d("temasek", "Countdown received " + currentIndex);
-                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+                            intent3.putExtra("pfp", pfpCurrentIndex);
                             intent3.putExtra("genre","kPop");
+
+                            songIndex = bundle.getInt("index");
+                            Log.d("temasek", "song array list no. sending: " + songIndex);
+                            int i = bundle.getInt("index");
+                            intent3.putExtra("index",i);
 
 
                             startActivity(intent3);
-
+                            if (player != null) {
+                                player.release();
+                            }
                         }
 
                         return true;
@@ -138,9 +168,6 @@ public class PlayKPopSongActivity extends AppCompatActivity {
         });
 
 
-        //playpause
-        btnPlayPause = findViewById(R.id.btnPlayPause);
-
         btnPlayPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -164,22 +191,6 @@ public class PlayKPopSongActivity extends AppCompatActivity {
         });
 
 
-        Intent intent = getIntent();
-
-        if (intent.getExtras() != null) {
-            Bundle songData = this.getIntent().getExtras();
-            int currentIndex = songData.getInt("index");
-            Log.d("temasek", "We receieved: " + currentIndex);
-            displaySongBasedOnIndex(currentIndex);
-            playSong(filelink);
-        }
-        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
-        if (bundle != null) {
-            currentIndex = bundle.getInt("index");
-            Log.d("bark", "we received: " + currentIndex);
-            int i = bundle.getInt("index");
-            displayAnimalBasedOnIndex(currentIndex);
-        }
 
         backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(new View.OnClickListener() {

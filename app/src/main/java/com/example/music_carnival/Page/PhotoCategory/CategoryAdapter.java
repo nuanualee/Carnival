@@ -12,12 +12,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.music_carnival.AddDone.DoneCollection;
 import com.example.music_carnival.Page.MainActivity.MainProfileActivity;
 import com.example.music_carnival.R;
 
 import java.util.List;
 
+
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+
+    private int drawable;
+    private int currentIndex = -1;
+    DoneCollection doneCollection = new DoneCollection();
 
     Context context;
     List<Category> categoryList;
@@ -45,18 +51,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         categoryViewHolder.iconImg.setImageDrawable(context.getResources().
                 getDrawable(category.getIconImg()));
 
-        categoryViewHolder.iconImg.setOnClickListener(new View.OnClickListener() {
+        final String getIconTitle = categoryList.get(i).getIconTitle();
+        categoryViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, category.getIconTitle(), Toast.LENGTH_SHORT).show();
-
-              if (category.getIconTitle().equals("Rhythm")){
-                  Intent intent = new Intent(context,MainProfileActivity.class);
-                  intent.putExtra("title", "RHYTHM");
-
-                  context.startActivity(intent);
-              }
-
+                Toast.makeText(context, categoryList.get(i).getIconTitle(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, MainProfileActivity.class);
+                intent.putExtra("title", getIconTitle);
+                intent.putExtra("index",i);
+                context.startActivity(intent);
             }
         });
 
@@ -85,6 +88,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public int getItemCount() {
         return categoryList.size();
     }
+
 
   /*  public int searchVibesById(String id){
         for (int i = 0; i < categoryList.size(); i++) { //song.length = 3 items

@@ -32,6 +32,8 @@ public class PhotoCateActivity extends AppCompatActivity {
     Button btnsavecate;
     Animation btt;
 
+    TextView mainTxtCategory;
+
     private int drawable;
     private int currentIndex = -1;
     DoneCollection doneCollection = new DoneCollection();
@@ -41,6 +43,7 @@ public class PhotoCateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_cate);
+
 
         btnsavecate = findViewById(R.id.btnsavecate);
         btt = AnimationUtils.loadAnimation(this, R.anim.btt);
@@ -97,6 +100,9 @@ public class PhotoCateActivity extends AppCompatActivity {
 
         categoryAdapter = new CategoryAdapter(this, categoryList);
         myCategoryList.setAdapter(categoryAdapter);
+      //  Bundle bundle = categoryAdapter.getIntent().getExtras(); //receiving Extras from Animal
+
+
 
 
         //snapping from Google
