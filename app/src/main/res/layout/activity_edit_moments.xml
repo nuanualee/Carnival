@@ -143,7 +143,7 @@
         android:gravity="center"
         android:padding="15dp"
         android:radius="10dp"
-        android:text="CANCEL"
+        android:text="DELETE"
         app:layout_constraintEnd_toEndOf="@+id/btnCancel"
         app:layout_constraintStart_toStartOf="@+id/btnCancel"
         app:layout_constraintTop_toBottomOf="@+id/btnCancel" />

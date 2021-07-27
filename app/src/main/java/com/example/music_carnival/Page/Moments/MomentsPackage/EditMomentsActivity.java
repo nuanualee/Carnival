@@ -99,6 +99,20 @@ public class EditMomentsActivity extends AppCompatActivity {
         });
 
 
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EditMomentsActivity.this, Moments.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "EDITMOMENTS sending: " + currentIndex + " back to MOMENTS");
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
+                startActivity(intent);
+            }
+        });
 
     }
 

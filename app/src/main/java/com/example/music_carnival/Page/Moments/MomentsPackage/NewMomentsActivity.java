@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.AddDone.DoneCollection;
+import com.example.music_carnival.Page.MainActivity.MainActivity;
 import com.example.music_carnival.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
+
+import SongCollection.Song.All.PlaySongActivity;
 
 public class NewMomentsActivity extends AppCompatActivity {
 
@@ -131,6 +134,22 @@ public class NewMomentsActivity extends AppCompatActivity {
                 });
             }
         });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NewMomentsActivity.this, Moments.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "NEWMOMENTSACTIVITY sending: " + currentIndex + " back to MOMENTS");
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void displayAnimalBasedOnIndex(int selectedIndex) {
