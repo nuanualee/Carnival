@@ -62,6 +62,7 @@ public class Moments extends AppCompatActivity {
         setContentView(R.layout.activity_moments);
 
 
+
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
             currentIndex = bundle.getInt("pfp");
@@ -71,6 +72,7 @@ public class Moments extends AppCompatActivity {
         }
 
 
+        //create event for adding of moments
         btnAddNew = findViewById(R.id.btnAddNew);
         btnAddNew.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +80,7 @@ public class Moments extends AppCompatActivity {
                 Intent intent = new Intent(Moments.this, NewMomentsActivity.class);
 
                 currentIndex = bundle.getInt("pfp");
-                Log.d("bark", "we received: " + currentIndex);
+                Log.d("bark", "MOMENTS received: " + currentIndex);
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
                 intent.putExtra("pfp", i);

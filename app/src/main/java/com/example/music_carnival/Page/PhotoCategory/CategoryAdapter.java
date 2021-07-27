@@ -1,7 +1,9 @@
 package com.example.music_carnival.Page.PhotoCategory;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +60,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                 Toast.makeText(context, categoryList.get(i).getIconTitle(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, MainProfileActivity.class);
                 intent.putExtra("title", getIconTitle);
-                intent.putExtra("index",i);
+
+                //PROFILE PIC SEND EXTRAS...
+                Intent intentpfp = ((Activity) context).getIntent();
+                int i = intentpfp.getIntExtra("pfp", currentIndex);
+                Log.d("bark", "CategoryADAPTER received" + i + " to be sent back to MAINPROFILEACTIVITY ");
+                intent.putExtra("pfp", i);
+
                 context.startActivity(intent);
             }
         });

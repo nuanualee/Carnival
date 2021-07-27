@@ -41,6 +41,8 @@ public class MainProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_profile);
 
+
+        //getting extras, if extras is NOT null we will get it
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
             currentIndex = bundle.getInt("pfp");
@@ -54,6 +56,7 @@ public class MainProfileActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
         String name = sharedPreferences.getString("NAME", "");
 
+        //getting name extras, if name extras is NOT null we will get it
         if (name != null) {
             //set data on textview after if
             txt.setText(name);
@@ -61,6 +64,7 @@ public class MainProfileActivity extends AppCompatActivity {
         mainTxtCategory = findViewById(R.id.mainTxtCategory);
         Intent intent = getIntent();
 
+        //for our feeling (xxx) text
         Bundle feeling = this.getIntent().getExtras();
         String feelingIndex = feeling.getString("title");
         Log.d("temasek", "PhotoCate receieved Feeling: " + feelingIndex);
@@ -70,8 +74,8 @@ public class MainProfileActivity extends AppCompatActivity {
         } else {
             mainTxtCategory.setText("Feeling rhythm");
         }
-        // if ()
 
+        //maintxtcategory and arrowgocategory goes the same activity
         mainTxtCategory = findViewById(R.id.mainTxtCategory);
         btnGoCategory = findViewById(R.id.arrowGoCategory);
         mainTxtCategory.setOnClickListener(new View.OnClickListener() {
@@ -95,27 +99,36 @@ public class MainProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainProfileActivity.this, PhotoCateActivity.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "CLICKING FEELING received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
             }
         });
 
 
+        //TO CARNIVAL
         btnMyCarnival = findViewById(R.id.btnMyCarnival);
         btnMyCarnival.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MainProfileActivity.this, MyCarnivalActivity.class);
+
                 currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
-
-
-                Intent intent = new Intent(MainProfileActivity.this, MyCarnivalActivity.class);
                 intent.putExtra("pfp", i);
+
                 startActivity(intent);
             }
         });
 
+        //back to our mainactivity
         backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +157,7 @@ public class MainProfileActivity extends AppCompatActivity {
     }
 
 
+    //FOR FRIENDS
     public void friendsSelection(View view) {
         String friendId = getResources().getResourceEntryName(view.getId());
         int currentFriendArrayIndex = friendsCollection.searchFriendById(friendId);

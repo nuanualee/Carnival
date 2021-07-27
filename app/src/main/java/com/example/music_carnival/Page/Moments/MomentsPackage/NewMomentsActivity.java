@@ -31,8 +31,8 @@ public class NewMomentsActivity extends AppCompatActivity {
     DatabaseReference reference;
     Integer momentNum = new Random().nextInt();
 
-    //change int to string of our randomized number
-    String keyMoments = Integer.toString(momentNum);
+    //change int to string of our randomized number moments post
+    String keyMoment = Integer.toString(momentNum);
 
     private int drawable;
     private int currentIndex = -1;
@@ -76,8 +76,9 @@ public class NewMomentsActivity extends AppCompatActivity {
                         dataSnapshot.getRef().child("userName").setValue(userName.getText().toString());
                         dataSnapshot.getRef().child("userDetail").setValue(userDetails.getText().toString());
                         dataSnapshot.getRef().child("songChose").setValue(songChosen.getText().toString());
-                        dataSnapshot.getRef().child("momentNum").setValue(keyMoments);
+                        dataSnapshot.getRef().child("momentNum").setValue(keyMoment);
 
+                        //if else empty fields, prevent user from entering null input
                         if (userName.getText().toString().equals("") && userDetails.getText().toString().equals("")
                                 && songChosen.getText().toString().equals("")) {
                             Toast.makeText(NewMomentsActivity.this, "Input the above fields!!", Toast.LENGTH_SHORT).show();

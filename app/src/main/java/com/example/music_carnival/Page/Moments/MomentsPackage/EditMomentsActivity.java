@@ -64,9 +64,10 @@ public class EditMomentsActivity extends AppCompatActivity {
         songChosen.setText(getIntent().getStringExtra("songChose"));
 
 
-        String numMomentNum = getIntent().getStringExtra("keyMoment");
+        final String numMomentNum = getIntent().getStringExtra("keyMoment");
         reference = FirebaseDatabase.getInstance().getReference().child("Moments").
                 child("Moments" + numMomentNum);
+
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,9 +77,9 @@ public class EditMomentsActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                           // lottieAnimationView.playAnimation();
+                           // lottieAnimationView.playAnimation(); animation not working..... leaving it out
                             Intent intent = new Intent(EditMomentsActivity.this,Moments.class);
-                            startActivity(intent);
+
 
                             currentIndex = bundle.getInt("pfp");
                             Log.d("bark", "editmoments sending : " + currentIndex + "after deletion");
@@ -86,8 +87,10 @@ public class EditMomentsActivity extends AppCompatActivity {
                             displayAnimalBasedOnIndex(currentIndex);
                             intent.putExtra("pfp", i);
 
-                            Toast.makeText(EditMomentsActivity.this, "Moments Deleted", Toast.LENGTH_SHORT).show();
+                            startActivity(intent);
+                            Toast.makeText(EditMomentsActivity.this, "Moments Post Deleted", Toast.LENGTH_SHORT).show();
                         } else {
+                            //safetynet, if cannot delete!
                             Toast.makeText(EditMomentsActivity.this, "Unable to delete!", Toast.LENGTH_SHORT).show();
                         }
                     }
