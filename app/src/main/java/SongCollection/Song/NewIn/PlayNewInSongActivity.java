@@ -109,16 +109,19 @@ public class PlayNewInSongActivity extends AppCompatActivity {
                             Intent intent = new Intent(PlayNewInSongActivity.this, AddToPlaylist.class);
                             intent.putExtra("TITLE", title);
                             startActivity(intent);
+
                         } else if (id == R.id.addToMoments) {
                             Intent intent2 = new Intent(PlayNewInSongActivity.this, NewMomentsActivity.class);
 
-
                             currentIndex = bundle.getInt("pfp");
-                            Log.d("bark", "we received: " + currentIndex);
+                            Log.d("bark", "PLAYNEWINACTIVITY sending: " + currentIndex);
                             int i = bundle.getInt("index");
                             displayAnimalBasedOnIndex(currentIndex);
                             intent2.putExtra("index", i);
+
+
                             startActivity(intent2);
+
 
                         } else if (id == R.id.countdownTimer) {
                             Intent intent3 = new Intent(PlayNewInSongActivity.this, Countdown.class);

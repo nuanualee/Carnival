@@ -116,10 +116,11 @@ public class PlaySongActivity extends AppCompatActivity {
                         } else if (id == R.id.addToMoments) {
                             Intent intent2 = new Intent(PlaySongActivity.this, NewMomentsActivity.class);
 
-                            intent2.putExtra("ALBUM", drawable);
-                            Log.d("temasek", "PLAYSONGACTIVITY sending over PFP " + pfpCurrentIndex);
-                            intent2.putExtra("pfp", pfpCurrentIndex);
-                            intent2.putExtra("genre","mainActivity");
+                            currentIndex = bundle.getInt("pfp");
+                            Log.d("bark", "PLAYSONGACTIVITY sending: " + currentIndex);
+                            int i = bundle.getInt("index");
+                            displayAnimalBasedOnIndex(currentIndex);
+                            intent2.putExtra("index", i);
 
                             startActivity(intent2);
 

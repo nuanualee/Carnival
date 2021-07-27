@@ -117,6 +117,13 @@ public class PlayContempSongActivity extends AppCompatActivity {
                             startActivity(intent);
                         } else if (id == R.id.addToMoments) {
                             Intent intent2 = new Intent(PlayContempSongActivity.this, NewMomentsActivity.class);
+
+                            currentIndex = bundle.getInt("pfp");
+                            Log.d("bark", "PLAYCONTEMPACTIVITY sending: " + currentIndex);
+                            int i = bundle.getInt("index");
+                            displayAnimalBasedOnIndex(currentIndex);
+                            intent2.putExtra("index", i);
+
                             startActivity(intent2);
 
                         } else if (id == R.id.countdownTimer) {
