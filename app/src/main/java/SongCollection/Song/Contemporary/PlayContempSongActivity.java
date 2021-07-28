@@ -1,5 +1,6 @@
 package SongCollection.Song.Contemporary;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -42,13 +43,16 @@ public class PlayContempSongActivity extends AppCompatActivity {
     private String filelink = "";
     private int drawable;
     private int currentIndex = -1;
-
     private int songIndex = -1;
 
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
 
-    private final MediaPlayer player = new MediaPlayer();
+    Dialog dialog;
+
+
+    //make mediaplayer static so it only plays song once and once, no repeating and crowding of songs
+    private static final MediaPlayer player = new MediaPlayer();
     private ImageButton btnPlayPause = null; //button initiate
     ContempSongCollection contempSongCollection = new ContempSongCollection();
     DoneCollection doneCollection = new DoneCollection();
@@ -301,16 +305,39 @@ public class PlayContempSongActivity extends AppCompatActivity {
     }
 
     public void playNext(View view) {
+        //init dialog
+        dialog = new Dialog(PlayContempSongActivity.this);
+        //show dialog
+        dialog.show();
+        dialog.setContentView(R.layout.playnext_dialog);
+        //set transparent bg
+        dialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
+
         currentIndex = contempSongCollection.getNextSong(currentIndex);
-        Toast.makeText(this, "Now Playing! : " + currentIndex, Toast.LENGTH_LONG).show();
+        //   Toast.makeText(this, "Now Playing! :  " + currentIndex, Toast.LENGTH_LONG).show();
         Log.d("temasek", "After playnext, the index is now : " + currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
     }
 
+
     public void playPrevious(View view) {
         currentIndex = contempSongCollection.getPrevSong(currentIndex);
-        Toast.makeText(this, "Now Playing! " + currentIndex, Toast.LENGTH_LONG).show();
+        //  Toast.makeText(this, "The current index now is: " + currentIndex, Toast.LENGTH_LONG).show();
+
+        //init dialog
+        dialog = new Dialog(PlayContempSongActivity.this);
+        //show dialog
+        dialog.show();
+        dialog.setContentView(R.layout.playprevious_dialog);
+        //set transparent bg
+        dialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
+
+
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
 

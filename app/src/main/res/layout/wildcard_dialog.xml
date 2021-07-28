@@ -15,8 +15,8 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieFindAnim"
-        android:layout_width="190dp"
-        android:layout_height="190dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:lottie_rawRes="@raw/animfind"
         app:lottie_autoPlay="true" />
 

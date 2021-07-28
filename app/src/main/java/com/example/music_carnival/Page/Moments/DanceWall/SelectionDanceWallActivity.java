@@ -1,5 +1,6 @@
 package com.example.music_carnival.Page.Moments.DanceWall;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +21,6 @@ import com.example.music_carnival.Page.Moments.DanceWall.Genres.DElecDanceWallAc
 import com.example.music_carnival.Page.Moments.DanceWall.Genres.HHDanceWallActivity;
 import com.example.music_carnival.Page.Moments.DanceWall.Genres.JPopDanceWallActivity;
 import com.example.music_carnival.Page.Moments.DanceWall.Genres.KPopDanceWallActivity;
-import com.example.music_carnival.Page.Moments.DanceWall.Genres.RBSoulDanceWallActivity;
 import com.example.music_carnival.Page.Moments.MomentsPackage.Moments;
 import com.example.music_carnival.R;
 
@@ -36,6 +36,9 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
     private int drawable;
     private int currentIndex = -1;
     DoneCollection doneCollection = new DoneCollection();
+
+
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +84,7 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 Toast.makeText(SelectionDanceWallActivity.this, "HIP-HOP!", Toast.LENGTH_SHORT).show();
 
 
-                cd_hiphop.startAnimation(animSlide);
+              //  cd_hiphop.startAnimation(animSlide);
 
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, HHDanceWallActivity.class);
@@ -91,9 +94,18 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(currentIndex);
                 intent.putExtra("pfp", i);
 
+                //init dialog
+                dialog = new Dialog(SelectionDanceWallActivity.this);
+                //show dialog
+                dialog.show();
+                dialog.setContentView(R.layout.dance_dialog);
+                //set transparent bg
+                dialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
 
                 startActivity(intent);
-                overridePendingTransition(0, 0);
+                //overridePendingTransition(0, 0);
             }
         });
 
@@ -104,7 +116,7 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(SelectionDanceWallActivity.this, "DANCE/ELECTRONIC!", Toast.LENGTH_SHORT).show();
 
-                cd_dance.startAnimation(animSlide);
+               // cd_dance.startAnimation(animSlide);
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, DElecDanceWallActivity.class);
 
@@ -113,9 +125,20 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
+                //init dialog
+                dialog = new Dialog(SelectionDanceWallActivity.this);
+                //show dialog
+                dialog.show();
+                dialog.setContentView(R.layout.dance_dialog);
+                //set transparent bg
+                dialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+
+
                 intent.putExtra("pfp", i);
                 startActivity(intent);
-                overridePendingTransition(0, 0);
+            // overridePendingTransition(0, 0);
             }
         });
 
@@ -126,7 +149,7 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(SelectionDanceWallActivity.this, "R&B/SOUL!", Toast.LENGTH_SHORT).show();
 
-                cd_rbsoul.startAnimation(animSlide);
+            /*   // cd_rbsoul.startAnimation(animSlide);
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, RBSoulDanceWallActivity.class);
                 currentIndex = bundle.getInt("pfp");
@@ -134,9 +157,21 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
+
+                //init dialog
+                dialog = new Dialog(SelectionDanceWallActivity.this);
+                //show dialog
+                dialog.show();
+                dialog.setContentView(R.layout.dance_dialog);
+                //set transparent bg
+                dialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+
+
                 intent.putExtra("pfp", i);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
+                startActivity(intent); */
+             //   overridePendingTransition(0, 0);
 
             }
         });
@@ -149,16 +184,28 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(SelectionDanceWallActivity.this, "ALTERNATIVE/INDIE!", Toast.LENGTH_SHORT).show();
 
-                cd_altindie.startAnimation(animSlide);
+                //cd_altindie.startAnimation(animSlide);
+
                 Intent intent = new Intent(SelectionDanceWallActivity.this, AltIndieDanceWallActivity.class);
                 currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
+                //init dialog
+                dialog = new Dialog(SelectionDanceWallActivity.this);
+                //show dialog
+                dialog.show();
+                dialog.setContentView(R.layout.dance_dialog);
+
+                //set transparent bg
+                dialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+
                 intent.putExtra("pfp", i);
                 startActivity(intent);
-                overridePendingTransition(0, 0);
+              //  overridePendingTransition(0, 0);
 
             }
         });
@@ -171,16 +218,29 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(SelectionDanceWallActivity.this, "J-POP!", Toast.LENGTH_SHORT).show();
 
-                cd_jpop.startAnimation(animSlide);
+              //  cd_jpop.startAnimation(animSlide);
+
+
                 Intent intent = new Intent(SelectionDanceWallActivity.this, JPopDanceWallActivity.class);
                 currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
+                //init dialog
+                dialog = new Dialog(SelectionDanceWallActivity.this);
+                //show dialog
+                dialog.show();
+                dialog.setContentView(R.layout.dance_dialog);
+                //set transparent bg
+                dialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+
+
                 intent.putExtra("pfp", i);
                 startActivity(intent);
-                overridePendingTransition(0, 0);
+              //  overridePendingTransition(0, 0);
             }
         });
 
@@ -193,7 +253,7 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 Toast.makeText(SelectionDanceWallActivity.this, "K-POP!", Toast.LENGTH_SHORT).show();
 
 
-                cd_kpop.startAnimation(animSlide);
+               // cd_kpop.startAnimation(animSlide);
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, KPopDanceWallActivity.class);
                 currentIndex = bundle.getInt("pfp");
@@ -201,9 +261,19 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
+                //init dialog
+                dialog = new Dialog(SelectionDanceWallActivity.this);
+                //show dialog
+                dialog.show();
+                dialog.setContentView(R.layout.dance_dialog);
+                //set transparent bg
+                dialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+
                 intent.putExtra("pfp", i);
                 startActivity(intent);
-                overridePendingTransition(0, 0);
+             //   overridePendingTransition(0, 0);
 
             }
         });
@@ -216,7 +286,7 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(SelectionDanceWallActivity.this, "CONTEMPORARY", Toast.LENGTH_SHORT).show();
 
-                cd_contemp.startAnimation(animSlide);
+                //cd_contemp.startAnimation(animSlide);
 
                 Intent intent = new Intent(SelectionDanceWallActivity.this, ContempDanceWallActivity.class);
                 currentIndex = bundle.getInt("pfp");
@@ -224,9 +294,19 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
 
+                //init dialog
+                dialog = new Dialog(SelectionDanceWallActivity.this);
+                //show dialog
+                dialog.show();
+                dialog.setContentView(R.layout.dance_dialog);
+                //set transparent bg
+                dialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+
                 intent.putExtra("pfp", i);
                 startActivity(intent);
-                overridePendingTransition(0, 0);
+            //    overridePendingTransition(0, 0);
 
             }
         });
@@ -239,15 +319,15 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
                 Toast.makeText(SelectionDanceWallActivity.this, "RAP!", Toast.LENGTH_SHORT).show();
 
 
-                cd_rap.startAnimation(animSlide);
+              //  cd_rap.startAnimation(animSlide);
 
             }
         });
-        rotateAnimation();
+      //  rotateAnimation();
     }
 
     //method created to be called
-    private void rotateAnimation() {
+    /* private void rotateAnimation() {
 
         animRotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
         cd_hiphop.startAnimation(animRotate);
@@ -258,7 +338,7 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
         cd_kpop.startAnimation(animRotate);
         cd_contemp.startAnimation(animRotate);
         cd_rap.startAnimation(animRotate);
-    }
+    } */
 
     public void displayAnimalBasedOnIndex(int selectedIndex) {
         Done done = doneCollection.getCurrentAnimal(selectedIndex);

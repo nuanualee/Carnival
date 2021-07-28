@@ -24,7 +24,7 @@ public class AdapterMoments extends RecyclerView.Adapter<AdapterMoments.MyViewHo
 
 
     private int drawable;
-    private int currentIndex = -1;
+    private final int currentIndex = -1;
     DoneCollection doneCollection = new DoneCollection();
 
     public AdapterMoments(Context c, ArrayList<MyMoment> p) {
@@ -94,9 +94,9 @@ public class AdapterMoments extends RecyclerView.Adapter<AdapterMoments.MyViewHo
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             //FOURTEEN, INS (13)
-            userName = (TextView) itemView.findViewById(R.id.userUserName);
-            userDetail = (TextView) itemView.findViewById(R.id.userDetail);
-            songChose = (TextView) itemView.findViewById(R.id.songChose);
+            userName = itemView.findViewById(R.id.userUserName);
+            userDetail = itemView.findViewById(R.id.userDetail);
+            songChose = itemView.findViewById(R.id.songChose);
 
 
         }

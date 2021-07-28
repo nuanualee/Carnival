@@ -30,13 +30,13 @@ public class PlayFriendActivity extends AppCompatActivity {
     private int friend4;
     private int friend5;
 
-    private String index1 = "";
+    private final String index1 = "";
     private int playlist1;
-    private String index2 = "";
+    private final String index2 = "";
     private int playlist2;
-    private String index3 = "";
+    private final String index3 = "";
     private int playlist3;
-    private String index4 = "";
+    private final String index4 = "";
     private int playlist4;
 
     private String playlistName1 = "";

@@ -1,5 +1,6 @@
 package SongCollection.Song.HipHop;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -47,7 +48,11 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
 
-    private final MediaPlayer player = new MediaPlayer();
+    Dialog dialog;
+
+
+    //make mediaplayer static so it only plays song once and once, no repeating and crowding of songs
+    private static final MediaPlayer player = new MediaPlayer();
     private ImageButton btnPlayPause = null; //button initiate
     HHSongCollection hhSongCollection = new HHSongCollection();
     DoneCollection doneCollection = new DoneCollection();
@@ -135,12 +140,16 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
                             int i = bundle.getInt("index");
                             intent3.putExtra("index",i);
 
-
-                            if (player != null) {
-                                player.release();
+       /*  int songIndex = intent3.getExtras().getInt("index");
+                            intent3.putExtra("index",songIndex);
+                            Log.d("temasek", "PLAYSONGACTIVITY sending over SONG " + songIndex);
+                             //  handler.removeCallbacks(p_bar);
+                            if (player.isPlaying()) {
+                                player.release();//to destroy player to OS
+                                handler.removeCallbacks(p_bar);
                             } else {
-                                player.release();
-                            }
+                                handler.removeCallbacks(p_bar);
+                            } */
 
                             startActivity(intent3);
 
@@ -299,16 +308,39 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
     }
 
     public void playNext(View view) {
+        //init dialog
+        dialog = new Dialog(PlayHipHopSongActivity.this);
+        //show dialog
+        dialog.show();
+        dialog.setContentView(R.layout.playnext_dialog);
+        //set transparent bg
+        dialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
+
         currentIndex = hhSongCollection.getNextSong(currentIndex);
-        Toast.makeText(this, "Now Playing!: " + currentIndex, Toast.LENGTH_LONG).show();
+        //   Toast.makeText(this, "Now Playing! :  " + currentIndex, Toast.LENGTH_LONG).show();
         Log.d("temasek", "After playnext, the index is now : " + currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
     }
 
+
     public void playPrevious(View view) {
         currentIndex = hhSongCollection.getPrevSong(currentIndex);
-        Toast.makeText(this, "Now Playing! " + currentIndex, Toast.LENGTH_LONG).show();
+        //  Toast.makeText(this, "The current index now is: " + currentIndex, Toast.LENGTH_LONG).show();
+
+        //init dialog
+        dialog = new Dialog(PlayHipHopSongActivity.this);
+        //show dialog
+        dialog.show();
+        dialog.setContentView(R.layout.playprevious_dialog);
+        //set transparent bg
+        dialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
+
+
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
 

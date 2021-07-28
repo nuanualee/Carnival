@@ -31,7 +31,7 @@ public class PlayArtistActivity extends AppCompatActivity {
 
     ImageButton backbtn;
 
-    private int currentIndex = -1;
+    private final int currentIndex = -1;
 
     private int drawablePfp;
     private int pfpCurrentIndex = -1;

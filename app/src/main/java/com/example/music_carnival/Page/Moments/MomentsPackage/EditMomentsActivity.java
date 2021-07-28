@@ -27,7 +27,7 @@ public class EditMomentsActivity extends AppCompatActivity {
 
     Button btnCancel, btnDelete;
     LottieAnimationView lottieAnimationView;
-    private boolean deleteMoments = false;
+    private final boolean deleteMoments = false;
 
     EditText userName, userDetails, songChosen;
 

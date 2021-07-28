@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center">
 
 
@@ -13,17 +14,26 @@
         android:orientation="vertical"
         android:padding="30dp">
 
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieFindAnim"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            app:lottie_rawRes="@raw/animdancingcat"
+            app:lottie_autoPlay="true" />
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Loading Friends..."
+            android:text="Loading Dance Wall"
             android:textStyle="bold" />
+
+
     </LinearLayout>
+
 
 
 </RelativeLayout>

@@ -24,7 +24,7 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
     private int drawable;
-    private int currentIndex = -1;
+    private final int currentIndex = -1;
     DoneCollection doneCollection = new DoneCollection();
 
     Context context;

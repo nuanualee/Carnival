@@ -1,6 +1,7 @@
 package SongCollection.Song.All;
 
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -42,9 +43,12 @@ public class PlaySongActivity extends AppCompatActivity {
     private int currentIndex = -1;
 
     private int songIndex = -1;
+    private static final int SPLASH_TIME_OUT = 1000;
 
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
+
+    Dialog dialog;
 
     //make mediaplayer static so it only plays song once and once, no repeating and crowding of songs
     private static MediaPlayer player = new MediaPlayer();
@@ -82,7 +86,6 @@ public class PlaySongActivity extends AppCompatActivity {
             displaySongBasedOnIndex(currentIndex);
             playSong(filelink);
         }
-
 
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
@@ -131,22 +134,23 @@ public class PlaySongActivity extends AppCompatActivity {
                             intent3.putExtra("ALBUM", drawable);
                             Log.d("temasek", "PLAYSONGACTIVITY sending over PFP " + pfpCurrentIndex);
                             intent3.putExtra("pfp", pfpCurrentIndex);
-                            intent3.putExtra("genre","mainActivity");
+                            intent3.putExtra("genre", "mainActivity");
 
                             songIndex = bundle.getInt("index");
                             Log.d("temasek", "song array list no. sending: " + songIndex);
                             int i = bundle.getInt("index");
-                            intent3.putExtra("index",i);
+                            intent3.putExtra("index", i);
 
                            /*  int songIndex = intent3.getExtras().getInt("index");
                             intent3.putExtra("index",songIndex);
-                            Log.d("temasek", "PLAYSONGACTIVITY sending over SONG " + songIndex); */
-
-                            if (player != null) {
-                                player.release();
+                            Log.d("temasek", "PLAYSONGACTIVITY sending over SONG " + songIndex);
+                             //  handler.removeCallbacks(p_bar);
+                            if (player.isPlaying()) {
+                                player.release();//to destroy player to OS
+                                handler.removeCallbacks(p_bar);
                             } else {
-                                player.release();
-                            }
+                                handler.removeCallbacks(p_bar);
+                            } */
 
                             startActivity(intent3);
 
@@ -206,8 +210,6 @@ public class PlaySongActivity extends AppCompatActivity {
                 }
             }
         });
-
-
 
 
         backButton = findViewById(R.id.btnBack);
@@ -280,7 +282,7 @@ public class PlaySongActivity extends AppCompatActivity {
             player.setDataSource(songUrl); //WILL NEED TO PUT CLAUSE
             player.prepare(); //prepare player
             player.start(); //start player
-            btnPlayPause.setImageResource(play_letterh); //BUTTON becomes paused
+            //  btnPlayPause.setImageResource(play_letterh); //BUTTON becomes paused
             setTitle(title);
             gracefullyStopsWhenMusicEnds(); //METHOD IS BEING CALLED
 
@@ -304,16 +306,41 @@ public class PlaySongActivity extends AppCompatActivity {
     }
 
     public void playNext(View view) {
+        //init dialog
+        dialog = new Dialog(PlaySongActivity.this);
+        //show dialog
+        dialog.show();
+        dialog.setContentView(R.layout.playnext_dialog);
+        //set transparent bg
+        dialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
+
         currentIndex = songCollection.getNextSong(currentIndex);
-        Toast.makeText(this, "Now Playing! :  " + currentIndex, Toast.LENGTH_LONG).show();
+        //   Toast.makeText(this, "Now Playing! :  " + currentIndex, Toast.LENGTH_LONG).show();
         Log.d("temasek", "After playnext, the index is now : " + currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
     }
 
+
+
+
     public void playPrevious(View view) {
         currentIndex = songCollection.getPrevSong(currentIndex);
-        Toast.makeText(this, "The current index now is: " + currentIndex, Toast.LENGTH_LONG).show();
+      //  Toast.makeText(this, "The current index now is: " + currentIndex, Toast.LENGTH_LONG).show();
+
+        //init dialog
+        dialog = new Dialog(PlaySongActivity.this);
+        //show dialog
+        dialog.show();
+        dialog.setContentView(R.layout.playprevious_dialog);
+        //set transparent bg
+        dialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
+
+
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
 

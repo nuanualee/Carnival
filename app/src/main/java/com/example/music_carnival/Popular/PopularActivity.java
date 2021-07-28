@@ -119,11 +119,11 @@ public class PopularActivity extends AppCompatActivity {
     //adapter
     class PopularAdapter extends ArrayAdapter<String> {
         Context context;
-        String title[];
-        String artiste[];
-        int album[];
+        String[] title;
+        String[] artiste;
+        int[] album;
 
-        PopularAdapter(Context c, String title[], String artiste[], int album[]) {
+        PopularAdapter(Context c, String[] title, String[] artiste, int[] album) {
             super(c, R.layout.list_popular, R.id.popularTitle,title);
             this.context = c;
             this.title = title;
