@@ -1,5 +1,6 @@
 package com.example.music_carnival.Page.Moments.DanceShake.WildCard;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.anupkumarpanwar.scratchview.ScratchView;
 import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.AddDone.DoneCollection;
 import com.example.music_carnival.Page.Moments.DanceShake.WildAltIndieActivity;
@@ -38,6 +40,8 @@ public class WildCardActivity extends AppCompatActivity {
 
 
     private ScratchCard mScratchCard;
+    private ScratchView mScratchView;
+    Dialog dialog;
 
     ImageButton backButton;
 
@@ -178,20 +182,33 @@ public class WildCardActivity extends AppCompatActivity {
         });
 
 
+
+
         r = new Random();
         textView = findViewById(R.id.wildCardTitle);
         imageWildCard = findViewById(R.id.wildCardImage);
-        mScratchCard = findViewById(R.id.scratchCard);
+        mScratchView = findViewById(R.id.scratchView);
+        dialog = new Dialog(this);
 
         imageWildCard.setImageResource(images[r.nextInt(images.length)]);
         findViewById(R.id.btnFind).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dialog.setContentView(R.layout.wildcard_dialog);
+                dialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+                dialog.show();
+
+
                 finish();
                 startActivity(getIntent());
-                overridePendingTransition(0, 0);
+                //overridePendingTransition(0, 0);
 
                 textView.setText("Finding Song!");
+
+                //init dialog
+
 
             }
         });
@@ -329,7 +346,7 @@ public class WildCardActivity extends AppCompatActivity {
 
     }
 
-    private void scratch(boolean isScratched) {
+    /* private void scratch(boolean isScratched) {
         if (isScratched) {
             mScratchCard.setVisibility(View.INVISIBLE);
         } else {
@@ -345,10 +362,7 @@ public class WildCardActivity extends AppCompatActivity {
                     scratch(true);
                 }
             }
-        });
-
-
-    }
+        }); */
 
     public void displayAnimalBasedOnIndex(int selectedIndex) {
         Done done = doneCollection.getCurrentAnimal(selectedIndex);

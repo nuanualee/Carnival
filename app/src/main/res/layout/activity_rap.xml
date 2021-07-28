@@ -182,6 +182,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="Travis Scott"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumOne"
                         app:layout_constraintTop_toTopOf="@+id/albumOne" />

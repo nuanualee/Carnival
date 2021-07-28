@@ -172,12 +172,13 @@
                         app:layout_constraintTop_toTopOf="@+id/albumOne" />
 
                     <TextView
-                        android:id="@+id/txtMiley"
+                        android:id="@+id/txtMiley3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="Miley Cyrus"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumOne"
                         app:layout_constraintTop_toTopOf="@+id/albumOne" />
@@ -243,6 +244,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="Harry Styles"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumTwo"
                         app:layout_constraintTop_toTopOf="@+id/albumTwo" />
@@ -302,12 +304,13 @@
                         app:layout_constraintTop_toTopOf="@+id/albumThree" />
 
                     <TextView
-                        android:id="@+id/txtPink"
+                        android:id="@+id/txtNate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="P!nk&amp;Nate Ruess "
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumThree"
                         app:layout_constraintTop_toTopOf="@+id/albumThree" />
@@ -373,6 +376,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="Bruno Mars"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumFour"
                         app:layout_constraintTop_toTopOf="@+id/albumFour" />

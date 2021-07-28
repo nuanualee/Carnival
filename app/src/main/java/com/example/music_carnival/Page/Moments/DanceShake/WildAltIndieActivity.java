@@ -1,5 +1,6 @@
 package com.example.music_carnival.Page.Moments.DanceShake;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,9 +14,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.anupkumarpanwar.scratchview.ScratchView;
 import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.AddDone.DoneCollection;
-import com.example.music_carnival.Page.Moments.DanceShake.WildCard.ScratchCard;
 import com.example.music_carnival.Page.Moments.DanceShake.WildCard.WildCardActivity;
 import com.example.music_carnival.Page.Moments.MomentsPackage.Moments;
 import com.example.music_carnival.R;
@@ -29,8 +30,11 @@ public class WildAltIndieActivity extends AppCompatActivity {
     TextView textView;
     TextView codeTxt;
 
+    Dialog dialog;
 
-    private ScratchCard mScratchCard;
+
+
+    private ScratchView mScratchView;
 
     ImageButton backButton;
 
@@ -92,15 +96,27 @@ public class WildAltIndieActivity extends AppCompatActivity {
         r = new Random();
         textView = findViewById(R.id.wildCardTitle);
         imageWildCard = findViewById(R.id.wildCardImage);
-        mScratchCard = findViewById(R.id.scratchCard);
+        mScratchView = findViewById(R.id.scratchView);
 
         imageWildCard.setImageResource(images[r.nextInt(images.length)]);
         findViewById(R.id.btnFind).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                dialog.setContentView(R.layout.wildcard_dialog);
+                dialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+                dialog.show();
+
+
                 finish();
                 startActivity(getIntent());
-                overridePendingTransition(0, 0);
+
+                // we need a delay for our dialog to show it is searching(MORE emphasis)
+                // no need for immediate transition
+                //overridePendingTransition(0, 0);
+
 
                 textView.setText("Finding Song!");
 
@@ -156,8 +172,6 @@ public class WildAltIndieActivity extends AppCompatActivity {
                             int i = bundle.getInt("pfp");
                             displayAnimalBasedOnIndex(currentIndex);
                             intent.putExtra("pfp", i);
-
-
 
 
                             startActivity(intent);
@@ -235,26 +249,6 @@ public class WildAltIndieActivity extends AppCompatActivity {
                     }
                 });
                 popup.show();
-            }
-        });
-
-    }
-
-    private void scratch(boolean isScratched) {
-        if (isScratched) {
-            mScratchCard.setVisibility(View.INVISIBLE);
-        } else {
-            mScratchCard.setVisibility(View.VISIBLE);
-        }
-    }
-
-    private void handleListeners() {
-        mScratchCard.setOnScratchListener(new ScratchCard.OnScratchListener() {
-            @Override
-            public void onScratch(ScratchCard scratchCard, float visiblePercent) {
-                if (visiblePercent > 0.8) {
-                    scratch(true);
-                }
             }
         });
 

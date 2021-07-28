@@ -183,6 +183,7 @@
                         android:layout_marginTop="84dp"
                         android:text="BTS"
                         android:textColor="@color/white"
+                        android:onClick="artistSelection"
                         app:layout_constraintStart_toEndOf="@+id/albumOne"
                         app:layout_constraintTop_toTopOf="@+id/albumOne" />
 
@@ -247,6 +248,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="Blackpink"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumTwo"
                         app:layout_constraintTop_toTopOf="@+id/albumTwo" />
@@ -311,7 +313,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
-                        android:onClick="handleSelection"
+                        android:onClick="artistSelection"
                         android:text="iKON"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumThree"

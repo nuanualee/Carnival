@@ -1,11 +1,10 @@
 package com.example.music_carnival.Page.Playlist.Friends;
 
-import com.example.music_carnival.ArtistCollection.Artist;
 import com.example.music_carnival.R;
 
 public class FriendsCollection {
 
-    public Friends[] friends= new Friends[1];
+    public Friends[] friends= new Friends[2];
 
     public FriendsCollection(){
         Friends viewFriendOne = new Friends(
@@ -38,7 +37,40 @@ public class FriendsCollection {
                 "R&B/Soul",
                 "Contemporary");
 
+
+
+        Friends viewFriendTwo = new Friends(
+                R.drawable.pfp_pug,
+                "Miku",
+                "friend2",
+
+                R.drawable.pfp_cat,
+                R.drawable.pfp_giraffe,
+                R.drawable.pfp_monkey,
+                R.drawable.pfp_elephant,
+                R.drawable.pfp_goat,
+
+                "playlistCover1",
+                R.drawable.b_infinite,
+                "playlistCover2",
+                R.drawable.b_ok,
+                "playlistCover3",
+                R.drawable.b_clueless,
+                "playlistCover4",
+                R.drawable.b_create,
+
+                "INFINITE",
+                "OK? MAYBE",
+                "YOU'RE CLUELE...",
+                "A LIFE TO CRE...",
+
+                "Contemporary",
+                "Dance/Electronic",
+                "Rap",
+                "Pop");
+
         friends[0] = viewFriendOne;
+        friends[1] = viewFriendTwo;
 
     }
 

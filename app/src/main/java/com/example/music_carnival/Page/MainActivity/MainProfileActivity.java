@@ -1,5 +1,6 @@
 package com.example.music_carnival.Page.MainActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -28,6 +29,8 @@ public class MainProfileActivity extends AppCompatActivity {
 
     TextView mainTxtCategory;
     ImageView btnGoCategory;
+
+    ProgressDialog progressDialog;
 
 
     private int drawable;
@@ -175,7 +178,16 @@ public class MainProfileActivity extends AppCompatActivity {
         Log.d("bark", "MAIN received: " + currentIndex);
         int i = bundle.getInt("pfp");
         intent.putExtra("pfp", i);
+
+        //init dialog
+        progressDialog = new ProgressDialog(MainProfileActivity.this);
+        //show dialog
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.progress_dialog);
+        //set transparent bg
+        progressDialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
         startActivity(intent);
     }
-
 }

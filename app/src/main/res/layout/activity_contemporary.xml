@@ -177,11 +177,12 @@
                         app:layout_constraintTop_toTopOf="@+id/albumOne" />
 
                     <TextView
-                        android:id="@+id/txtJPSaxe"
+                        android:id="@+id/txtJulia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
+                        android:onClick="artistSelection"
                         android:text="JP Saxe &amp; Julia Micheals"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumOne"
@@ -248,6 +249,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="Miley Cyrus"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumTwo"
                         app:layout_constraintTop_toTopOf="@+id/albumTwo" />
@@ -307,12 +309,13 @@
                         app:layout_constraintTop_toTopOf="@+id/albumThree" />
 
                     <TextView
-                        android:id="@+id/txtHarry"
+                        android:id="@+id/txtHS"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="Harry Styles"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumThree"
                         app:layout_constraintTop_toTopOf="@+id/albumThree" />

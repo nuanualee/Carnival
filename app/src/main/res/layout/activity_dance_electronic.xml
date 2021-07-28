@@ -172,13 +172,14 @@
                         app:layout_constraintTop_toTopOf="@+id/albumOne" />
 
                     <TextView
-                        android:id="@+id/txtMeg"
+                        android:id="@+id/txtChainSmokers1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="The Chainsmokers"
                         android:textColor="@color/white"
+                        android:onClick="artistSelection"
                         app:layout_constraintStart_toEndOf="@+id/albumOne"
                         app:layout_constraintTop_toTopOf="@+id/albumOne" />
 
@@ -309,6 +310,7 @@
                         android:layout_marginTop="84dp"
                         android:text="Miley Cyrus"
                         android:textColor="@color/white"
+                        android:onClick="artistSelection"
                         app:layout_constraintStart_toEndOf="@+id/albumThree"
                         app:layout_constraintTop_toTopOf="@+id/albumThree" />
 
@@ -505,7 +507,7 @@
                         app:layout_constraintTop_toTopOf="@+id/albumSix" />
 
                     <TextView
-                        android:id="@+id/txtChainSmokers"
+                        android:id="@+id/txtChainSmokers2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"

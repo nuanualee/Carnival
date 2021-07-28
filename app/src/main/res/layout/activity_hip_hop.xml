@@ -178,6 +178,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
+                        android:onClick="artistSelection"
                         android:text="Nicki Minaj"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumOne"
@@ -243,7 +244,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
-                        android:text="Meghan Trainor"
+                        android:text="P!nk"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumTwo"
                         app:layout_constraintTop_toTopOf="@+id/albumTwo" />
@@ -309,6 +311,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="Miley Cyrus"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumThree"
                         app:layout_constraintTop_toTopOf="@+id/albumThree" />
@@ -374,6 +377,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
                         android:text="Miley Cyrus"
+                        android:onClick="artistSelection"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumFour"
                         app:layout_constraintTop_toTopOf="@+id/albumFour" />

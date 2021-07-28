@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lavender"
+    android:background="@drawable/bg_purple"
     tools:context=".Page.Moments.DanceShake.WildAltIndieActivity">
+
 
     <ImageButton
         android:id="@+id/btnBack"
@@ -59,16 +60,19 @@
         app:layout_constraintTop_toBottomOf="@+id/txtWildCard" />
 
 
-    <com.example.music_carnival.Page.Moments.DanceShake.WildCard.ScratchCard
-        android:id="@+id/scratchCard"
+    <com.anupkumarpanwar.scratchview.ScratchView
+        android:id="@+id/scratchView"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="30dp"
+        app:overlay_height="300dp"
+        app:overlay_width="300dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtWildCard"
-        android:visibility="visible" />
+        app:overlay_image="@drawable/question_pastel_png" />
+
 
 
 
@@ -91,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Scratch to reveal ALT/INDIE genre"
+        android:text="Scratch to reveal ALL genre"
         android:textColor="@color/matte_grey"
         android:gravity="center"
         android:textSize="21sp"
