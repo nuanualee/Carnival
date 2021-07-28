@@ -8,11 +8,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.AddDone.DoneCollection;
+import com.example.music_carnival.ArtistCollection.ArtistCollection;
+import com.example.music_carnival.ArtistCollection.PlayArtistActivity;
 import com.example.music_carnival.Page.MainActivity.MainActivity;
 import com.example.music_carnival.R;
 
@@ -28,6 +31,7 @@ public class JPop extends AppCompatActivity {
     Animation slideRight, slideLeft;
 
     JPopSongCollection jPopSongCollection = new JPopSongCollection();
+    ArtistCollection artistCollection = new ArtistCollection();
    // SongCollection songCollection = new SongCollection();
 
     private int drawable;
@@ -42,7 +46,7 @@ public class JPop extends AppCompatActivity {
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
             currentIndex = bundle.getInt("pfp");
-            Log.d("bark", "we received: " + currentIndex);
+            Log.d("bark", "JPOP received: " + currentIndex);
             int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
@@ -79,7 +83,15 @@ public class JPop extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(JPop.this, AlternativeIndie.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "JPOP sending: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
+                Toast.makeText(JPop.this, "Genre : Alternative/Indie", Toast.LENGTH_SHORT).show();
                 overridePendingTransition(0,0);
             }
         });
@@ -89,7 +101,15 @@ public class JPop extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(JPop.this, KPop.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "JPOP sending: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
+                Toast.makeText(JPop.this, "Genre : K-Pop", Toast.LENGTH_SHORT).show();
                 overridePendingTransition(0,0);
             }
         });
@@ -115,12 +135,37 @@ public class JPop extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
+    public void artistSelection(View view) {
+        String artistId = getResources().getResourceEntryName(view.getId());
+        int currentArtistArrayIndex = artistCollection.searchArtistById(artistId);
+
+        Log.d("temasek", "The current artist array position is " + currentArtistArrayIndex);
+        sendArtistToActivity(currentArtistArrayIndex);
+    }
+
+
+    public void sendArtistToActivity(int index) {
+        Intent intent = new Intent(this, PlayArtistActivity.class);
+        intent.putExtra("index", index);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        currentIndex = bundle.getInt("pfp");
+        Log.d("bark", "MAIN received: " + currentIndex);
+        int i = bundle.getInt("pfp");
+        intent.putExtra("pfp", i);
+
+        startActivity(intent);
+    }
+
+
     public void displayAnimalBasedOnIndex(int selectedIndex) {
         Done done = doneCollection.getCurrentAnimal(selectedIndex);
         drawable = done.getDrawable();
         Log.d("temasek", "You clicked on animal : " + drawable);
 
-        ImageView iCoverArt = findViewById(R.id.pfpNewMoments);
+        ImageView iCoverArt = findViewById(R.id.pfpGenreActivity);
         iCoverArt.setImageResource(drawable);
     }
 }

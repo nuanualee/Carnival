@@ -1,7 +1,5 @@
 package com.example.music_carnival.ArtistCollection;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +8,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.music_carnival.AddDone.Done;
+import com.example.music_carnival.AddDone.DoneCollection;
 import com.example.music_carnival.Page.MainActivity.MainActivity;
 import com.example.music_carnival.R;
 
@@ -29,6 +31,12 @@ public class PlayArtistActivity extends AppCompatActivity {
 
     ImageButton backbtn;
 
+    private int currentIndex = -1;
+
+    private int drawablePfp;
+    private int pfpCurrentIndex = -1;
+    DoneCollection doneCollection = new DoneCollection();
+
 
     ArtistCollection artistCollection = new ArtistCollection();
 
@@ -38,17 +46,38 @@ public class PlayArtistActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_artist);
 
+
         Bundle artistData = this.getIntent().getExtras();
-        int currentIndex = artistData.getInt("index");
-        Log.d("temasek", "We received: "+ currentIndex);
-        displayArtistBasedOnIndex(currentIndex);
+        if (artistData != null) {
+            int currentIndex = artistData.getInt("index");
+            Log.d("temasek", "We received: " + currentIndex);
+            displayArtistBasedOnIndex(currentIndex);
+        }
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        if (bundle != null) {
+            pfpCurrentIndex = bundle.getInt("pfp");
+
+
+            Log.d("bark", "we received: " + pfpCurrentIndex);
+            int i = bundle.getInt("pfp");
+            displayAnimalBasedOnIndex(pfpCurrentIndex);
+        }
 
         backbtn = findViewById(R.id.btnBack);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PlayArtistActivity.this, MainActivity.class);
+
+                pfpCurrentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + pfpCurrentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(pfpCurrentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -122,7 +151,13 @@ public class PlayArtistActivity extends AppCompatActivity {
         ImageView imgArtistCover = findViewById(R.id.imgArtist);
         imgArtistCover.setImageResource(drawable);
 
+    }
+    public void displayAnimalBasedOnIndex(int selectedIndex) {
+        Done done = doneCollection.getCurrentAnimal(selectedIndex);
+        drawablePfp = done.getDrawable();
+        Log.d("temasek", "You clicked on animal : " + drawablePfp);
 
-
+        ImageView iCoverArt = findViewById(R.id.pfpArtistActivity);
+        iCoverArt.setImageResource(drawablePfp);
     }
 }

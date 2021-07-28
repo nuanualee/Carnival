@@ -136,10 +136,14 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
                             intent3.putExtra("index",i);
 
 
-                            startActivity(intent3);
                             if (player != null) {
                                 player.release();
+                            } else {
+                                player.release();
                             }
+
+                            startActivity(intent3);
+
 
                         }
 

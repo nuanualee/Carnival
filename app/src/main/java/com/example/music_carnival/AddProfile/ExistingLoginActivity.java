@@ -22,6 +22,7 @@ public class ExistingLoginActivity extends AppCompatActivity {
     CheckBox rememberMe;
     Button signIn;
     ShapeableImageView existingProfile;
+    private int drawable;
     boolean isRemembered = false;
 
 
@@ -54,6 +55,8 @@ public class ExistingLoginActivity extends AppCompatActivity {
 
         if (isRemembered) {
             Intent intent = new Intent(ExistingLoginActivity.this, Moments.class);
+         //   intent.putExtra("pfp", existingProfile.getId());
+
             startActivity(intent);
             finish();
         }

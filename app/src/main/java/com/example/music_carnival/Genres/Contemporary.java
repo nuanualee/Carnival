@@ -8,11 +8,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.AddDone.DoneCollection;
+import com.example.music_carnival.ArtistCollection.ArtistCollection;
+import com.example.music_carnival.ArtistCollection.PlayArtistActivity;
 import com.example.music_carnival.Page.MainActivity.MainActivity;
 import com.example.music_carnival.R;
 
@@ -28,6 +31,7 @@ public class Contemporary extends AppCompatActivity {
     Animation slideRight, slideLeft;
 
     ContempSongCollection contempSongCollection = new ContempSongCollection();
+    ArtistCollection artistCollection = new ArtistCollection();
 
     private int drawable;
     private int currentIndex = -1;
@@ -76,7 +80,15 @@ public class Contemporary extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Contemporary.this, KPop.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "CONTEMP sending: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
+                Toast.makeText(Contemporary.this, "Genre : Contemporary", Toast.LENGTH_SHORT).show();
                 overridePendingTransition(0,0);
             }
         });
@@ -86,7 +98,15 @@ public class Contemporary extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Contemporary.this, Rap.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "CONTEMP sending: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
+                Toast.makeText(Contemporary.this, "Genre : Rap", Toast.LENGTH_SHORT).show();
                 overridePendingTransition(0,0);
             }
         });
@@ -111,6 +131,27 @@ public class Contemporary extends AppCompatActivity {
         intent.putExtra("pfp", i);
         startActivity(intent);
 
+    }
+    public void artistSelection(View view) {
+        String artistId = getResources().getResourceEntryName(view.getId());
+        int currentArtistArrayIndex = artistCollection.searchArtistById(artistId);
+
+        Log.d("temasek", "The current artist array position is " + currentArtistArrayIndex);
+        sendArtistToActivity(currentArtistArrayIndex);
+    }
+
+
+    public void sendArtistToActivity(int index) {
+        Intent intent = new Intent(this, PlayArtistActivity.class);
+        intent.putExtra("index", index);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        currentIndex = bundle.getInt("pfp");
+        Log.d("bark", "MAIN received: " + currentIndex);
+        int i = bundle.getInt("pfp");
+        intent.putExtra("pfp", i);
+
+        startActivity(intent);
     }
     public void displayAnimalBasedOnIndex(int selectedIndex) {
         Done done = doneCollection.getCurrentAnimal(selectedIndex);

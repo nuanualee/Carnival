@@ -36,19 +36,6 @@ public class ArtistCollection {
                 R.drawable.artist_miley);
 
 
-        Artist nissy = new Artist("txtArtist3",
-                "NISSY",
-                "Relax & Chill",
-                "Don't Let Me Go",
-                "Toriko",
-                5.22,
-                3.19,
-                3.51,
-                1.6,
-                1.5,
-                1.3,
-                R.drawable.artist_nissy);
-
         Artist pink = new Artist("artistPink",
                 "P!NK",
                 "Don't Let Me Get Me",
@@ -64,10 +51,38 @@ public class ArtistCollection {
 
 
 
+
+        Artist nissy = new Artist("txtNissy",
+                "NISSY",
+                "Relax & Chill",
+                "Don't Let Me Go",
+                "Toriko",
+                5.22,
+                3.19,
+                3.51,
+                1.6,
+                1.5,
+                1.3,
+                R.drawable.artist_nissy);
+
+
+        Artist vaundy = new Artist("txtVaundy2",
+                "Vaundy",
+                "Don't Let Me Get Me",
+                "Just Give Me A Reason",
+                "All I Know So Far",
+                3.31,
+                4.03,
+                4.62,
+                2.6,
+                2.0,
+                1.8,
+                R.drawable.artist_pink);
+
         artist [0] = harryStyles;
         artist [1] = mileyCyrus;
-        artist [2] = nissy;
-        artist [3] = pink;
+        artist [2] = pink;
+        artist [3] = nissy;
 
     }
 

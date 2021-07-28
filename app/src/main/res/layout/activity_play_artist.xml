@@ -152,11 +152,21 @@
 
     <TextView
         android:id="@+id/topSong1"
-        android:layout_width="wrap_content"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="3dp"
         android:text="Song 1"
+
+        android:gravity="left"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+
+
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -223,11 +233,21 @@
 
     <TextView
         android:id="@+id/topSong2"
-        android:layout_width="wrap_content"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="3dp"
-        android:text="Song 1"
+        android:text="Song 2"
+
+        android:gravity="left"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+
+
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -296,11 +316,21 @@
 
     <TextView
         android:id="@+id/topSong3"
-        android:layout_width="wrap_content"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="3dp"
-        android:text="Song 1"
+        android:text="Song 3"
+
+        android:gravity="left"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+
+
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -327,6 +357,15 @@
         app:layout_constraintStart_toEndOf="@+id/topLength3"
         app:layout_constraintTop_toTopOf="@+id/topLength3"
         app:srcCompat="@drawable/dot_horz" />
+
+    <ImageView
+        android:id="@+id/pfpArtistActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pfp_fawn"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

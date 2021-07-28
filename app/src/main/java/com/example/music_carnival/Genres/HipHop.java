@@ -8,11 +8,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.AddDone.DoneCollection;
+import com.example.music_carnival.ArtistCollection.ArtistCollection;
+import com.example.music_carnival.ArtistCollection.PlayArtistActivity;
 import com.example.music_carnival.Page.MainActivity.MainActivity;
 import com.example.music_carnival.R;
 
@@ -31,6 +34,7 @@ public class HipHop extends AppCompatActivity {
     private int drawable;
     private int currentIndex = -1;
     DoneCollection doneCollection = new DoneCollection();
+    ArtistCollection artistCollection = new ArtistCollection();
 
 
     @Override
@@ -79,7 +83,15 @@ public class HipHop extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HipHop.this, Rap.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "PLAYCONTEMPACTIVITY sending: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
+                Toast.makeText(HipHop.this, "Genre : Rap", Toast.LENGTH_SHORT).show();
                 overridePendingTransition(0,0);
             }
         });
@@ -89,7 +101,15 @@ public class HipHop extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HipHop.this, DanceElectronic.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "PLAYCONTEMPACTIVITY sending: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intent.putExtra("pfp", i);
+
                 startActivity(intent);
+                Toast.makeText(HipHop.this, "Genre : Dance/Electronic", Toast.LENGTH_SHORT).show();
                 overridePendingTransition(0,0);
             }
         });
@@ -115,6 +135,27 @@ public class HipHop extends AppCompatActivity {
         intent.putExtra("pfp", i);
         startActivity(intent);
 
+    }
+    public void artistSelection(View view) {
+        String artistId = getResources().getResourceEntryName(view.getId());
+        int currentArtistArrayIndex = artistCollection.searchArtistById(artistId);
+
+        Log.d("temasek", "The current artist array position is " + currentArtistArrayIndex);
+        sendArtistToActivity(currentArtistArrayIndex);
+    }
+
+
+    public void sendArtistToActivity(int index) {
+        Intent intent = new Intent(this, PlayArtistActivity.class);
+        intent.putExtra("index", index);
+
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        currentIndex = bundle.getInt("pfp");
+        Log.d("bark", "MAIN received: " + currentIndex);
+        int i = bundle.getInt("pfp");
+        intent.putExtra("pfp", i);
+
+        startActivity(intent);
     }
 
     public void displayAnimalBasedOnIndex(int selectedIndex) {

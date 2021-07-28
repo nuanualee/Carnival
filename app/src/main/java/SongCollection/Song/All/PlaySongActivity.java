@@ -46,7 +46,8 @@ public class PlaySongActivity extends AppCompatActivity {
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
 
-    private MediaPlayer player = new MediaPlayer();
+    //make mediaplayer static so it only plays song once and once, no repeating and crowding of songs
+    private static MediaPlayer player = new MediaPlayer();
     private ImageButton btnPlayPause = null; //button initiate
     SongCollection songCollection = new SongCollection();
     ArrayList<Song> favList = new ArrayList<Song>(); //will increase or decrease depending on number of songs added in
@@ -141,10 +142,13 @@ public class PlaySongActivity extends AppCompatActivity {
                             intent3.putExtra("index",songIndex);
                             Log.d("temasek", "PLAYSONGACTIVITY sending over SONG " + songIndex); */
 
-                            startActivity(intent3);
                             if (player != null) {
                                 player.release();
+                            } else {
+                                player.release();
                             }
+
+                            startActivity(intent3);
 
                         }
 
@@ -231,6 +235,7 @@ public class PlaySongActivity extends AppCompatActivity {
         @Override
         public void run() {
             // Log.d("temasek", "running");
+
             seekbar.setProgress(player.getCurrentPosition());
             handler.postDelayed(this, 1000); //this, run this runnable. will call itself 1 sec after.
         }
