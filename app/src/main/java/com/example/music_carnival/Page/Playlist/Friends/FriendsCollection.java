@@ -69,8 +69,40 @@ public class FriendsCollection {
                 "Rap",
                 "Pop");
 
+
+        Friends viewFriendThree = new Friends(
+                R.drawable.pfp_giraffe,
+                "Haru",
+                "friend3",
+
+                R.drawable.pfp_alpaca,
+                R.drawable.pfp_elephant,
+                R.drawable.pfp_goat,
+                R.drawable.pfp_seal,
+                R.drawable.pfp_fox,
+
+                "playlistCover1",
+                R.drawable.b_infinite,
+                "playlistCover2",
+                R.drawable.b_ok,
+                "playlistCover3",
+                R.drawable.b_clueless,
+                "playlistCover4",
+                R.drawable.b_create,
+
+                "INFINITE",
+                "OK? MAYBE",
+                "YOU'RE CLUELE...",
+                "A LIFE TO CRE...",
+
+                "Contemporary",
+                "Dance/Electronic",
+                "Rap",
+                "Pop");
+
         friends[0] = viewFriendOne;
         friends[1] = viewFriendTwo;
+        friends[2] = viewFriendThree;
 
     }
 

@@ -1,13 +1,16 @@
 package com.example.music_carnival.Page.Moments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,7 +23,7 @@ import com.example.music_carnival.AddDone.DoneCollection;
 import com.example.music_carnival.AddProfile.AddProfile;
 import com.example.music_carnival.R;
 
-public class Account extends AppCompatActivity {
+public class Account extends AppCompatActivity{ //implements AdapterView.OnItemSelectedListener {
 
 
     ImageButton backButton, toUsernameButton;
@@ -34,6 +37,13 @@ public class Account extends AppCompatActivity {
     private int drawable;
     private int currentIndex = -1;
     DoneCollection doneCollection = new DoneCollection();
+
+    Spinner spinnerLanguage;
+    int selectedLangauge;
+    Context context;
+    Resources resources;
+
+    View viewAccount;
 
 
     @Override
@@ -109,6 +119,9 @@ public class Account extends AppCompatActivity {
             }
         });
 
+
+
+
     }
     public void displayAnimalBasedOnIndex(int selectedIndex) {
         Done done = doneCollection.getCurrentAnimal(selectedIndex);
@@ -118,4 +131,20 @@ public class Account extends AppCompatActivity {
         ImageView iCoverArt = findViewById(R.id.pfpInsideSettings);
         iCoverArt.setImageResource(drawable);
     }
+
+
+
+
+    /*@Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (parent.getId() == R.id.spinner){
+            String spinnerValue = parent.getItemAtPosition(position).toString()
+
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    } */
 }

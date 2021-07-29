@@ -343,7 +343,7 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
     public void displayAnimalBasedOnIndex(int selectedIndex) {
         Done done = doneCollection.getCurrentAnimal(selectedIndex);
         drawable = done.getDrawable();
-        Log.d("temasek", "You clicked on animal : " + drawable);
+        Log.d("temasek", "SelectionDanceWall displaying : " + drawable);
 
         ImageView iCoverArt = findViewById(R.id.pfpSelectionActivity);
         iCoverArt.setImageResource(drawable);

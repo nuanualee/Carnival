@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "app_name"> 音楽カーニバル </string>
+    <string name = "account"> アカウント </string>
+    <string name = "username"> ユーザー名 </string>
+</resources>

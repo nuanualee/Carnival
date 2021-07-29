@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,6 +36,9 @@ public class ElaspedCountdownActivity extends AppCompatActivity {
     TextView textOverlay;
     ImageView bgOverlay;
 
+    Button btnCancel;
+    TextView textTimer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +64,15 @@ public class ElaspedCountdownActivity extends AppCompatActivity {
         int timerPosition = extras.getInt("timer");
         String genre = extras.getString("genre");
 
+        btnCancel = findViewById(R.id.btnCancel);
+        textTimer = findViewById(R.id.textTimer);
+
+      /*    btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+         finish();
+            }
+        }); */
 
 
         if (timerPosition == 1) {
@@ -79,68 +92,69 @@ public class ElaspedCountdownActivity extends AppCompatActivity {
                     textOverlay.setAnimation(animation);
                     bgOverlay.setVisibility(View.VISIBLE);
                     textOverlay.setVisibility(View.VISIBLE);
-                  //  startButton.setVisibility(View.INVISIBLE);
+                    btnCancel.setVisibility(View.INVISIBLE);
+                    textTimer.setVisibility(View.INVISIBLE);
+                    //  startButton.setVisibility(View.INVISIBLE);
 
                     if (genre.equals("mainActivity")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlaySongActivity.class);
                         Log.d("temasek", "Elapsed will send over MAIN ACTIVITY INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("altIndie")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayAltIndieSongActivity.class);
                         Log.d("temasek", "Elapsed will send over ALT INDIE INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("contemp")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayContempSongActivity.class);
                         Log.d("temasek", "Elapsed will send over CONTEMP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("hipHop")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayHipHopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over HIP HOP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("danceElec")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayDanceElectronicActivity.class);
                         Log.d("temasek", "Elapsed will send over DANCE ELECINDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("jPop")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayJPopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over JPOP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("kPop")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayKPopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over KPOP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("rbSoul")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayRBSoulSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RB SOUL INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("rap")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayRapSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RAP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
-                    }
-                    else if (genre.equals("newIn")) {
+                    } else if (genre.equals("newIn")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayNewInSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RAP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     }
                 }
@@ -163,69 +177,70 @@ public class ElaspedCountdownActivity extends AppCompatActivity {
                     textOverlay.setAnimation(animation);
                     bgOverlay.setVisibility(View.VISIBLE);
                     textOverlay.setVisibility(View.VISIBLE);
-                   // startButton.setVisibility(View.INVISIBLE);
+                    btnCancel.setVisibility(View.INVISIBLE);
+                    textTimer.setVisibility(View.INVISIBLE);
+                    // startButton.setVisibility(View.INVISIBLE);
 
 
                     if (genre.equals("mainActivity")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlaySongActivity.class);
                         Log.d("temasek", "Elapsed will send over MAIN ACTIVITY INDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
                     } else if (genre.equals("altIndie")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlayAltIndieSongActivity.class);
                         Log.d("temasek", "Elapsed will send over ALT INDIE INDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
                     } else if (genre.equals("contemp")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlayContempSongActivity.class);
                         Log.d("temasek", "Elapsed will send over CONTEMP INDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
                     } else if (genre.equals("hipHop")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlayHipHopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over HIP HOP INDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
                     } else if (genre.equals("danceElec")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlayDanceElectronicActivity.class);
                         Log.d("temasek", "Elapsed will send over DANCE ELECINDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
                     } else if (genre.equals("jPop")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlayJPopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over JPOP INDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
                     } else if (genre.equals("kPop")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlayKPopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over KPOP INDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
                     } else if (genre.equals("rbSoul")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlayRBSoulSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RB SOUL INDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
                     } else if (genre.equals("rap")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlayRapSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RAP INDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
-                    }
-                    else if (genre.equals("newIn")) {
+                    } else if (genre.equals("newIn")) {
                         Intent intent2 = new Intent(ElaspedCountdownActivity.this, PlayNewInSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RAP INDEX " + currentIndex);
                         intent2.putExtra("index", currentIndex);
-                        intent2.putExtra("pfp",pfpCurrentIndex);
+                        intent2.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent2);
                     }
                 }
@@ -249,44 +264,46 @@ public class ElaspedCountdownActivity extends AppCompatActivity {
                     textOverlay.setAnimation(animation);
                     bgOverlay.setVisibility(View.VISIBLE);
                     textOverlay.setVisibility(View.VISIBLE);
-                   // startButton.setVisibility(View.INVISIBLE);
+                    btnCancel.setVisibility(View.INVISIBLE);
+                    textTimer.setVisibility(View.INVISIBLE);
+                    // startButton.setVisibility(View.INVISIBLE);
 
 
                     if (genre.equals("mainActivity")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlaySongActivity.class);
                         Log.d("temasek", "Elapsed will send over MAIN ACTIVITY INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("altIndie")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayAltIndieSongActivity.class);
                         Log.d("temasek", "Elapsed will send over ALT INDIE INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("contemp")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayContempSongActivity.class);
                         Log.d("temasek", "Elapsed will send over CONTEMP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("hipHop")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayHipHopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over HIP HOP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("danceElec")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayDanceElectronicActivity.class);
                         Log.d("temasek", "Elapsed will send over DANCE ELECINDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("jPop")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayJPopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over JPOP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("kPop")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayKPopSongActivity.class);
@@ -297,20 +314,19 @@ public class ElaspedCountdownActivity extends AppCompatActivity {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayRBSoulSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RB SOUL INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     } else if (genre.equals("rap")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayRapSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RAP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
-                    }
-                    else if (genre.equals("newIn")) {
+                    } else if (genre.equals("newIn")) {
                         Intent intent = new Intent(ElaspedCountdownActivity.this, PlayNewInSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RAP INDEX " + currentIndex);
                         intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
+                        intent.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent);
                     }
                 }
@@ -335,68 +351,69 @@ public class ElaspedCountdownActivity extends AppCompatActivity {
                     textOverlay.setAnimation(animation);
                     bgOverlay.setVisibility(View.VISIBLE);
                     textOverlay.setVisibility(View.VISIBLE);
-                   // startButton.setVisibility(View.INVISIBLE);
+                    btnCancel.setVisibility(View.INVISIBLE);
+                    textTimer.setVisibility(View.INVISIBLE);
+                    // startButton.setVisibility(View.INVISIBLE);
 
                     if (genre.equals("mainActivity")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlaySongActivity.class);
                         Log.d("temasek", "Elapsed will send over MAIN ACTIVITY INDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
                     } else if (genre.equals("altIndie")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlayAltIndieSongActivity.class);
                         Log.d("temasek", "Elapsed will send over ALT INDIE INDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
                     } else if (genre.equals("contemp")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlayContempSongActivity.class);
                         Log.d("temasek", "Elapsed will send over CONTEMP INDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
                     } else if (genre.equals("hipHop")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlayHipHopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over HIP HOP INDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
                     } else if (genre.equals("danceElec")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlayDanceElectronicActivity.class);
                         Log.d("temasek", "Elapsed will send over DANCE ELECINDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
                     } else if (genre.equals("jPop")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlayJPopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over JPOP INDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
                     } else if (genre.equals("kPop")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlayKPopSongActivity.class);
                         Log.d("temasek", "Elapsed will send over KPOP INDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
                     } else if (genre.equals("rbSoul")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlayRBSoulSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RB SOUL INDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
                     } else if (genre.equals("rap")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlayRapSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RAP INDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
-                    }
-                    else if (genre.equals("newIn")) {
+                    } else if (genre.equals("newIn")) {
                         Intent intent3 = new Intent(ElaspedCountdownActivity.this, PlayNewInSongActivity.class);
                         Log.d("temasek", "Elapsed will send over RAP INDEX " + currentIndex);
                         intent3.putExtra("index", currentIndex);
-                        intent3.putExtra("pfp",pfpCurrentIndex);
+                        intent3.putExtra("pfp", pfpCurrentIndex);
                         startActivity(intent3);
                     }
                 }
