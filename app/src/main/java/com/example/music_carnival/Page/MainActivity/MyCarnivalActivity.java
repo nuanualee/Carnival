@@ -1,5 +1,6 @@
 package com.example.music_carnival.Page.MainActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +22,7 @@ public class MyCarnivalActivity extends AppCompatActivity {
     TextView artistName1,artistName2,artistName3,artistName4;
     TextView genreName1,genreName2,genreName3,genreName4;
     CarnivalCollection carnivalCollection = new CarnivalCollection();
+    ProgressDialog progressDialog;
 
     private int drawable;
     private int currentIndex = -1;
@@ -92,6 +94,16 @@ public class MyCarnivalActivity extends AppCompatActivity {
         Log.d("bark", "CARNIVAL sending: " + pfpCurrentIndex + "to SAMPLER");
         int i = bundlePfp.getInt("pfp");
         intent.putExtra("pfp", i);
+
+        //init dialog
+        progressDialog = new ProgressDialog(MyCarnivalActivity.this);
+        //show dialog
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.progress_sampler_dialog);
+        //set transparent bg
+        progressDialog.getWindow().setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
 
 
         startActivity(intent);

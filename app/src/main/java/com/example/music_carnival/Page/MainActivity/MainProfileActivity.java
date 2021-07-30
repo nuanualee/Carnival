@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -136,6 +137,8 @@ public class MainProfileActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(currentIndex);
                 intent.putExtra("pfp", i);
 
+                Toast.makeText(MainProfileActivity.this, "My Carnival", Toast.LENGTH_SHORT).show();
+
                 startActivity(intent);
             }
         });
@@ -197,6 +200,7 @@ public class MainProfileActivity extends AppCompatActivity {
         progressDialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+
         startActivity(intent);
     }
 }

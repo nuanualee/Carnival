@@ -113,10 +113,8 @@ public class WildAltIndieActivity extends AppCompatActivity {
                 finish();
                 startActivity(getIntent());
 
-                // we need a delay for our dialog to show it is searching(MORE emphasis)
-                // no need for immediate transition
+                //no need for immediate transition
                 //overridePendingTransition(0, 0);
-
 
                 textView.setText("Finding Song!");
 
@@ -263,4 +261,5 @@ public class WildAltIndieActivity extends AppCompatActivity {
         ImageView iCoverArt = findViewById(R.id.pfpWildCardActivity);
         iCoverArt.setImageResource(drawable);
     }
+
 }
