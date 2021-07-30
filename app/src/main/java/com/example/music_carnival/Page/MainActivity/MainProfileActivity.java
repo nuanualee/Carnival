@@ -38,6 +38,7 @@ public class MainProfileActivity extends AppCompatActivity {
     DoneCollection doneCollection = new DoneCollection();
     FriendsCollection friendsCollection = new FriendsCollection();
 
+    //call getSharedPreferences to fetch vibes data
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +69,16 @@ public class MainProfileActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         //for our feeling (xxx) text
-        Bundle feeling = this.getIntent().getExtras();
+        sharedPreferences = getSharedPreferences("SHARED_PREF_NAME", MODE_PRIVATE);
+        String feeling = sharedPreferences.getString("VIBES", null);
+        Log.d("temasek", "MainProfileActivity receieved Feeling: " + feeling);
+
+        if (mainTxtCategory != null) {
+            mainTxtCategory.setText("Feeling " + feeling);
+        }
+
+
+        /*   Bundle feeling = this.getIntent().getExtras();
         String feelingIndex = feeling.getString("title");
         Log.d("temasek", "PhotoCate receieved Feeling: " + feelingIndex);
 
@@ -76,7 +86,7 @@ public class MainProfileActivity extends AppCompatActivity {
             mainTxtCategory.setText("Feeling " + getIntent().getStringExtra("title"));
         } else {
             mainTxtCategory.setText("Feeling rhythm");
-        }
+        } */
 
         //maintxtcategory and arrowgocategory goes the same activity
         mainTxtCategory = findViewById(R.id.mainTxtCategory);
@@ -95,7 +105,6 @@ public class MainProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
 
         btnGoCategory.setOnClickListener(new View.OnClickListener() {

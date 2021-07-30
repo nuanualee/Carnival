@@ -3,6 +3,7 @@ package com.example.music_carnival.Page.PhotoCategory;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     private int drawable;
     private final int currentIndex = -1;
     DoneCollection doneCollection = new DoneCollection();
+
+    //init sharedPreferences
+    SharedPreferences sharedPreferences;
+    //create sharedPreferences name and key
+
 
     Context context;
     List<Category> categoryList;
@@ -66,6 +72,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                 int i = intentpfp.getIntExtra("pfp", currentIndex);
                 Log.d("bark", "CategoryADAPTER received" + i + " to be sent back to MAINPROFILEACTIVITY ");
                 intent.putExtra("pfp", i);
+
+                //create object of sharedPreferences class and call to getSharedPreferences();
+                sharedPreferences = context.getSharedPreferences("SHARED_PREF_NAME", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("VIBES", getIconTitle);
+                editor.commit();
+                Log.d("bark", "CategoryADAPTER will send" + getIconTitle + " to MAINPROFILEACTIVITY ");
+
 
                 context.startActivity(intent);
             }
