@@ -47,6 +47,7 @@ public class PlayArtistActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play_artist);
 
 
+        //getting EXTRAS
         Bundle artistData = this.getIntent().getExtras();
         if (artistData != null) {
             int currentIndex = artistData.getInt("index");
@@ -64,6 +65,8 @@ public class PlayArtistActivity extends AppCompatActivity {
             displayAnimalBasedOnIndex(pfpCurrentIndex);
         }
 
+
+        //going back to MainActivity
         backbtn = findViewById(R.id.btnBack);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +91,7 @@ public class PlayArtistActivity extends AppCompatActivity {
 
     }
 
+    //to display from selectedindex
     public void displayArtistBasedOnIndex(int selectedIndex){
         Artist artist = artistCollection.getCurrentArtist(selectedIndex);
         artiste = artist.getArtiste();

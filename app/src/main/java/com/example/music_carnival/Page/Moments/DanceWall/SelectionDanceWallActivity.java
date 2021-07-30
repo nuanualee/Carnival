@@ -56,6 +56,7 @@ public class SelectionDanceWallActivity extends AppCompatActivity {
         }
 
 
+        //bg in xml layout
         dynamicbg = findViewById(R.id.dynamicbg);
         animSlide = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_right);
 

@@ -46,7 +46,9 @@ public class WildCardActivity extends AppCompatActivity {
     ImageButton backButton;
 
 
+    //random for randomization
     Random r;
+    //init of images, will generate images from this array
     Integer[] images = {
 
             //hiphop
@@ -157,7 +159,7 @@ public class WildCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wild_card);
 
-        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras for our profile picture
         if (bundle != null) {
             currentIndex = bundle.getInt("pfp");
             Log.d("bark", "we received: " + currentIndex);
@@ -165,6 +167,7 @@ public class WildCardActivity extends AppCompatActivity {
             displayAnimalBasedOnIndex(currentIndex);
         }
 
+        //go back to moments
         backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,35 +187,38 @@ public class WildCardActivity extends AppCompatActivity {
 
 
 
-        r = new Random();
+        r = new Random(); //random variable
         textView = findViewById(R.id.wildCardTitle);
         imageWildCard = findViewById(R.id.wildCardImage);
-        mScratchView = findViewById(R.id.scratchView);
-        dialog = new Dialog(this);
+        mScratchView = findViewById(R.id.scratchView); //init scratchview which we will SCRATCH
+        dialog = new Dialog(this); //dialog when we click SEARCH BUTTON
 
+        //image will be set when users click BTNFIND
         imageWildCard.setImageResource(images[r.nextInt(images.length)]);
         findViewById(R.id.btnFind).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //init dialog
                 dialog.setContentView(R.layout.wildcard_dialog);
+                //set transparent bg
                 dialog.getWindow().setBackgroundDrawableResource(
                         android.R.color.transparent
                 );
-                dialog.show();
+                dialog.show(); //for dialog to show otherwise it will not show when user click
 
 
-                finish();
-                startActivity(getIntent());
+                finish(); //reload activity so image can re-generate
+                startActivity(getIntent()); //
                 //overridePendingTransition(0, 0);
 
-                textView.setText("Finding Song!");
+                textView.setText("Finding Song!"); //text that says click button will change
 
-                //init dialog
 
 
             }
         });
 
+        //for menu button
         menu_button = findViewById(R.id.btnMenu);
         menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
             @Override

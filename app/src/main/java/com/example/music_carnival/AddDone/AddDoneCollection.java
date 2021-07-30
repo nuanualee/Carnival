@@ -1,11 +1,10 @@
 package com.example.music_carnival.AddDone;
 
-import com.example.music_carnival.AddDone.AddDone;
 import com.example.music_carnival.R;
 
 public class AddDoneCollection {
 
-
+    //array
     private final AddDone[] addDone = new AddDone[2];
 
     public AddDoneCollection() {

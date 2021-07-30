@@ -13,6 +13,9 @@ import com.example.music_carnival.R;
 
 public class ExsitingProfileActivity extends AppCompatActivity {
 
+
+    //for our existing users, however we are not
+    //really focusing on existing users
     ProfileActCollection profileActCollection = new ProfileActCollection();
 
     @Override

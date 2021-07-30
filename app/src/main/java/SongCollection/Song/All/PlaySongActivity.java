@@ -85,6 +85,7 @@ public class PlaySongActivity extends AppCompatActivity {
             Log.d("temasek", "We receieved: " + currentIndex);
             displaySongBasedOnIndex(currentIndex);
             playSong(filelink);
+
         }
 
 
@@ -165,12 +166,16 @@ public class PlaySongActivity extends AppCompatActivity {
         });
 
 
-        //seekbar, manipulationt through here.
+        //seekbar, manipulation through here.
         seekbar = findViewById(R.id.seekBar);
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 //whenever value changes
+           /*     if (fromUser) {
+                    seekBar.setProgress(progress);
+                    player.seekTo(progress);
+                } */
 
             }
 
@@ -182,9 +187,10 @@ public class PlaySongActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 //let go, scrub and let go will call this method
-                if (player != null && player.isPlaying()) {
+              if (player != null && player.isPlaying()) {
                     player.seekTo(seekbar.getProgress());
                 }
+
             }
         });
 
@@ -192,21 +198,22 @@ public class PlaySongActivity extends AppCompatActivity {
         btnPlayPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (!player.isPlaying()) { //if player is NOT playing
                     player.start();
-
                     //length will now represent duration
                     seekbar.setMax(player.getDuration());
                     //remove existing calling of run, so it won't interject
                     handler.removeCallbacks(p_bar);
                     handler.postDelayed(p_bar, 1000);//calling progress bar,activation starts after 1 sec
-
+                    //gracefullyStopsWhenMusicEnds();
 
                     btnPlayPause.setImageResource(play_letterh);
+
+
                 } else {
                     player.pause();
                     btnPlayPause.setImageResource(play_triangleanother);
+
                 }
             }
         });
@@ -278,13 +285,16 @@ public class PlaySongActivity extends AppCompatActivity {
         btnPlayPause = findViewById(R.id.btnPlayPause);
 
         try { //we are playign song here
-            player.reset(); //we created instance ontop. we are resettnig
+            player.reset(); //we created instance ontop. we are resetting
             player.setDataSource(songUrl); //WILL NEED TO PUT CLAUSE
             player.prepare(); //prepare player
             player.start(); //start player
             //  btnPlayPause.setImageResource(play_letterh); //BUTTON becomes paused
             setTitle(title);
             gracefullyStopsWhenMusicEnds(); //METHOD IS BEING CALLED
+
+          //  seekbar.setMax(player.getDuration());
+
 
         } catch (IOException e) {
             e.printStackTrace(); //if something went wrong

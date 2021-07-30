@@ -4,7 +4,7 @@ import com.example.music_carnival.R;
 
 public class FriendsCollection {
 
-    public Friends[] friends= new Friends[2];
+    public Friends[] friends= new Friends[3];
 
     public FriendsCollection(){
         Friends viewFriendOne = new Friends(

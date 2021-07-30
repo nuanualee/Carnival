@@ -33,8 +33,10 @@ public class NewInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_in);
 
         scrollView = findViewById(R.id.scrollViewNewIn);
+        //fit scrollview to layout in xml
         scrollView.setFillViewport(true);
 
+        //getting extras
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
             currentIndex = bundle.getInt("pfp");

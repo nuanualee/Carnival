@@ -20,10 +20,10 @@ import java.util.List;
 
 
 //video adapter to inflate our custom video container to bind with video view
-public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder>{
+public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
 
     //creating list
-    private final List<VideoObject>  videoObjects;
+    private final List<VideoObject> videoObjects;
 
 
     //constructor created from DanceWallActivity. constructor needed to pass objects in
@@ -36,7 +36,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     @NonNull
     @Override
     public VideoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new VideoViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.video_container,parent,false));
+        return new VideoViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.video_container, parent, false));
     }
 
     @Override
@@ -50,10 +50,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     }
 
 
-
-
-    static class VideoViewHolder extends RecyclerView.ViewHolder
-    {
+    static class VideoViewHolder extends RecyclerView.ViewHolder {
         VideoView videoView;
         TextView videoTitle, videoDescription, videoCreator;
         ImageView videoProfile;
@@ -70,8 +67,8 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         }
 
         @SuppressLint("ClickableViewAccessibility")
-        void setVideoObjects(final VideoObject videoObjects)
-        {
+        void setVideoObjects(final VideoObject videoObjects) {
+            //set video display
             videoTitle.setText(videoObjects.getVideoTitle());
             videoDescription.setText(videoObjects.getVideoDescription());
             videoView.setVideoPath(videoObjects.getVideoURL());
@@ -92,8 +89,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                     if (videoView.isPlaying()) {
                         videoView.pause();
                         return false;
-                    }
-                    else {
+                    } else {
                         videoView.start();
                         return false;
                     }

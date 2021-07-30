@@ -43,6 +43,7 @@ public class AddProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_profile);
 
+        //init
         btnSave = findViewById(R.id.btn1);
         sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
         String name = sharedPreferences.getString("NAME", "");
@@ -60,6 +61,7 @@ public class AddProfile extends AppCompatActivity {
 
         } */
 
+        //menu button
         menu_button = findViewById(R.id.btnMenu);
         menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
 

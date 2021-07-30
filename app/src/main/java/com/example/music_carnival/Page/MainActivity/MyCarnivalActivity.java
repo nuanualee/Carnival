@@ -35,6 +35,7 @@ public class MyCarnivalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_carnival);
 
+        //getting extras
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
             currentIndex = bundle.getInt("index");

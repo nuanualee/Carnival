@@ -36,7 +36,7 @@ public class AltIndieDanceWallActivity extends AppCompatActivity {
         final ViewPager2 viewPager2 = findViewById(R.id.viewPager);
         List<VideoObject> videoObjects = new ArrayList<>();
 
-        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
+        Bundle bundle = this.getIntent().getExtras(); //receiving Extras for PFP
         if (bundle != null) {
             currentIndex = bundle.getInt("pfp");
             Log.d("bark", "we received: " + currentIndex);

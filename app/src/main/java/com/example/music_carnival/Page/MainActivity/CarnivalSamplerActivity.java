@@ -47,6 +47,7 @@ public class CarnivalSamplerActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        //getting extras
         if (intent.getExtras() != null) {
             Bundle songData = this.getIntent().getExtras();
             int currentIndex = songData.getInt("index");
@@ -83,6 +84,7 @@ public class CarnivalSamplerActivity extends AppCompatActivity {
             }
         });
 
+        //going back to MyCarnivalActivity
         txtBack = findViewById(R.id.txtBack);
         txtBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,8 +128,8 @@ public class CarnivalSamplerActivity extends AppCompatActivity {
     public void playCarnival(String songUrl) {
         //songurl is pertaining to input and output
 
-        try { //we are playign song here
-            player.reset(); //we created instance ontop. we are resettnig
+        try { //we are playing song here
+            player.reset(); //we created instance ontop. we are resetting
             player.setDataSource(songUrl); //WILL NEED TO PUT CLAUSE
             player.prepare(); //prepare player
             player.start(); //start player

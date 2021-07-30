@@ -43,6 +43,8 @@ public class EditMomentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_moments);
 
+
+        //getting extras
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Moments
         if (bundle != null) {
             currentIndex = bundle.getInt("pfp");
@@ -59,11 +61,14 @@ public class EditMomentsActivity extends AppCompatActivity {
         userDetails = findViewById(R.id.userDetails);
         songChosen = findViewById(R.id.songChosen);
 
+        //getting extras
         userName.setText(getIntent().getStringExtra("userName"));
         userDetails.setText(getIntent().getStringExtra("userDetail"));
         songChosen.setText(getIntent().getStringExtra("songChose"));
 
 
+
+        //getting from FIREBASE, link to FIREBASE
         final String numMomentNum = getIntent().getStringExtra("keyMoment");
         reference = FirebaseDatabase.getInstance().getReference().child("Moments").
                 child("Moments" + numMomentNum);

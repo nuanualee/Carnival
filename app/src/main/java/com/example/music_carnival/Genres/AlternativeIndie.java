@@ -42,6 +42,7 @@ public class AlternativeIndie extends AppCompatActivity {
         setContentView(R.layout.activity_alternative_indie);
 
 
+        //getting EXTRAS
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
             currentIndex = bundle.getInt("pfp");
@@ -50,7 +51,8 @@ public class AlternativeIndie extends AppCompatActivity {
             displayAnimalBasedOnIndex(currentIndex);
         }
 
-        //anim//
+        //anim
+        //not using, extremely laggy and slow
         slideRight = AnimationUtils.loadAnimation(getApplicationContext()
                 , R.anim.left_to_right);
         slideLeft = AnimationUtils.loadAnimation(getApplicationContext()
@@ -58,7 +60,7 @@ public class AlternativeIndie extends AppCompatActivity {
 
 
 
-
+        //going back to MainActivity
         backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +75,7 @@ public class AlternativeIndie extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
         rbSoulButton = findViewById(R.id.btnRB);

@@ -1,10 +1,10 @@
 package com.example.music_carnival.AddDone;
 
-import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.R;
 
 public class DoneCollection {
 
+    //all of pfps
     private final Done[] done = new Done[12];
 
     public DoneCollection() {

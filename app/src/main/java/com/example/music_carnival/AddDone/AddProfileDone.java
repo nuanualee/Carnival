@@ -43,7 +43,7 @@ public class AddProfileDone extends AppCompatActivity {
         setContentView(R.layout.activity_add_profile_done);
 
 
-
+        //init
         rememberMe = findViewById(R.id.rememberMe);
         sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
         //default value of checkbox is false
@@ -72,8 +72,8 @@ public class AddProfileDone extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //putting data on shared preferences
 
+                //putting data on shared preferences
                 String name = user_txt.getText().toString();
                 boolean checked = rememberMe.isChecked();
 
@@ -83,7 +83,9 @@ public class AddProfileDone extends AppCompatActivity {
                 editor.apply();
 
 
+                //convert text to string
                 userStr = user_txt.getText().toString();
+                //deny users of empty field
                 if (!userStr.equals("")) {
                 Toast.makeText(AddProfileDone.this, "Login succesfully!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddProfileDone.this, MainActivity.class);
@@ -94,6 +96,7 @@ public class AddProfileDone extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
+                    //if users did not write anything
                     Toast.makeText(AddProfileDone.this, "Type Display Name!", Toast.LENGTH_LONG).show();
                 }
             }
