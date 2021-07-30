@@ -160,13 +160,13 @@ public class PlayFriendActivity extends AppCompatActivity {
         playlistNameFour.setText(playlistName4);
 
         TextView genreOne = findViewById(R.id.playlistGenre1);
-        genreOne.setText(genre1);
+        genreOne.setText(" " + genre1);
         TextView genreTwo = findViewById(R.id.playlistGenre2);
-        genreTwo.setText(genre2);
+        genreTwo.setText(" " + genre2);
         TextView genreThree = findViewById(R.id.playlistGenre3);
-        genreThree.setText(genre3);
+        genreThree.setText(" " + genre3);
         TextView genreFour = findViewById(R.id.playlistGenre4);
-        genreFour.setText(genre4);
+        genreFour.setText(" " + genre4);
 
     }
     public void displayAnimalBasedOnIndex(int selectedIndex) {
