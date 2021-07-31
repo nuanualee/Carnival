@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -118,7 +119,14 @@ public class Account extends AppCompatActivity{ //implements AdapterView.OnItemS
                 Toast.makeText(Account.this, "Signed out!", Toast.LENGTH_SHORT).show();
             }
         });
-
+        spinnerLanguage = findViewById(R.id.spinner);
+        String[] languages = getResources().getStringArray(R.array.language);
+        //pass in 3 parameters
+        ArrayAdapter adapter = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_item,languages);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //call spinner and pass adapter
+        spinnerLanguage.setAdapter(adapter);
 
 
 

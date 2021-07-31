@@ -1,6 +1,7 @@
 package com.example.music_carnival.Page.Moments.MomentsPackage;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.music_carnival.AddDone.Done;
 import com.example.music_carnival.AddDone.DoneCollection;
-import com.example.music_carnival.Page.MainActivity.MainActivity;
 import com.example.music_carnival.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,8 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
-import SongCollection.Song.All.PlaySongActivity;
-
 public class NewMomentsActivity extends AppCompatActivity {
 
     //init
@@ -33,6 +31,7 @@ public class NewMomentsActivity extends AppCompatActivity {
     EditText userName, userDetails, songChosen;
     DatabaseReference reference;
     Integer momentNum = new Random().nextInt();
+    SharedPreferences sharedPreferences;
 
     //change int to string of our randomized number moments post
     String keyMoment = Integer.toString(momentNum);
@@ -47,6 +46,8 @@ public class NewMomentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_moments);
 
+        sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
+        String name = sharedPreferences.getString("NAME", "");
 
 
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Moments
@@ -81,6 +82,12 @@ public class NewMomentsActivity extends AppCompatActivity {
                         dataSnapshot.getRef().child("songChose").setValue(songChosen.getText().toString());
                         dataSnapshot.getRef().child("momentNum").setValue(keyMoment);
 
+                        Log.d("temasek", "USERNAME is : " + name);
+
+                        if (!userName.getText().toString().equals(name)){
+                            Toast.makeText(NewMomentsActivity.this, "Input your local Username!", Toast.LENGTH_SHORT).show();
+                        }
+
                         //if else empty fields, prevent user from entering null input
                         if (userName.getText().toString().equals("") && userDetails.getText().toString().equals("")
                                 && songChosen.getText().toString().equals("")) {
@@ -112,7 +119,7 @@ public class NewMomentsActivity extends AppCompatActivity {
                         }
 
                         if (!userName.getText().toString().equals("") && !userDetails.getText().toString().equals("")
-                                && !songChosen.getText().toString().equals("")) {
+                                && !songChosen.getText().toString().equals("") && userName.getText().toString().equals(name)) {
                             Intent intent = new Intent(NewMomentsActivity.this, Moments.class);
 
                             currentIndex = bundle.getInt("pfp");

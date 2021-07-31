@@ -29,6 +29,7 @@ public class EditMomentsActivity extends AppCompatActivity {
     LottieAnimationView lottieAnimationView;
     private final boolean deleteMoments = false;
 
+
     EditText userName, userDetails, songChosen;
 
     DatabaseReference reference;
@@ -42,7 +43,6 @@ public class EditMomentsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_moments);
-
 
         //getting extras
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Moments

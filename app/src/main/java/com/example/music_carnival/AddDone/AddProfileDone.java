@@ -55,6 +55,17 @@ public class AddProfileDone extends AppCompatActivity {
         //default value of checkbox is false
         isRemembered = sharedPreferences.getBoolean("CHECKED", false);
         if (isRemembered) {
+            Toast.makeText(this, "Log in successful!", Toast.LENGTH_SHORT).show();
+
+            //dialog does not show, HOWEVER we will use this to cast the translucent bg :)
+            dialog.setContentView(R.layout.wildcard_dialog);
+            //set transparent bg
+            dialog.getWindow().setBackgroundDrawableResource(
+                    android.R.color.transparent
+            );
+            dialog.show(); //for dialog to show otherwise it will not show when user click
+
+
             Intent intent = new Intent(AddProfileDone.this, MainActivity.class);
             Bundle btnAnimal = this.getIntent().getExtras(); //receiving Extras from Animal
             int i = btnAnimal.getInt("pfp");
