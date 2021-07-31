@@ -1,5 +1,7 @@
 package com.example.music_carnival.AddDone;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -35,13 +37,17 @@ public class AddProfileDone extends AppCompatActivity {
     boolean isRemembered = false;
     CheckBox rememberMe;
 
+    //progress dialog
+    ProgressDialog progressDialog;
+    Dialog dialog;
     ////////////////////////
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_profile_done);
-
+        dialog = new Dialog(this);
 
         //init
         rememberMe = findViewById(R.id.rememberMe);
@@ -53,6 +59,7 @@ public class AddProfileDone extends AppCompatActivity {
             Bundle btnAnimal = this.getIntent().getExtras(); //receiving Extras from Animal
             int i = btnAnimal.getInt("pfp");
             intent.putExtra("pfp", i);
+
             startActivity(intent);
         }
 
@@ -87,10 +94,21 @@ public class AddProfileDone extends AppCompatActivity {
                 userStr = user_txt.getText().toString();
                 //deny users of empty field
                 if (!userStr.equals("")) {
-                Toast.makeText(AddProfileDone.this, "Login succesfully!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddProfileDone.this, "Login succesfully!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddProfileDone.this, MainActivity.class);
                     intent.putExtra("pfp", i);
                     displayAnimalBasedOnIndex(currentIndex);
+
+
+                    //init dialog
+                    progressDialog = new ProgressDialog(AddProfileDone.this);
+                    //show dialog
+                    progressDialog.show();
+                    progressDialog.setContentView(R.layout.progress_done_dialog);
+                    //set transparent bg
+                    progressDialog.getWindow().setBackgroundDrawableResource(
+                            android.R.color.transparent
+                    );
 
 
                     startActivity(intent);

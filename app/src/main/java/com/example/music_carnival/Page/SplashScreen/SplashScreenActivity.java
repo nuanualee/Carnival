@@ -15,7 +15,7 @@ import com.example.music_carnival.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private static final int SPLASH_TIME_OUT = 3500;
+    private static final int SPLASH_TIME_OUT = 2000;
 
 
     Animation osuAnimation, topAnimation, middleAnimation;
