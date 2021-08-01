@@ -317,6 +317,7 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton.setImageResource(R.drawable.like);
 
         currentIndex = hhSongCollection.getNextSong(currentIndex);
         //   Toast.makeText(this, "Now Playing! :  " + currentIndex, Toast.LENGTH_LONG).show();
@@ -339,6 +340,7 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton.setImageResource(R.drawable.like);
 
 
         displaySongBasedOnIndex(currentIndex);

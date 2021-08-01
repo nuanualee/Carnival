@@ -29,13 +29,11 @@ import java.util.ArrayList;
 import Search.Search;
 import SongCollection.Song.AddToPlaylist;
 import SongCollection.Song.All.Song;
-import SongCollection.Song.AlternativeIndie.PlayAltIndieSongActivity;
 import SongCollection.Song.Countdown.Countdown;
 
 import static com.example.music_carnival.R.drawable.like_orange;
 import static com.example.music_carnival.R.drawable.play_letterh;
 import static com.example.music_carnival.R.drawable.play_triangleanother;
-import static com.example.music_carnival.R.drawable.triangle_play;
 
 public class PlayJPopSongActivity extends AppCompatActivity {
 
@@ -222,6 +220,14 @@ public class PlayJPopSongActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PlayJPopSongActivity.this, MainActivity.class);
+
+                pfpCurrentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + pfpCurrentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(pfpCurrentIndex);
+                intent.putExtra("pfp", i);
+
+
                 startActivity(intent);
             }
         });
@@ -297,7 +303,7 @@ public class PlayJPopSongActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) { //ON COMPLETION, finished playing
                 Toast.makeText(PlayJPopSongActivity.this, "Song ended", Toast.LENGTH_SHORT).show();
-                btnPlayPause.setImageResource(triangle_play); //btn changes back to PLAY
+                btnPlayPause.setImageResource(play_triangleanother); //btn changes back to PLAY
             }
         });
     }
@@ -312,6 +318,8 @@ public class PlayJPopSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+
+        likedButton.setImageResource(R.drawable.like);
 
         currentIndex = jPopSongCollection.getNextSong(currentIndex);
         //   Toast.makeText(this, "Now Playing! :  " + currentIndex, Toast.LENGTH_LONG).show();
@@ -335,6 +343,7 @@ public class PlayJPopSongActivity extends AppCompatActivity {
                 android.R.color.transparent
         );
 
+        likedButton.setImageResource(R.drawable.like);
 
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);

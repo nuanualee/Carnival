@@ -34,7 +34,6 @@ import SongCollection.Song.Countdown.Countdown;
 import static com.example.music_carnival.R.drawable.like_orange;
 import static com.example.music_carnival.R.drawable.play_letterh;
 import static com.example.music_carnival.R.drawable.play_triangleanother;
-import static com.example.music_carnival.R.drawable.triangle_play;
 
 public class PlayRBSoulSongActivity extends AppCompatActivity {
 
@@ -303,7 +302,7 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) { //ON COMPLETION, finished playing
                 Toast.makeText(PlayRBSoulSongActivity.this, "Song ended", Toast.LENGTH_SHORT).show();
-                btnPlayPause.setImageResource(triangle_play); //btn changes back to PLAY
+                btnPlayPause.setImageResource(play_triangleanother); //btn changes back to PLAY
             }
         });
     }
@@ -318,6 +317,7 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton.setImageResource(R.drawable.like);
 
         currentIndex = rbSoulSongCollection.getNextSong(currentIndex);
         //   Toast.makeText(this, "Now Playing! :  " + currentIndex, Toast.LENGTH_LONG).show();
@@ -342,7 +342,7 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
-
+        likedButton.setImageResource(R.drawable.like);
 
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);

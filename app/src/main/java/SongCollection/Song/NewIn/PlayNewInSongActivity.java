@@ -29,13 +29,11 @@ import java.util.ArrayList;
 import Search.Search;
 import SongCollection.Song.AddToPlaylist;
 import SongCollection.Song.All.Song;
-import SongCollection.Song.AlternativeIndie.PlayAltIndieSongActivity;
 import SongCollection.Song.Countdown.Countdown;
 
 import static com.example.music_carnival.R.drawable.like_orange;
 import static com.example.music_carnival.R.drawable.play_letterh;
 import static com.example.music_carnival.R.drawable.play_triangleanother;
-import static com.example.music_carnival.R.drawable.triangle_play;
 
 public class PlayNewInSongActivity extends AppCompatActivity {
 
@@ -304,7 +302,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) { //ON COMPLETION, finished playing
                 Toast.makeText(PlayNewInSongActivity.this, "Song ended", Toast.LENGTH_SHORT).show();
-                btnPlayPause.setImageResource(triangle_play); //btn changes back to PLAY
+                btnPlayPause.setImageResource(play_triangleanother); //btn changes back to PLAY
             }
         });
     }
@@ -319,6 +317,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton.setImageResource(R.drawable.like);
 
         currentIndex = newInSongCollection.getNextSong(currentIndex);
         //   Toast.makeText(this, "Now Playing! :  " + currentIndex, Toast.LENGTH_LONG).show();
@@ -341,7 +340,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
-
+        likedButton.setImageResource(R.drawable.like);
 
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);

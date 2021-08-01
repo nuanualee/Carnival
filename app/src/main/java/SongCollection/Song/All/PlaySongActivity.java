@@ -320,11 +320,13 @@ public class PlaySongActivity extends AppCompatActivity {
         dialog = new Dialog(PlaySongActivity.this);
         //show dialog
         dialog.show();
+
         dialog.setContentView(R.layout.playnext_dialog);
         //set transparent bg
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton.setImageResource(R.drawable.like);
 
         currentIndex = songCollection.getNextSong(currentIndex);
         //   Toast.makeText(this, "Now Playing! :  " + currentIndex, Toast.LENGTH_LONG).show();
@@ -349,6 +351,7 @@ public class PlaySongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton.setImageResource(R.drawable.like);
 
 
         displaySongBasedOnIndex(currentIndex);

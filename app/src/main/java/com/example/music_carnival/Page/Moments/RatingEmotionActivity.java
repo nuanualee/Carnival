@@ -36,7 +36,7 @@ public class RatingEmotionActivity extends AppCompatActivity {
         Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
         if (bundle != null) {
             currentIndex = bundle.getInt("pfp");
-            Log.d("bark", "we received: " + currentIndex);
+            Log.d("bark", "RATING EMOTION received: " + currentIndex);
             int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
@@ -48,7 +48,7 @@ public class RatingEmotionActivity extends AppCompatActivity {
                 Intent intent = new Intent(RatingEmotionActivity.this,Settings.class);
 
                 currentIndex = bundle.getInt("pfp");
-                Log.d("bark", "we received: " + currentIndex);
+                Log.d("bark", "RATING EMOTION SENDING: " + currentIndex);
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
                 intent.putExtra("pfp", i);

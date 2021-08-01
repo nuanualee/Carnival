@@ -140,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(currentIndex);
                 goSearch.putExtra("pfp", i);
 
+                Toast.makeText(MainActivity.this, "Search", Toast.LENGTH_SHORT).show();
+
                 startActivity(goSearch);
                 overridePendingTransition(0, 0);
             }
@@ -158,6 +160,9 @@ public class MainActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(currentIndex);
                 intent_one.putExtra("pfp", i);
 
+
+                Toast.makeText(MainActivity.this, "HipHop", Toast.LENGTH_SHORT).show();
+
                 startActivity(intent_one);
             }
         });
@@ -173,6 +178,9 @@ public class MainActivity extends AppCompatActivity {
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
                 intent_two.putExtra("pfp", i);
+
+
+                Toast.makeText(MainActivity.this, "Dance/Electronic", Toast.LENGTH_SHORT).show();
 
 
                 startActivity(intent_two);
@@ -191,6 +199,9 @@ public class MainActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(currentIndex);
                 intent_three.putExtra("pfp", i);
 
+
+                Toast.makeText(MainActivity.this, "R&B/Soul", Toast.LENGTH_SHORT).show();
+
                 startActivity(intent_three);
             }
         });
@@ -206,6 +217,9 @@ public class MainActivity extends AppCompatActivity {
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
                 intent_fourth.putExtra("pfp", i);
+
+
+                Toast.makeText(MainActivity.this, "Alternative/Indie", Toast.LENGTH_SHORT).show();
 
                 startActivity(intent_fourth);
             }
@@ -223,6 +237,9 @@ public class MainActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(currentIndex);
                 intent_fifth.putExtra("pfp", i);
 
+
+                Toast.makeText(MainActivity.this, "J-Pop", Toast.LENGTH_SHORT).show();
+
                 startActivity(intent_fifth);
             }
         });
@@ -238,6 +255,9 @@ public class MainActivity extends AppCompatActivity {
                 int i = bundle.getInt("pfp");
                 displayAnimalBasedOnIndex(currentIndex);
                 intent_six.putExtra("pfp", i);
+
+
+                Toast.makeText(MainActivity.this, "KPop", Toast.LENGTH_SHORT).show();
 
                 startActivity(intent_six);
             }
@@ -255,6 +275,9 @@ public class MainActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(currentIndex);
                 intent_seventh.putExtra("pfp", i);
 
+
+                Toast.makeText(MainActivity.this, "Contemporary", Toast.LENGTH_SHORT).show();
+
                 startActivity(intent_seventh);
             }
         });
@@ -271,6 +294,9 @@ public class MainActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(currentIndex);
                 intent_eigth.putExtra("pfp", i);
 
+
+                Toast.makeText(MainActivity.this, "Rap", Toast.LENGTH_SHORT).show();
+
                 startActivity(intent_eigth);
             }
         });
@@ -280,7 +306,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent_popular = new Intent(MainActivity.this, PopularActivity.class);
-                Toast.makeText(MainActivity.this, "Popular songs~", Toast.LENGTH_SHORT).show();
 
                 currentIndex = bundle.getInt("pfp");
                 Log.d("bark", "we received: " + currentIndex);
@@ -288,6 +313,7 @@ public class MainActivity extends AppCompatActivity {
                 displayAnimalBasedOnIndex(currentIndex);
                 intent_popular.putExtra("pfp", i);
 
+                Toast.makeText(MainActivity.this, "Popular songs~", Toast.LENGTH_SHORT).show();
                 startActivity(intent_popular);
             }
         });

@@ -97,6 +97,14 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentRate = new Intent(Settings.this, RatingEmotionActivity.class);
+
+                currentIndex = bundle.getInt("pfp");
+                Log.d("bark", "we received: " + currentIndex);
+                int i = bundle.getInt("pfp");
+                displayAnimalBasedOnIndex(currentIndex);
+                intentRate.putExtra("pfp", i);
+
+
                 startActivity(intentRate);
             }
         });
