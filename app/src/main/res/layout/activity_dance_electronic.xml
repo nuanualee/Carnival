@@ -803,6 +803,20 @@
 
 
 
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floatingActionButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:backgroundTint="@color/white"
+                        android:src="@drawable/arrow_up"
+                        app:fabCustomSize="50dp"
+                        app:layout_constraintBottom_toTopOf="@+id/dot10"
+                        app:layout_constraintEnd_toEndOf="@id/dot10"
+                        app:layout_constraintHorizontal_bias="0.923"
+                        app:layout_constraintStart_toEndOf="@+id/numberTen" />
+
+
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </HorizontalScrollView>
 

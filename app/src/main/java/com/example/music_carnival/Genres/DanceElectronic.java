@@ -8,6 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import com.example.music_carnival.ArtistCollection.ArtistCollection;
 import com.example.music_carnival.ArtistCollection.PlayArtistActivity;
 import com.example.music_carnival.Page.MainActivity.MainActivity;
 import com.example.music_carnival.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import SongCollection.Song.DanceElectronic.DanceElecSongCollection;
 import SongCollection.Song.DanceElectronic.PlayDanceElectronicActivity;
@@ -32,6 +34,9 @@ public class DanceElectronic extends AppCompatActivity {
 
     DanceElecSongCollection danceElecSongCollection = new DanceElecSongCollection();
     ArtistCollection artistCollection = new ArtistCollection();
+
+    ScrollView scrollView2;
+    FloatingActionButton floatingActionButton;
 
     private int drawable;
     private int currentIndex = -1;
@@ -48,6 +53,18 @@ public class DanceElectronic extends AppCompatActivity {
             int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(currentIndex);
         }
+
+        scrollView2 = findViewById(R.id.scrollView2);
+        floatingActionButton = findViewById(R.id.floatingActionButton);
+        //up button
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scrollView2.fullScroll(ScrollView.FOCUS_UP);
+                floatingActionButton.show();
+            }
+        });
+
 
         //anim//
         slideRight = AnimationUtils.loadAnimation(getApplicationContext()

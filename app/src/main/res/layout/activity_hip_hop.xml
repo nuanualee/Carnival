@@ -110,11 +110,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/picHipHop" />
 
+
             <HorizontalScrollView
                 android:id="@+id/horizontalHip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="255dp"
+                android:layout_marginTop="268dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -244,8 +245,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
-                        android:text="P!nk"
                         android:onClick="artistSelection"
+                        android:text="P!nk"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumTwo"
                         app:layout_constraintTop_toTopOf="@+id/albumTwo" />
@@ -310,8 +311,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
-                        android:text="Miley Cyrus"
                         android:onClick="artistSelection"
+                        android:text="Miley Cyrus"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumThree"
                         app:layout_constraintTop_toTopOf="@+id/albumThree" />
@@ -376,8 +377,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginTop="84dp"
-                        android:text="Miley Cyrus"
                         android:onClick="artistSelection"
+                        android:text="Miley Cyrus"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/albumFour"
                         app:layout_constraintTop_toTopOf="@+id/albumFour" />
@@ -782,10 +783,21 @@
                         app:layout_constraintTop_toTopOf="@+id/albumTen"
                         app:srcCompat="@drawable/dot" />
 
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floatingActionButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:backgroundTint="@color/white"
+                        android:src="@drawable/arrow_up"
+                        app:fabCustomSize="50dp"
+                        app:layout_constraintBottom_toTopOf="@+id/dot10"
+                        app:layout_constraintEnd_toEndOf="@id/dot10"
+                        app:layout_constraintHorizontal_bias="0.923"
+                        app:layout_constraintStart_toEndOf="@+id/numberTen" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </HorizontalScrollView>
-
 
             <ImageView
                 android:id="@+id/pfpGenreActivity"
@@ -795,6 +807,9 @@
                 android:visibility="invisible"
                 app:layout_constraintStart_toEndOf="@+id/btnBack"
                 app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
