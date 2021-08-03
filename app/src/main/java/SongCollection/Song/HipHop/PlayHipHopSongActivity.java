@@ -133,7 +133,7 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
                             intent3.putExtra("ALBUM", drawable);
                             Log.d("temasek", "Countdown received " + pfpCurrentIndex);
                             intent3.putExtra("pfp", pfpCurrentIndex);
-                            intent3.putExtra("genre","contemp");
+                            intent3.putExtra("genre","hipHop");
 
                             songIndex = bundle.getInt("index");
                             Log.d("temasek", "song array list no. sending: " + songIndex);

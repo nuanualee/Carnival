@@ -77,6 +77,7 @@ public class PlayJPopSongActivity extends AppCompatActivity {
 
         //playpause
         btnPlayPause = findViewById(R.id.btnPlayPause);
+
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
             Bundle songData = this.getIntent().getExtras();
@@ -319,6 +320,7 @@ public class PlayJPopSongActivity extends AppCompatActivity {
                 android.R.color.transparent
         );
 
+        likedButton = findViewById(R.id.btnLiked);
         likedButton.setImageResource(R.drawable.like);
 
         currentIndex = jPopSongCollection.getNextSong(currentIndex);
@@ -342,7 +344,7 @@ public class PlayJPopSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
-
+        likedButton = findViewById(R.id.btnLiked);
         likedButton.setImageResource(R.drawable.like);
 
         displaySongBasedOnIndex(currentIndex);

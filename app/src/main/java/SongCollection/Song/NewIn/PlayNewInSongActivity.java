@@ -317,6 +317,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton = findViewById(R.id.btnLiked);
         likedButton.setImageResource(R.drawable.like);
 
         currentIndex = newInSongCollection.getNextSong(currentIndex);
@@ -340,6 +341,7 @@ public class PlayNewInSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton = findViewById(R.id.btnLiked);
         likedButton.setImageResource(R.drawable.like);
 
         displaySongBasedOnIndex(currentIndex);

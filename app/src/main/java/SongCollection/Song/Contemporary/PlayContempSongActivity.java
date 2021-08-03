@@ -142,11 +142,6 @@ public class PlayContempSongActivity extends AppCompatActivity {
                             int i = bundle.getInt("index");
                             intent3.putExtra("index",i);
 
-                            if (player != null) {
-                                player.release();
-                            } else {
-                                player.release();
-                            }
 
                             startActivity(intent3);
 
