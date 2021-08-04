@@ -48,7 +48,9 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
 
-    Dialog dialog;
+
+    Dialog dialog, dialogBeeRepeat;
+
 
 
     //make mediaplayer static so it only plays song once and once, no repeating and crowding of songs
@@ -60,6 +62,9 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
 
     ImageButton backButton;
     ImageButton likedButton;
+
+    ImageButton repeatButton;
+    Boolean repeatFlag = false;
 
     ImageButton menu_button;
 
@@ -79,6 +84,11 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
 
         //playpause
         btnPlayPause = findViewById(R.id.btnPlayPause);
+        //repeat
+        repeatButton = findViewById(R.id.btnRepeat);
+        elapsedTimeLabel = findViewById(R.id.elapsedTimeLabel);
+        remainingTimeLabel = findViewById(R.id.remainingTimeLabel);
+
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
             Bundle songData = this.getIntent().getExtras();
@@ -189,29 +199,6 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
         });
 
 
-        btnPlayPause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (!player.isPlaying()) { //if player is NOT playing
-                    player.start();
-
-                    //length will now represent duration
-                    seekbar.setMax(player.getDuration());
-                    //remove existing calling of run, so it won't interject
-                    handler.removeCallbacks(p_bar);
-                    handler.postDelayed(p_bar, 1000);//calling progress bar,activation starts after 1 sec
-
-
-                    btnPlayPause.setImageResource(play_letterh);
-                } else {
-                    player.pause();
-                    btnPlayPause.setImageResource(play_triangleanother);
-                }
-            }
-        });
-
-
 
         backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -234,6 +221,25 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
 
     }
 
+    public void playOrPauseSong(View view) {
+        if (!player.isPlaying()) { //if player is NOT playing
+            player.start();
+            //length will now represent duration
+            seekbar.setMax(player.getDuration());
+            //remove existing calling of run, so it won't interject
+            handler.removeCallbacks(p_bar);
+            handler.postDelayed(p_bar, 1000);//calling progress bar,activation starts after 1 sec
+            gracefullyStopsWhenMusicEnds();
+
+            btnPlayPause.setImageResource(play_letterh);
+
+
+        } else {
+            player.pause();
+            btnPlayPause.setImageResource(play_triangleanother);
+
+        }
+    }
 
     //SEEKBAR
     Runnable p_bar = new Runnable() {
@@ -243,6 +249,12 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
             seekbar.setProgress(player.getCurrentPosition());
             handler.postDelayed(this, 1000); //this, run this runnable. will call itself 1 sec after.
 
+            // update time Labels
+            String elapsedTime = createTimeLabel(player.getCurrentPosition());
+            elapsedTimeLabel.setText(elapsedTime);
+
+            String remainingTime = " " + createTimeLabel(player.getDuration() - player.getCurrentPosition());
+            remainingTimeLabel.setText(remainingTime);
 
         }
     };
@@ -302,7 +314,25 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) { //ON COMPLETION, finished playing
                 Toast.makeText(PlayHipHopSongActivity.this, "Song ended", Toast.LENGTH_SHORT).show();
-                btnPlayPause.setImageResource(play_triangleanother); //btn changes back to PLAY
+
+                if (repeatFlag){
+                    playOrPauseSong(null);
+                    //init dialog
+                    dialogBeeRepeat = new Dialog(PlayHipHopSongActivity.this);
+                    //show dialog
+                    dialogBeeRepeat.show();
+                    dialogBeeRepeat.setContentView(R.layout.repeat_dialog);
+                    //set transparent bg
+                    dialogBeeRepeat.getWindow().setBackgroundDrawableResource(
+                            android.R.color.transparent
+                    );
+
+
+                } else {
+                    btnPlayPause.setImageResource(play_triangleanother); //btn changes back to PLAY
+                }
+
+
             }
         });
     }
@@ -317,6 +347,7 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton = findViewById(R.id.btnLiked);
         likedButton.setImageResource(R.drawable.like);
 
         currentIndex = hhSongCollection.getNextSong(currentIndex);
@@ -340,6 +371,7 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton = findViewById(R.id.btnLiked);
         likedButton.setImageResource(R.drawable.like);
 
 
@@ -362,4 +394,27 @@ public class PlayHipHopSongActivity extends AppCompatActivity {
         iCoverArt.setImageResource(drawablePfp);
     }
 
+    public void repeatSong(View view) {
+
+        if (repeatFlag){ //if it is FALSE
+            repeatButton.setImageResource(R.drawable.repeat);
+        }else{ //if it is TRUE
+            repeatButton.setImageResource(R.drawable.repeat_orange);
+            Toast.makeText(this, "Song will be repeated!", Toast.LENGTH_SHORT).show();
+        }
+        //if !, forced to rerun onClick
+        repeatFlag = !repeatFlag;
+    }
+
+    public String createTimeLabel(int time) {
+        String timeLabel = "";
+        int min = time / 1000 / 60;
+        int sec = time / 1000 % 60;
+
+        timeLabel = min + ":";
+        if (sec < 10) timeLabel += "0";
+        timeLabel += sec;
+
+        return timeLabel;
+    }
 }

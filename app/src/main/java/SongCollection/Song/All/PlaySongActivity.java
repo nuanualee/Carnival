@@ -25,7 +25,6 @@ import com.example.music_carnival.Page.Moments.MomentsPackage.NewMomentsActivity
 import com.example.music_carnival.R;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import Search.Search;
 import SongCollection.Song.AddToPlaylist;
@@ -43,21 +42,26 @@ public class PlaySongActivity extends AppCompatActivity {
     private int currentIndex = -1;
 
     private int songIndex = -1;
-    private static final int SPLASH_TIME_OUT = 1000;
+  //  private static final int SPLASH_TIME_OUT = 1000;
 
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
 
-    Dialog dialog;
+
+    Dialog dialog, dialogBeeRepeat;
+
 
     //make mediaplayer static so it only plays song once and once, no repeating and crowding of songs
     private static MediaPlayer player = new MediaPlayer();
     private ImageButton btnPlayPause = null; //button initiate
     SongCollection songCollection = new SongCollection();
-    ArrayList<Song> favList = new ArrayList<Song>(); //will increase or decrease depending on number of songs added in
+    // ArrayList<Song> favList = new ArrayList<Song>(); //will increase or decrease depending on number of songs added in
 
     ImageButton backButton;
     ImageButton likedButton;
+
+    ImageButton repeatButton;
+    Boolean repeatFlag = false;
 
     ImageButton menu_button;
 
@@ -66,6 +70,7 @@ public class PlaySongActivity extends AppCompatActivity {
     Handler handler = new Handler();
     TextView elapsedTimeLabel, remainingTimeLabel;
     int totalTime;
+
 
     Search search;
     DoneCollection doneCollection = new DoneCollection();
@@ -78,6 +83,12 @@ public class PlaySongActivity extends AppCompatActivity {
 
         //playpause
         btnPlayPause = findViewById(R.id.btnPlayPause);
+        //repeat
+        repeatButton = findViewById(R.id.btnRepeat);
+
+        elapsedTimeLabel = findViewById(R.id.elapsedTimeLabel);
+        remainingTimeLabel = findViewById(R.id.remainingTimeLabel);
+
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
             Bundle songData = this.getIntent().getExtras();
@@ -195,28 +206,14 @@ public class PlaySongActivity extends AppCompatActivity {
         });
 
 
-        btnPlayPause.setOnClickListener(new View.OnClickListener() {
+
+
+      /*  btnPlayPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!player.isPlaying()) { //if player is NOT playing
-                    player.start();
-                    //length will now represent duration
-                    seekbar.setMax(player.getDuration());
-                    //remove existing calling of run, so it won't interject
-                    handler.removeCallbacks(p_bar);
-                    handler.postDelayed(p_bar, 1000);//calling progress bar,activation starts after 1 sec
-                    //gracefullyStopsWhenMusicEnds();
 
-                    btnPlayPause.setImageResource(play_letterh);
-
-
-                } else {
-                    player.pause();
-                    btnPlayPause.setImageResource(play_triangleanother);
-
-                }
             }
-        });
+        }); */
 
 
         backButton = findViewById(R.id.btnBack);
@@ -238,6 +235,26 @@ public class PlaySongActivity extends AppCompatActivity {
 
     }
 
+    public void playOrPauseSong(View view) {
+        if (!player.isPlaying()) { //if player is NOT playing
+            player.start();
+            //length will now represent duration
+            seekbar.setMax(player.getDuration());
+            //remove existing calling of run, so it won't interject
+            handler.removeCallbacks(p_bar);
+            handler.postDelayed(p_bar, 1000);//calling progress bar,activation starts after 1 sec
+            gracefullyStopsWhenMusicEnds();
+
+            btnPlayPause.setImageResource(play_letterh);
+
+
+        } else {
+            player.pause();
+            btnPlayPause.setImageResource(play_triangleanother);
+
+        }
+    }
+
 
     //SEEKBAR
     Runnable p_bar = new Runnable() {
@@ -247,6 +264,13 @@ public class PlaySongActivity extends AppCompatActivity {
 
             seekbar.setProgress(player.getCurrentPosition());
             handler.postDelayed(this, 1000); //this, run this runnable. will call itself 1 sec after.
+
+          // update time Labels
+            String elapsedTime = createTimeLabel(player.getCurrentPosition());
+            elapsedTimeLabel.setText(elapsedTime);
+
+            String remainingTime = " " + createTimeLabel(player.getDuration() - player.getCurrentPosition());
+            remainingTimeLabel.setText(remainingTime);
         }
     };
 
@@ -310,7 +334,28 @@ public class PlaySongActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) { //ON COMPLETION, finished playing
                 Toast.makeText(PlaySongActivity.this, "Song ended", Toast.LENGTH_SHORT).show();
-                btnPlayPause.setImageResource(play_triangleanother); //btn changes back to PLAY
+
+                if (repeatFlag){
+                    playOrPauseSong(null);
+                    //init dialog
+                    dialogBeeRepeat = new Dialog(PlaySongActivity.this);
+                    //show dialog
+                    dialogBeeRepeat.show();
+                    dialogBeeRepeat.setContentView(R.layout.repeat_dialog);
+                    //set transparent bg
+                    dialogBeeRepeat.getWindow().setBackgroundDrawableResource(
+                            android.R.color.transparent
+                    );
+
+
+
+                } else {
+                    btnPlayPause.setImageResource(play_triangleanother); //btn changes back to PLAY
+                }
+
+
+
+
             }
         });
     }
@@ -326,6 +371,7 @@ public class PlaySongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton = findViewById(R.id.btnLiked);
         likedButton.setImageResource(R.drawable.like);
 
         currentIndex = songCollection.getNextSong(currentIndex);
@@ -351,6 +397,7 @@ public class PlaySongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+        likedButton = findViewById(R.id.btnLiked);
         likedButton.setImageResource(R.drawable.like);
 
 
@@ -392,5 +439,32 @@ public class PlaySongActivity extends AppCompatActivity {
         ImageView iCoverArt = findViewById(R.id.pfpPlaySongActivity);
         iCoverArt.setImageResource(drawablePfp);
     }
+
+    public void repeatSong(View view) {
+
+        if (repeatFlag){ //if it is FALSE
+            repeatButton.setImageResource(R.drawable.repeat);
+        }else{ //if it is TRUE
+            repeatButton.setImageResource(R.drawable.repeat_orange);
+            Toast.makeText(this, "Song will be repeated!", Toast.LENGTH_SHORT).show();
+        }
+        //if !, forced to rerun onClick
+        repeatFlag = !repeatFlag;
+
+
+    }
+
+    public String createTimeLabel(int time) {
+        String timeLabel = "";
+        int min = time / 1000 / 60;
+        int sec = time / 1000 % 60;
+
+        timeLabel = min + ":";
+        if (sec < 10) timeLabel += "0";
+        timeLabel += sec;
+
+        return timeLabel;
+    }
+
 
 }
