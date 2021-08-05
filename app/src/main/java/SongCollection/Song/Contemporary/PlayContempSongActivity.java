@@ -31,7 +31,6 @@ import SongCollection.Song.AddToPlaylist;
 import SongCollection.Song.All.Song;
 import SongCollection.Song.Countdown.Countdown;
 
-import static com.example.music_carnival.R.drawable.like_orange;
 import static com.example.music_carnival.R.drawable.play_letterh;
 import static com.example.music_carnival.R.drawable.play_triangleanother;
 
@@ -62,6 +61,7 @@ public class PlayContempSongActivity extends AppCompatActivity {
 
     ImageButton repeatButton;
     Boolean repeatFlag = false;
+    Boolean likedFlag = false;
 
     ImageButton menu_button;
 
@@ -253,10 +253,22 @@ public class PlayContempSongActivity extends AppCompatActivity {
 
     public void handleSelection(View view) {
         likedButton = findViewById(R.id.btnLiked);
-        likedButton.setImageResource(like_orange);
-        Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();
+       /* likedButton.setImageResource(like_orange);
+        Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();*/
+
+
+        if (likedFlag){ //if it is FALSE
+            likedButton.setImageResource(R.drawable.like);
+            Toast.makeText(this, "Song unliked!", Toast.LENGTH_SHORT).show();
+        }else{ //if it is TRUE
+            likedButton.setImageResource(R.drawable.like_orange);
+            Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();
+        }
+        //if !, forced to rerun onClick
+        likedFlag = !likedFlag;
 
     }
+
 
     public void displaySongBasedOnIndex(int selectedIndex) {
         ContempSong contempSong = contempSongCollection.getCurrentSong(selectedIndex);

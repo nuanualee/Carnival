@@ -66,6 +66,7 @@ public class PlayDanceElectronicActivity extends AppCompatActivity {
 
     ImageButton repeatButton;
     Boolean repeatFlag = false;
+    Boolean likedFlag = false;
 
     //to access seekbar, as class variable.
     SeekBar seekbar;
@@ -264,10 +265,22 @@ public class PlayDanceElectronicActivity extends AppCompatActivity {
 
     public void handleSelection(View view) {
         likedButton = findViewById(R.id.btnLiked);
-        likedButton.setImageResource(like_orange);
-        Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();
+       /* likedButton.setImageResource(like_orange);
+        Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();*/
+
+
+        if (likedFlag){ //if it is FALSE
+            likedButton.setImageResource(R.drawable.like);
+            Toast.makeText(this, "Song unliked!", Toast.LENGTH_SHORT).show();
+        }else{ //if it is TRUE
+            likedButton.setImageResource(R.drawable.like_orange);
+            Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();
+        }
+        //if !, forced to rerun onClick
+        likedFlag = !likedFlag;
 
     }
+
 
     public void displaySongBasedOnIndex(int selectedIndex) {
         DanceElecSong danceElecSong = danceElecSongCollection.getCurrentSong(selectedIndex);

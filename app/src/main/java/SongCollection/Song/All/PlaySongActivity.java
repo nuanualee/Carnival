@@ -30,7 +30,6 @@ import Search.Search;
 import SongCollection.Song.AddToPlaylist;
 import SongCollection.Song.Countdown.Countdown;
 
-import static com.example.music_carnival.R.drawable.like_orange;
 import static com.example.music_carnival.R.drawable.play_letterh;
 import static com.example.music_carnival.R.drawable.play_triangleanother;
 
@@ -62,6 +61,7 @@ public class PlaySongActivity extends AppCompatActivity {
 
     ImageButton repeatButton;
     Boolean repeatFlag = false;
+    Boolean likedFlag = false;
 
     ImageButton menu_button;
 
@@ -277,8 +277,19 @@ public class PlaySongActivity extends AppCompatActivity {
 
     public void handleSelection(View view) {
         likedButton = findViewById(R.id.btnLiked);
-        likedButton.setImageResource(like_orange);
-        Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();
+       /* likedButton.setImageResource(like_orange);
+        Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();*/
+
+
+        if (likedFlag){ //if it is FALSE
+            likedButton.setImageResource(R.drawable.like);
+            Toast.makeText(this, "Song unliked!", Toast.LENGTH_SHORT).show();
+        }else{ //if it is TRUE
+            likedButton.setImageResource(R.drawable.like_orange);
+            Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();
+        }
+        //if !, forced to rerun onClick
+        likedFlag = !likedFlag;
 
     }
 
@@ -366,6 +377,7 @@ public class PlaySongActivity extends AppCompatActivity {
         //show dialog
         dialog.show();
 
+
         dialog.setContentView(R.layout.playnext_dialog);
         //set transparent bg
         dialog.getWindow().setBackgroundDrawableResource(
@@ -397,6 +409,7 @@ public class PlaySongActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+
         likedButton = findViewById(R.id.btnLiked);
         likedButton.setImageResource(R.drawable.like);
 
@@ -444,15 +457,15 @@ public class PlaySongActivity extends AppCompatActivity {
 
         if (repeatFlag){ //if it is FALSE
             repeatButton.setImageResource(R.drawable.repeat);
+
         }else{ //if it is TRUE
             repeatButton.setImageResource(R.drawable.repeat_orange);
             Toast.makeText(this, "Song will be repeated!", Toast.LENGTH_SHORT).show();
         }
         //if !, forced to rerun onClick
         repeatFlag = !repeatFlag;
-
-
     }
+
 
     public String createTimeLabel(int time) {
         String timeLabel = "";
