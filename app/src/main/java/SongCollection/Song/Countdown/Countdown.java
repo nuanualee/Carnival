@@ -68,6 +68,7 @@ public class Countdown extends AppCompatActivity {
         int currentIndex = extras.getInt("index");
         Log.d("temasek", "Countdown CHOOSING Received " + currentIndex);
 
+
         int pfpCurrentIndex = extras.getInt("pfp");
         Log.d("temasek", "Countdown PFP Received " + pfpCurrentIndex);
 
@@ -99,12 +100,13 @@ public class Countdown extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(Countdown.this, ElaspedCountdownActivity.class);
 
-                        intent.putExtra("index", currentIndex);
-                        intent.putExtra("pfp",pfpCurrentIndex);
-                        intent.putExtra("timer", 1);
-                        intent.putExtra("genre",genre);
+                            intent.putExtra("index", currentIndex);
+                            Log.d("temasek", "CLICKED COUNTDOWN song array list no. sending: " + currentIndex);
+                            intent.putExtra("pfp", pfpCurrentIndex);
+                            intent.putExtra("timer", 1);
+                            intent.putExtra("genre", genre);
 
-                        startActivity(intent);
+                            startActivity(intent);
                     }
                 });
 

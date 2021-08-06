@@ -87,23 +87,23 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
         remainingTimeLabel = findViewById(R.id.remainingTimeLabel);
 
 
-        Intent intent = getIntent();
-        if (intent.getExtras() != null) {
+        Bundle bundle = this.getIntent().getExtras();
+        if (bundle != null) {
             Bundle songData = this.getIntent().getExtras();
             int currentIndex = songData.getInt("index");
             Log.d("temasek", "We receieved: " + currentIndex);
             displaySongBasedOnIndex(currentIndex);
             playSong(filelink);
         }
-        Bundle bundle = this.getIntent().getExtras(); //receiving Extras from Animal
-        if (bundle != null) {
+        Bundle bundlePfp = this.getIntent().getExtras(); //receiving Extras from Animal
+        if (bundlePfp != null) {
             pfpCurrentIndex = bundle.getInt("pfp");
             Log.d("bark", "pfp received: " + pfpCurrentIndex);
 
             songIndex = bundle.getInt("index");
             Log.d("temasek", "song array list no. received: " + songIndex);
 
-            int i = bundle.getInt("pfp");
+           // int i = bundle.getInt("pfp");
             displayAnimalBasedOnIndex(pfpCurrentIndex);
         }
 
@@ -141,13 +141,12 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
 
                             intent3.putExtra("ALBUM", drawable);
                             Log.d("temasek", "Countdown received " + pfpCurrentIndex);
-                            intent3.putExtra("pfp", pfpCurrentIndex);
-                            intent3.putExtra("genre","rbSoul");
 
-                            songIndex = bundle.getInt("index");
-                            Log.d("temasek", "song array list no. sending: " + songIndex);
-                            int i = bundle.getInt("index");
-                            intent3.putExtra("index",i);
+                            intent3.putExtra("pfp", pfpCurrentIndex);
+                            intent3.putExtra("genre", "rbSoul");
+
+                            intent3.putExtra("index", songIndex);
+                            Log.d("temasek", "PLAY song array list no. sending: " + songIndex);
 
                              /*  int songIndex = intent3.getExtras().getInt("index");
                             intent3.putExtra("index",songIndex);
@@ -172,13 +171,19 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
             }
         });
 
-
-        //seekbar, manipulationt through here.
+        //seekbar, manipulation through here.
         seekbar = findViewById(R.id.seekBar);
+        seekbar.setMax(player.getDuration());
+        handler.removeCallbacks(p_bar);
+        handler.postDelayed(p_bar, 1000);
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 //whenever value changes
+                /*if (fromUser) {
+                    seekBar.setProgress(progress);
+                    player.seekTo(progress);
+                } */
 
             }
 
@@ -193,10 +198,9 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
                 if (player != null && player.isPlaying()) {
                     player.seekTo(seekbar.getProgress());
                 }
+
             }
         });
-
-
 
 
         backButton = findViewById(R.id.btnBack);
@@ -241,7 +245,6 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
     }
 
 
-
     //SEEKBAR
     Runnable p_bar = new Runnable() {
         @Override
@@ -267,10 +270,10 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
         Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();*/
 
 
-        if (likedFlag){ //if it is FALSE
+        if (likedFlag) { //if it is FALSE
             likedButton.setImageResource(R.drawable.like);
             Toast.makeText(this, "Song unliked!", Toast.LENGTH_SHORT).show();
-        }else{ //if it is TRUE
+        } else { //if it is TRUE
             likedButton.setImageResource(R.drawable.like_orange);
             Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();
         }
@@ -328,7 +331,7 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) { //ON COMPLETION, finished playing
                 Toast.makeText(PlayRBSoulSongActivity.this, "Song ended", Toast.LENGTH_SHORT).show();
 
-                if (repeatFlag){
+                if (repeatFlag) {
                     playOrPauseSong(null);
                     //init dialog
                     dialogBeeRepeat = new Dialog(PlayRBSoulSongActivity.this);
@@ -368,9 +371,46 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
         Log.d("temasek", "After playnext, the index is now : " + currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
+
+
+        //init MENU AGAIN, reloads whole song playing activity and CURRENT INDEX.
+        menu_button = findViewById(R.id.btnMenu);
+        menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(PlayRBSoulSongActivity.this, menu_button);
+                popup.getMenuInflater().inflate(R.menu.menu_popup, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {//SECOND ONCLICK
+                        Toast.makeText(PlayRBSoulSongActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        int id = item.getItemId();
+                   if (id == R.id.countdownTimer) {
+                            Intent intent3 = new Intent(PlayRBSoulSongActivity.this, Countdown.class);
+
+                            intent3.putExtra("ALBUM", drawable);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+
+                            intent3.putExtra("pfp", pfpCurrentIndex);
+                            intent3.putExtra("genre", "rbSoul");
+
+                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "PLAYNEXT/PREVIOUS song array list no. sending: " + currentIndex);
+
+                            startActivity(intent3);
+
+                        }
+
+                        return true;
+                    }
+                });
+                popup.show();
+
+            }
+        });
+
     }
-
-
 
 
     public void playPrevious(View view) {
@@ -392,6 +432,43 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
 
+        //init MENU AGAIN, reloads whole song playing activity and CURRENT INDEX.
+        menu_button = findViewById(R.id.btnMenu);
+        menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(PlayRBSoulSongActivity.this, menu_button);
+                popup.getMenuInflater().inflate(R.menu.menu_popup, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {//SECOND ONCLICK
+                        Toast.makeText(PlayRBSoulSongActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        int id = item.getItemId();
+                        if (id == R.id.countdownTimer) {
+                            Intent intent3 = new Intent(PlayRBSoulSongActivity.this, Countdown.class);
+
+                            intent3.putExtra("ALBUM", drawable);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+
+                            intent3.putExtra("pfp", pfpCurrentIndex);
+                            intent3.putExtra("genre", "rbSoul");
+
+                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "PLAYNEXT/PREVIOUS song array list no. sending: " + currentIndex);
+
+                            startActivity(intent3);
+
+                        }
+
+                        return true;
+                    }
+                });
+                popup.show();
+
+            }
+        });
+
     }
 
     @Override //the parent of PSA also has this function implemented
@@ -399,6 +476,7 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
         super.onBackPressed(); //will be called super...
         player.release();//to destroy player to OS
     }
+
     public void displayAnimalBasedOnIndex(int selectedIndex) {
         Done done = doneCollection.getCurrentAnimal(selectedIndex);
         drawablePfp = done.getDrawable();
@@ -407,11 +485,12 @@ public class PlayRBSoulSongActivity extends AppCompatActivity {
         ImageView iCoverArt = findViewById(R.id.pfpPlaySongActivity);
         iCoverArt.setImageResource(drawablePfp);
     }
+
     public void repeatSong(View view) {
 
-        if (repeatFlag){ //if it is FALSE
+        if (repeatFlag) { //if it is FALSE
             repeatButton.setImageResource(R.drawable.repeat);
-        }else{ //if it is TRUE
+        } else { //if it is TRUE
             repeatButton.setImageResource(R.drawable.repeat_orange);
             Toast.makeText(this, "Song will be repeated!", Toast.LENGTH_SHORT).show();
         }

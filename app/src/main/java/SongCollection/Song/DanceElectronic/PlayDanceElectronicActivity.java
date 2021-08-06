@@ -31,7 +31,6 @@ import SongCollection.Song.AddToPlaylist;
 import SongCollection.Song.All.Song;
 import SongCollection.Song.Countdown.Countdown;
 
-import static com.example.music_carnival.R.drawable.like_orange;
 import static com.example.music_carnival.R.drawable.play_letterh;
 import static com.example.music_carnival.R.drawable.play_triangleanother;
 
@@ -146,10 +145,8 @@ public class PlayDanceElectronicActivity extends AppCompatActivity {
                             intent3.putExtra("pfp", pfpCurrentIndex);
                             intent3.putExtra("genre","danceElec");
 
-                            songIndex = bundle.getInt("index");
-                            Log.d("temasek", "song array list no. sending: " + songIndex);
-                            int i = bundle.getInt("index");
-                            intent3.putExtra("index",i);
+                            intent3.putExtra("index", songIndex);
+                            Log.d("temasek", "PLAY song array list no. sending: " + songIndex);
 
                               /*  int songIndex = intent3.getExtras().getInt("index");
                             intent3.putExtra("index",songIndex);
@@ -176,12 +173,19 @@ public class PlayDanceElectronicActivity extends AppCompatActivity {
         });
 
 
-        //seekbar, manipulationt through here.
+        //seekbar, manipulation through here.
         seekbar = findViewById(R.id.seekBar);
+        seekbar.setMax(player.getDuration());
+        handler.removeCallbacks(p_bar);
+        handler.postDelayed(p_bar,1000);
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 //whenever value changes
+                /*if (fromUser) {
+                    seekBar.setProgress(progress);
+                    player.seekTo(progress);
+                } */
 
             }
 
@@ -196,6 +200,7 @@ public class PlayDanceElectronicActivity extends AppCompatActivity {
                 if (player != null && player.isPlaying()) {
                     player.seekTo(seekbar.getProgress());
                 }
+
             }
         });
 
@@ -371,6 +376,42 @@ public class PlayDanceElectronicActivity extends AppCompatActivity {
         Log.d("temasek", "After playnext, the index is now : " + currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
+        //init MENU AGAIN, reloads whole song playing activity and CURRENT INDEX.
+        menu_button = findViewById(R.id.btnMenu);
+        menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(PlayDanceElectronicActivity.this, menu_button);
+                popup.getMenuInflater().inflate(R.menu.menu_popup, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {//SECOND ONCLICK
+                        Toast.makeText(PlayDanceElectronicActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        int id = item.getItemId();
+                        if (id == R.id.countdownTimer) {
+                            Intent intent3 = new Intent(PlayDanceElectronicActivity.this, Countdown.class);
+
+                            intent3.putExtra("ALBUM", drawable);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+
+                            intent3.putExtra("pfp", pfpCurrentIndex);
+                            intent3.putExtra("genre", "danceElec");
+
+                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "PLAYNEXT/PREVIOUS song array list no. sending: " + currentIndex);
+
+                            startActivity(intent3);
+
+                        }
+
+                        return true;
+                    }
+                });
+                popup.show();
+
+            }
+        });
     }
 
 
@@ -392,6 +433,42 @@ public class PlayDanceElectronicActivity extends AppCompatActivity {
 
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
+        //init MENU AGAIN, reloads whole song playing activity and CURRENT INDEX.
+        menu_button = findViewById(R.id.btnMenu);
+        menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(PlayDanceElectronicActivity.this, menu_button);
+                popup.getMenuInflater().inflate(R.menu.menu_popup, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {//SECOND ONCLICK
+                        Toast.makeText(PlayDanceElectronicActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        int id = item.getItemId();
+                        if (id == R.id.countdownTimer) {
+                            Intent intent3 = new Intent(PlayDanceElectronicActivity.this, Countdown.class);
+
+                            intent3.putExtra("ALBUM", drawable);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+
+                            intent3.putExtra("pfp", pfpCurrentIndex);
+                            intent3.putExtra("genre", "danceElec");
+
+                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "PLAYNEXT/PREVIOUS song array list no. sending: " + currentIndex);
+
+                            startActivity(intent3);
+
+                        }
+
+                        return true;
+                    }
+                });
+                popup.show();
+
+            }
+        });
 
     }
 

@@ -16,7 +16,7 @@ public class HHSongCollection {
             3.23,
             R.drawable.superbass);
     HHSong walkMeHome = new HHSong("txtWMH",
-            "Walk Me More",
+            "Walk Me Home",
             "P!nk",
             "https://firebasestorage.googleapis.com/v0/b/musiccarnival-553f3.appspot.com/o/P!nk%20-%20Walk%20Me%20Home%20(Lyrics).mp3?alt=media&token=e6cdeae7-32df-461d-a2aa-8c358ccfdc6e",
             2.57,

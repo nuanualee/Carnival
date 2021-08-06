@@ -199,6 +199,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/cool_grey"
         android:textSize="12sp"
+        android:text="0:00"
         app:layout_constraintBottom_toBottomOf="@+id/seekBar"
         app:layout_constraintEnd_toStartOf="@+id/seekBar"
         app:layout_constraintTop_toTopOf="@+id/seekBar" />
@@ -209,6 +210,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/cool_grey"
         android:textSize="12sp"
+        android:text="0:00"
         app:layout_constraintBottom_toBottomOf="@+id/seekBar"
         app:layout_constraintStart_toEndOf="@+id/seekBar"
         app:layout_constraintTop_toTopOf="@+id/seekBar" />

@@ -145,11 +145,8 @@ public class PlayContempSongActivity extends AppCompatActivity {
                             intent3.putExtra("pfp", pfpCurrentIndex);
                             intent3.putExtra("genre","contemp");
 
-                            songIndex = bundle.getInt("index");
-                            Log.d("temasek", "song array list no. sending: " + songIndex);
-                            int i = bundle.getInt("index");
-                            intent3.putExtra("index",i);
-
+                            intent3.putExtra("index", songIndex);
+                            Log.d("temasek", "PLAY song array list no. sending: " + songIndex);
 
                             startActivity(intent3);
 
@@ -165,12 +162,19 @@ public class PlayContempSongActivity extends AppCompatActivity {
         });
 
 
-        //seekbar, manipulationt through here.
+        //seekbar, manipulation through here.
         seekbar = findViewById(R.id.seekBar);
+        seekbar.setMax(player.getDuration());
+        handler.removeCallbacks(p_bar);
+        handler.postDelayed(p_bar,1000);
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 //whenever value changes
+                /*if (fromUser) {
+                    seekBar.setProgress(progress);
+                    player.seekTo(progress);
+                } */
 
             }
 
@@ -185,6 +189,7 @@ public class PlayContempSongActivity extends AppCompatActivity {
                 if (player != null && player.isPlaying()) {
                     player.seekTo(seekbar.getProgress());
                 }
+
             }
         });
 
@@ -360,6 +365,42 @@ public class PlayContempSongActivity extends AppCompatActivity {
         Log.d("temasek", "After playnext, the index is now : " + currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
+        //init MENU AGAIN, reloads whole song playing activity and CURRENT INDEX.
+        menu_button = findViewById(R.id.btnMenu);
+        menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(PlayContempSongActivity.this, menu_button);
+                popup.getMenuInflater().inflate(R.menu.menu_popup, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {//SECOND ONCLICK
+                        Toast.makeText(PlayContempSongActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        int id = item.getItemId();
+                        if (id == R.id.countdownTimer) {
+                            Intent intent3 = new Intent(PlayContempSongActivity.this, Countdown.class);
+
+                            intent3.putExtra("ALBUM", drawable);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+
+                            intent3.putExtra("pfp", pfpCurrentIndex);
+                            intent3.putExtra("genre", "contemp");
+
+                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "PLAYNEXT/PREVIOUS song array list no. sending: " + currentIndex);
+
+                            startActivity(intent3);
+
+                        }
+
+                        return true;
+                    }
+                });
+                popup.show();
+
+            }
+        });
     }
 
 
@@ -382,6 +423,42 @@ public class PlayContempSongActivity extends AppCompatActivity {
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
 
+        //init MENU AGAIN, reloads whole song playing activity and CURRENT INDEX.
+        menu_button = findViewById(R.id.btnMenu);
+        menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(PlayContempSongActivity.this, menu_button);
+                popup.getMenuInflater().inflate(R.menu.menu_popup, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {//SECOND ONCLICK
+                        Toast.makeText(PlayContempSongActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        int id = item.getItemId();
+                        if (id == R.id.countdownTimer) {
+                            Intent intent3 = new Intent(PlayContempSongActivity.this, Countdown.class);
+
+                            intent3.putExtra("ALBUM", drawable);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+
+                            intent3.putExtra("pfp", pfpCurrentIndex);
+                            intent3.putExtra("genre", "contemp");
+
+                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "PLAYNEXT/PREVIOUS song array list no. sending: " + currentIndex);
+
+                            startActivity(intent3);
+
+                        }
+
+                        return true;
+                    }
+                });
+                popup.show();
+
+            }
+        });
     }
 
     @Override //the parent of PSA also has this function implemented

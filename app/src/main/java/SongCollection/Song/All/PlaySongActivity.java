@@ -41,7 +41,7 @@ public class PlaySongActivity extends AppCompatActivity {
     private int currentIndex = -1;
 
     private int songIndex = -1;
-  //  private static final int SPLASH_TIME_OUT = 1000;
+    //  private static final int SPLASH_TIME_OUT = 1000;
 
     private int drawablePfp;
     private int pfpCurrentIndex = -1;
@@ -97,6 +97,38 @@ public class PlaySongActivity extends AppCompatActivity {
             displaySongBasedOnIndex(currentIndex);
             playSong(filelink);
 
+
+            //seekbar, manipulation through here.
+            seekbar = findViewById(R.id.seekBar);
+            seekbar.setMax(player.getDuration());
+            handler.removeCallbacks(p_bar);
+            handler.postDelayed(p_bar,1000);
+            seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    //whenever value changes
+                /*if (fromUser) {
+                    seekBar.setProgress(progress);
+                    player.seekTo(progress);
+                } */
+
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+                    //when touch
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+                    //let go, scrub and let go will call this method
+                    if (player != null && player.isPlaying()) {
+                        player.seekTo(seekbar.getProgress());
+                    }
+
+                }
+            });
+
         }
 
 
@@ -148,10 +180,8 @@ public class PlaySongActivity extends AppCompatActivity {
                             intent3.putExtra("pfp", pfpCurrentIndex);
                             intent3.putExtra("genre", "mainActivity");
 
-                            songIndex = bundle.getInt("index");
-                            Log.d("temasek", "song array list no. sending: " + songIndex);
-                            int i = bundle.getInt("index");
-                            intent3.putExtra("index", i);
+                            intent3.putExtra("index", songIndex);
+                            Log.d("temasek", "PLAY song array list no. sending: " + songIndex);
 
                            /*  int songIndex = intent3.getExtras().getInt("index");
                             intent3.putExtra("index",songIndex);
@@ -177,33 +207,6 @@ public class PlaySongActivity extends AppCompatActivity {
         });
 
 
-        //seekbar, manipulation through here.
-        seekbar = findViewById(R.id.seekBar);
-        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                //whenever value changes
-           /*     if (fromUser) {
-                    seekBar.setProgress(progress);
-                    player.seekTo(progress);
-                } */
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                //when touch
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                //let go, scrub and let go will call this method
-              if (player != null && player.isPlaying()) {
-                    player.seekTo(seekbar.getProgress());
-                }
-
-            }
-        });
 
 
 
@@ -265,7 +268,7 @@ public class PlaySongActivity extends AppCompatActivity {
             seekbar.setProgress(player.getCurrentPosition());
             handler.postDelayed(this, 1000); //this, run this runnable. will call itself 1 sec after.
 
-          // update time Labels
+            // update time Labels
             String elapsedTime = createTimeLabel(player.getCurrentPosition());
             elapsedTimeLabel.setText(elapsedTime);
 
@@ -281,10 +284,10 @@ public class PlaySongActivity extends AppCompatActivity {
         Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();*/
 
 
-        if (likedFlag){ //if it is FALSE
+        if (likedFlag) { //if it is FALSE
             likedButton.setImageResource(R.drawable.like);
             Toast.makeText(this, "Song unliked!", Toast.LENGTH_SHORT).show();
-        }else{ //if it is TRUE
+        } else { //if it is TRUE
             likedButton.setImageResource(R.drawable.like_orange);
             Toast.makeText(this, "Song has been liked!", Toast.LENGTH_SHORT).show();
         }
@@ -328,7 +331,7 @@ public class PlaySongActivity extends AppCompatActivity {
             setTitle(title);
             gracefullyStopsWhenMusicEnds(); //METHOD IS BEING CALLED
 
-          //  seekbar.setMax(player.getDuration());
+            //  seekbar.setMax(player.getDuration());
 
 
         } catch (IOException e) {
@@ -346,7 +349,7 @@ public class PlaySongActivity extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) { //ON COMPLETION, finished playing
                 Toast.makeText(PlaySongActivity.this, "Song ended", Toast.LENGTH_SHORT).show();
 
-                if (repeatFlag){
+                if (repeatFlag) {
                     playOrPauseSong(null);
                     //init dialog
                     dialogBeeRepeat = new Dialog(PlaySongActivity.this);
@@ -359,12 +362,9 @@ public class PlaySongActivity extends AppCompatActivity {
                     );
 
 
-
                 } else {
                     btnPlayPause.setImageResource(play_triangleanother); //btn changes back to PLAY
                 }
-
-
 
 
             }
@@ -391,14 +391,48 @@ public class PlaySongActivity extends AppCompatActivity {
         Log.d("temasek", "After playnext, the index is now : " + currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
+        //init MENU AGAIN, reloads whole song playing activity and CURRENT INDEX.
+        menu_button = findViewById(R.id.btnMenu);
+        menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(PlaySongActivity.this, menu_button);
+                popup.getMenuInflater().inflate(R.menu.menu_popup, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {//SECOND ONCLICK
+                        Toast.makeText(PlaySongActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        int id = item.getItemId();
+                        if (id == R.id.countdownTimer) {
+                            Intent intent3 = new Intent(PlaySongActivity.this, Countdown.class);
+
+                            intent3.putExtra("ALBUM", drawable);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+
+                            intent3.putExtra("pfp", pfpCurrentIndex);
+                            intent3.putExtra("genre", "mainActivity");
+
+                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "PLAYNEXT/PREVIOUS song array list no. sending: " + currentIndex);
+
+                            startActivity(intent3);
+
+                        }
+
+                        return true;
+                    }
+                });
+                popup.show();
+
+            }
+        });
     }
-
-
 
 
     public void playPrevious(View view) {
         currentIndex = songCollection.getPrevSong(currentIndex);
-      //  Toast.makeText(this, "The current index now is: " + currentIndex, Toast.LENGTH_LONG).show();
+        //  Toast.makeText(this, "The current index now is: " + currentIndex, Toast.LENGTH_LONG).show();
 
         //init dialog
         dialog = new Dialog(PlaySongActivity.this);
@@ -416,6 +450,42 @@ public class PlaySongActivity extends AppCompatActivity {
 
         displaySongBasedOnIndex(currentIndex);
         playSong(filelink);
+        //init MENU AGAIN, reloads whole song playing activity and CURRENT INDEX.
+        menu_button = findViewById(R.id.btnMenu);
+        menu_button.setOnClickListener(new View.OnClickListener() { //FIRST ONCLICK
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(PlaySongActivity.this, menu_button);
+                popup.getMenuInflater().inflate(R.menu.menu_popup, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {//SECOND ONCLICK
+                        Toast.makeText(PlaySongActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        int id = item.getItemId();
+                        if (id == R.id.countdownTimer) {
+                            Intent intent3 = new Intent(PlaySongActivity.this, Countdown.class);
+
+                            intent3.putExtra("ALBUM", drawable);
+                            Log.d("temasek", "Countdown received " + pfpCurrentIndex);
+
+                            intent3.putExtra("pfp", pfpCurrentIndex);
+                            intent3.putExtra("genre", "mainActivity");
+
+                            intent3.putExtra("index", currentIndex);
+                            Log.d("temasek", "PLAYNEXT/PREVIOUS song array list no. sending: " + currentIndex);
+
+                            startActivity(intent3);
+
+                        }
+
+                        return true;
+                    }
+                });
+                popup.show();
+
+            }
+        });
 
     }
 
@@ -455,10 +525,10 @@ public class PlaySongActivity extends AppCompatActivity {
 
     public void repeatSong(View view) {
 
-        if (repeatFlag){ //if it is FALSE
+        if (repeatFlag) { //if it is FALSE
             repeatButton.setImageResource(R.drawable.repeat);
 
-        }else{ //if it is TRUE
+        } else { //if it is TRUE
             repeatButton.setImageResource(R.drawable.repeat_orange);
             Toast.makeText(this, "Song will be repeated!", Toast.LENGTH_SHORT).show();
         }

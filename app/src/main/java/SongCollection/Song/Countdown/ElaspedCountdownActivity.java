@@ -64,6 +64,8 @@ public class ElaspedCountdownActivity extends AppCompatActivity {
         int timerPosition = extras.getInt("timer");
         String genre = extras.getString("genre");
 
+        Log.d("temasek", "Elapsed will received " + currentIndex);
+
         btnCancel = findViewById(R.id.btnCancel);
         textTimer = findViewById(R.id.textTimer);
 

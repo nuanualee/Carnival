@@ -2,8 +2,6 @@ package SongCollection.Song.JPop;
 
 import com.example.music_carnival.R;
 
-import SongCollection.Song.JPop.JPSong;
-
 public class JPopSongCollection {
 
     public JPSong[] jpSongs = new JPSong[10];
@@ -24,10 +22,10 @@ public class JPopSongCollection {
                 3.87,
                 R.drawable.relaxandchill);
         JPSong standByMeYou = new JPSong("txtStand",
-                "Stand By me, stand by you.",
+                "Stand by me, stand by you.",
                 "HIRAIDAI",
-                "https://firebasestorage.googleapis.com/v0/b/musiccarnival-553f3.appspot.com/o/%E5%B9%B3%E4%BA%95%20%E5%A4%A7%20Stand%20by%20me%2C%20Stand%20by%20you.Lyric%20Video.mp3?alt=media&token=09517a97-d2ea-4c7d-9bb2-3d29c5924fd9",
-                3.22,
+                "https://firebasestorage.googleapis.com/v0/b/musiccarnival-553f3.appspot.com/o/Stand%20By%20Me%2C%20Stand%20by%20You%20by%20%E5%B9%B3%E4%BA%95%20%E5%A4%A7%20Lyrics%20Romaji%20%26%20Kanji.mp3?alt=media&token=07b61709-bbb8-4c92-9999-5d79fb4b18e4",
+                3.17,
                 R.drawable.standbymeyou);
         JPSong dryFlower = new JPSong("txtDry",
                 "Dry Flower",
@@ -90,7 +88,7 @@ public class JPopSongCollection {
         jpSongs[4] = viewOfLife;
         jpSongs[5] = konomama;
         jpSongs[6] = summer;
-        jpSongs[7] = summer;
+        jpSongs[7] = benefits;
         jpSongs[8] = taketen;
         jpSongs[9] = perfectWorld;
     }
