@@ -19,4 +19,4 @@ If you knowingly allow another student to use the whole or part of your work and
 as his or her own work, you could be liable for abetting plagiarism. The penalty for abetting
 plagiarism includes failing the subject, suspension and removal from course.
 
-Thanks.
+Thanks and please go on your way.
