@@ -1,5 +1,5 @@
 #Music_Carnival
-Plagiarism Policy
+Do you know the Plagiarism Policy?
 Temasek Polytechnic's Policy on Plagiarism
 Academic integrity is expected of all students at Temasek Polytechnic. The Polytechnic
 requires all students to be assessed for their own work only. All students are required to give
@@ -21,5 +21,6 @@ If you knowingly allow another student to use the whole or part of your work and
 as his or her own work, you could be liable for abetting plagiarism. The penalty for abetting
 plagiarism includes failing the subject, suspension and removal from course.
 
+Now you know :)
 Thanks and please go on your way.
 Cheers, Ji Yee
