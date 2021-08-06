@@ -22,5 +22,4 @@ as his or her own work, you could be liable for abetting plagiarism. The penalty
 plagiarism includes failing the subject, suspension and removal from course.
 
 Now you know :)
-Thanks and please go on your way.
 Cheers, Ji Yee
