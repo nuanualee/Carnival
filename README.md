@@ -7,7 +7,7 @@ Get a 2 in 1 experience when you use Carnival for dancing or purely for listenin
 ## Features
 
 -	Auto countdown timer
-Allows dancers to choose a countdown timer.
+> Allows dancers to choose a countdown timer.
 Dancers would no longer have to rush to take their spots as they can follow this timer.
 Time left on countdown can be utilized to prepare themselves.
 4 countdown options.
